@@ -5,4 +5,4 @@ Diese Karte zeigt den aktuellen Stand in Sachen Open Data in Deutschland, Öster
 
 http://opendata.tursics.de/
 
-![Preview](https://raw.githubusercontent.com/tursics/open-data-atlas/master/map/images/facebookimage.png)
+![Preview](https://raw.githubusercontent.com/tursics/open-data-atlas/master/images/facebookimage.png)
