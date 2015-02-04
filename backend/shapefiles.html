@@ -1,0 +1,106 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7; IE=EmulateIE9; IE=10" />
+
+ 	<title>Converter</title>
+	<link rel="stylesheet" href="../jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
+
+	<style type="text/css">
+		body {
+			font-weight:300 !important;
+		}
+		.ui-header {
+			background:#ffffff  !important;
+			border-bottom:1px solid #000000 !important;
+		}
+	</style>
+	<script src="../jquery.mobile-1.4.2/jquery-1.10.2.min.js"></script>
+	<script src="../jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="pageMain">
+		<div data-role="header" data-position="fixed">
+			<div style="float:left;">
+				<a href="http://codefor.de/berlin/" class="ui-link" target="_blank"><img src="../images/cfg_berlin.svg" style="height:3.5em" /></a>
+			</div>
+			<div style="float:left;font-size:2em;font-weight:100 !important;padding:0.3em 0 0 1em;">Convert UMT32 to WGS84</div>
+		</div>
+		<div style="padding:1em;" id="target">
+			<b>Aufgabe:</b><br>
+			Erzeuge eine GeoJSON-Datei für alle Gemeinden, Kreise, Bundesländer und Deutschland.<br>
+			<br>
+			<b>Vorbereitung:</b><br>
+			Suche beim Bundesamt für Kartographie und Geodäsie nach <a href="http://www.geodatenzentrum.de/geodaten/gdz_rahmen.gdz_div?gdz_spr=deu&gdz_akt_zeile=5&gdz_anz_zeile=0&gdz_user_id=0">Open Data</a>.
+			Die <a href="http://www.geodatenzentrum.de/geodaten/gdz_rahmen.gdz_div?gdz_spr=deu&gdz_akt_zeile=5&gdz_anz_zeile=1&gdz_unt_zeile=15&gdz_user_id=0">Verwaltungsgebiete mit Einwohnerzahlen 1:250.000 - Stand 31.12.2013</a> enthält alles was ich brauche.
+			Als Copyright muss "© GeoBasis-DE / <a href="http://www.bkg.bund.de">BKG</a> 2015" angegeben werden.
+			Downloade die UTM32-Kompakt-ArcInfo-SHAPE-Datei. Das sind schlappe 39 MB.<br>
+			<br>
+			<b>Überprüfung:</b><br>
+			Entpacke die ZIP-SHAPE-Datei.
+			Öffne die Webseite <a href="http://www.mapshaper.org/" target="_blank">mapshaper</a> und dragge die Datei VG250_F.shp dorthin.
+			Prüfe, ob ganz Deutschland zu sehen ist.<br>
+			<br>
+			<b>Parsen:</b><br>
+			Mit Hilfe von <a href="http://github.com/wavded/js-shapefile-to-geojson">js-shapefile-to-geojson</a> lese ich gerade die .shp-Datei ein.<br>
+		</div>
+
+		<div style="padding:1em;" id="dest">
+			Bitte warte...
+		</div>
+
+		<div style="padding:1em;" id="result">
+		</div>
+
+		<script src="stream.js"></script>
+		<script src="shapefile.js"></script>
+		<script src="dbf.js"></script>
+		<script type="text/javascript">
+			var starttime = new Date;
+			var shpData = null;
+			var shapefile = new Shapefile({
+				shp: "VG250_F.shp",
+				dbf: "VG250_F.dbf"
+			}, function(data){
+				shpData = data;
+				console.log("took",new Date - starttime,"milliseconds")
+
+				var count = shpData.geojson.features.length;
+				var str = '';
+
+				str += '<b>Konvertiere zu GeoJSON:</b><br>';
+				str += 'Ich habe '+count+' Objekte eingelesen. ';
+				str += 'Welchen Regionalschlüssel soll ich konvertieren?<br>';
+				str += '<br>';
+				str += '<input type="text" id="ars"> <input type="submit" value="OK" onclick="convertARS();"><br>';
+
+				$( '#dest').html( str);
+			})
+
+			function convertARS()
+			{
+				var ars = $( '#ars').val();
+				var str = '';
+
+				str += '<b>Ergebnis:</b><br>';
+
+				for( var i = 0; i < shpData.geojson.features.length; ++i) {
+					var obj = shpData.geojson.features[i];
+					if( ars == obj.properties['RS']) {
+						if( parseInt( obj.properties['GF']) >= 3) {
+							console.log(obj);
+							str += JSON.stringify( obj.geometry.coordinates, null, 2) + '<br><br>';
+						}
+					}
+				}
+
+				str += 'Fertig<br>';
+				$( '#result').html( str);
+			}
+		</script>
+	</div>
+</body>
+</html>

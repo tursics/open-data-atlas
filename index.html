@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7; IE=EmulateIE9; IE=10" />
+
+ 	<title>Open Data DACH-Map</title>
+	<meta name="title" content="Open Data DACH-Map" />
+	<meta property="og:title" content="Open Data DACH-Map" />
+	<meta name="twitter:title" content="Open Data DACH-Map" />
+
+	<meta name="description" content="Wo gibt es Open Data Vornamen in Deutschland, Österreich und der Schweiz?" />
+	<meta property="og:description" content="Wo gibt es Open Data Vornamen in Deutschland, Österreich und der Schweiz?" />
+	<meta name="twitter:description" content="Wo gibt es Open Data Vornamen in Deutschland, Österreich und der Schweiz?" />
+
+	<link rel="image_src" type="image/png" href="http://vornamen.tursics.de/images/facebookimage.png" />
+	<meta property="og:image" content="http://vornamen.tursics.de/images/facebookimage.png" />
+	<meta name="twitter:image:src" content="http://vornamen.tursics.de/images/twitterimage.png">
+
+	<meta property="og:url" content="http://vornamen.tursics.de/">
+	<meta name="twitter:domain" content="http://vornamen.tursics.de/">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:creator" content="@tursics">
+
+	<link rel="stylesheet" href="jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+
+	<script src="http://js.api.here.com/se/2.5.4/jsl.js?with=maps,places,directions,positioning" type="text/javascript" charset="utf-8"></script>
+
+	<style type="text/css">
+		html {
+			overflow:hidden;
+		}
+		body {
+			font-weight:300 !important;
+			margin:0;
+			padding:0;
+			position:absolute;
+			overflow:hidden;
+			width:100%;
+			height:100%;
+		}
+		#mapContainer {
+			width:70%;
+			height:100%;
+			left:0;
+			top:0;
+			margin-top:-2.7em;
+			padding:0px!important;
+			text-shadow:none;
+		}
+		#mapDetails {
+			position:absolute;
+			width:30%;
+			height:100%;
+			right:0;
+			top:0;
+			margin-top:0;
+			padding:0 !important;
+			text-shadow:none;
+			background:#ffffff !important;
+			border-left:1px solid #000000 !important;
+			overflow-y:scroll;
+		}
+		#mapDetailsDiv {
+			margin:3.5em 0 3.5em 0;
+			padding:1em;
+		}
+		.ui-header {
+			background:#ffffff !important;
+			border-bottom:1px solid #000000 !important;
+		}
+		.segmented-control { text-align:center; }
+		.segmented-control .ui-controlgroup { display:inline; margin:.2em 0px; }
+		.chart { display:inline;padding:0.5em 0.75em 0 0.75em; }
+		.chart div { background-repeat:no-repeat;background-position:15px 15px;background-size:70px 70px; }
+		.chartAT div { background-image:url('images/at.png'); }
+		.chartCH div { background-image:url('images/ch.png'); }
+		.chartDE div { background-image:url('images/de.png'); }
+		#chart1 {padding:0 0 2.5em 0; }
+		.circles-text span { font-size:0.5em;position:absolute;top:107px;left:0;width:100px;line-height:normal; }
+		.circles-wrp { height:140px; }
+
+		#pageMap { width:100%; height:100%; }
+		#dataList {
+			margin:1em -1em 0 -1em;
+		}
+		.marker-red {
+			color:#f03b20;
+			font-size:1.5em;
+			padding-right:0.2em;
+		}
+		.marker-yellow {
+			color:#e1c64b;
+			font-size:1.5em;
+			padding-right:0.2em;
+		}
+		.marker-green {
+			color:#31a354;
+			font-size:1.5em;
+			padding-right:0.2em;
+		}
+		#dataInfo {
+			border-top:1px solid #000000 !important;
+			margin:1em -1em 0 -1em;
+			padding:1em 1em 0 1em;
+		}
+	</style>
+	<script src="jquery.mobile-1.4.2/jquery-1.10.2.min.js"></script>
+	<script src="data/dataBasics.js"></script>
+	<script src="data/dataFirstnames.js"></script>
+	<script src="index.js"></script>
+	<script src="jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	<script src="circles-0.0.5/circles.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="pageMap">
+		<div data-role="header" data-position="fixed">
+			<div style="float:left;">
+				<a href="http://codefor.de/berlin/" class="ui-link" target="_blank"><img src="images/cfg_berlin.svg" style="height:3.5em" /></a>
+			</div>
+			<div style="float:left;font-size:2em;font-weight:100 !important;padding:0.3em 0 0 1em;">Open Data DACH-Map</div>
+			<div data-role="controlgroup" data-type="horizontal" style="float:right;margin-right:1em;">
+				<a href="#" id="aPopupData"      data-rel="popup" class="ui-btn"><i class="fa fa-map-marker" style="font-size:1.5em;"></i></a>
+				<a href="#" id="aPopupSamples"   data-rel="popup" class="ui-btn"><i class="fa fa-flask" style="font-size:1.5em;"></i></a>
+				<a href="#" id="aPopupContests"  data-rel="popup" class="ui-btn"><i class="fa fa-trophy" style="font-size:1.5em;"></i></a>
+				<a href="#" id="aPopupShare"     data-rel="popup" class="ui-btn"><i class="fa fa-share-alt" style="font-size:1.5em;"></i></a>
+				<a href="#" id="aPopupCopyright" data-rel="popup" class="ui-btn"><i class="fa fa-info-circle" style="font-size:1.5em;"></i></a>
+			</div>
+			<div data-role="popup" id="popupSamples" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">
+				<div style="font-size:2em;font-weight:100;padding:0 0 .5em 0;">Beispiele</div>
+				<div>
+					Die offenen Daten über Vornamen werden bereits verwendet. Hier eine Beispiele:<br>
+				</div>
+				<ul data-role="listview" data-inset="true">
+					<li><a href="http://tursics.de/nameyourbabe/" target="blank_"><img src="vornamen/babybenamsen.png"><h2>Baby benamsen</h2><p>von Thomas Tursics</p></a></li>
+					<li><a href="http://codefor.de/projekte/2014-07-04-Vornamen-in-Berlin.html" target="blank_"><img src="vornamen/berlinervornamen.png"><h2>Berliner Vornamen</h2><p>von Knud Möller</p></a></li>
+					<li><a href="http://derstandard.at/1341845196023/Florian-und-Jessica-Muhammed-und-Leonie-Vornamen-in-Wien" target="blank_"><img src="vornamen/vornameninwien.png"><h2>Florian und Jessica, Muhammed und Leonie: Vornamen in Wien</h2><p>von Florian Gossy</p></a></li>
+					<li><a href="http://www.newmediaart.at/" target="blank_"><img src="vornamen/ratemyname.png"><h2>rate my name</h2><p>von Benjamin Grabner</p></a></li>
+					<li><a href="http://data.gv.at/anwendungen/statistik-niederosterreich/" target="blank_"><img src="vornamen/statistikniederoesterreich.png"><h2>Statistik Niederösterreich</h2><p>von Benjamin Grabner</p></a></li>
+					<li><a href="http://issy.netcomdev.com/" target="blank_"><img src="vornamen/issylesmoulineaux.png"><h2>Les prénoms les plus portés</h2><p>von Ville d'Issy-les-Moulineaux</p></a></li>
+					<li><a href="https://www.stadt-zuerich.ch/prd/de/index/statistik/ueber_uns/externe-projekte/2014_ZHDK_measuring-zurich.html#growing_names_" target="blank_"><img src="vornamen/zurich.png"><h2>Growing Names</h2><p>von Marlo Limacher</p></a></li>
+					<li><a href="http://blog.tagesanzeiger.ch/datenblog/index.php/6859/alles-mueller-oder-was" target="blank_"><img src="vornamen/kantonsnameskarte.png"><h2>Alles Müller</h2><p>von Tages-Anzeiger, Schweiz</p></a></li>
+				</ul>
+			</div>
+			<div data-role="popup" id="popupContests" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">
+				<div style="font-size:2em;font-weight:100;padding:0 0 .5em 0;">Wettbewerbe</div>
+				<div>
+					Aktuell laufen Wettbewerbe rund um Open Data.<br>
+				</div>
+				<ul data-role="listview" data-inset="true">
+					<li><a href="http://data.ktn.gv.at/news/ogd-challenge/" target="blank_">
+						<img src="http://data.ktn.gv.at/wp-content/uploads/2014/09/header_v5.jpg">
+						<h2>OpenDataChallenge Kärnten</h2>
+						<p>- Web-Anwendungen und mobile Applikationen<br>- Konzepte</p>
+						<p>Nur Personen mit Wohnsitz in Österreich, Teams nur bis 10 Personen<br>
+						Bereits veröffentlichte Konzepte und Apps erlaubt<br>
+						Einreichungsfrist: <b>31. Januar 2015</b> um 24:00 Uhr MEZ</p>
+					</a></li>
+					<li><a href="https://www.tirol.gv.at/data/App-Wettbewerb/" target="blank_">
+						<img src="https://wwwstatic.tirol.gv.at/t3tiro/fileadmin/_processed_/csm_App_Wettbewerb_Tirol15_slogan_3d9cd9915b.jpg">
+						<h2>APP-Wettbewerb Tirol `15</h2>
+						<p>- Anwendungen und mobile Applikationen (Apps)<br>- Ideen und Konzepte</p>
+						<p>Jeder darf teilnehmen, auch Teams<br>
+						Nur neue Konzepte, Ideen, Apps (nach dem 1. Juli 2014)<br>
+						Einreichungsfrist: <b>28. Februar 2015</b> um 24.00 Uhr MEZ</p>
+					</a></li>
+				</ul>
+			</div>
+			<div data-role="popup" id="popupShare" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">
+				<div style="font-size:2em;font-weight:100;padding:0 0 .5em 0;">Teilen</div>
+				<div>
+					Gefällt dir diese Seite? Erzähle es weiter.<br>
+				</div>
+				<div style="color:gray;text-align:center;margin-top:0.5em;padding-top:1.5em;">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://vornamen.tursics.de" data-text="Die Open Data DACH-Map auf" data-via="tursics" data-lang="de">Twittern</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div>
+				<div style="color:gray;text-align:center;margin-bottom:0.5em;padding:1em 0 1.5em 0;">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&appId=625938384187754&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+						<div class="fb-like" data-href="http://vornamen.tursics.de" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+				</div>
+			</div>
+			<div data-role="popup" id="popupCopyright" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">
+				<div style="font-size:2em;font-weight:100;padding:0 0 .5em 0;">Wo gibt es Open Data?</div>
+				Wo im deutschsprachigen Raum gibt es Open Data Portale? Und bieten sie auch Vornamen-Daten neugeborener Kinder an?<br>
+				<br>
+				Diese Karte zeigt den aktuellen Stand in Sachen Open Data und Vornamen in Deutschland, Österreich und der Schweiz an.<br>
+				<br>
+				Habe ich ein Datenportal übersehen? Sag es mir:<br>
+				<center><div data-role="controlgroup" data-type="horizontal">
+					<a href="http://www.tursics.de/support"              target="_blank" class="ui-btn"><i class="fa fa-envelope"></i></a>
+					<a href="https://twitter.com/tursics"                target="_blank" class="ui-btn"><i class="fa fa-twitter"></i></a>
+					<a href="https://www.facebook.com/thomas.tursics"    target="_blank" class="ui-btn"><i class="fa fa-facebook"></i></a>
+					<a href="https://google.com/+ThomasTursics"          target="_blank" class="ui-btn"><i class="fa fa-google-plus"></i></a>
+					<a href="https://github.com/tursics/NameYourBabe/tree/master/map" target="_blank" class="ui-btn"><i class="fa fa-github"></i></a>
+				</div></center><br>
+				<div style="color:gray;text-align:center;border-top:solid 1px gray;margin-top:0.5em;padding-top:0.5em;">Thomas Tursics • Frankfurter Allee 172 • 10365 Berlin</div>
+			</div>
+			<div data-role="popup" id="popupData" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">
+				<div>Einen kurzen Moment noch...</div>
+			</div>
+		</div>
+		<div role="main" class="ui-content" id="mapContainer"></div>
+		<div id="mapDetails"><div id="mapDetailsDiv"></div></div>
+	</div>
+</body>
+</html>
