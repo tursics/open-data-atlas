@@ -9,6 +9,7 @@ var mapBubbles = null;
 var filterCountry = 'DE';
 var filterLevel = 'all';
 var filterDataset = 'portals';
+var filterPage = '#popupData';
 
 // -----------------------------------------------------------------------------
 
@@ -50,7 +51,9 @@ function initNokiaMap( elementName, lat, lon, zoom)
 
 	mapContainer = new nokia.maps.map.Container();
 	mapContainer.addListener( CLICK, function( evt) {
-		mapBubble = mapBubbles.openBubble( getBubbleHTML( evt.target.nr), evt.target.coordinate);
+		if( evt.target.nr >= 0) {
+			mapBubble = mapBubbles.openBubble( getBubbleHTML( evt.target.nr), evt.target.coordinate);
+		}
 	}, false);
 
 	map.components.add( mapBubbles);
@@ -187,6 +190,53 @@ function basicIndexGetDataIndex( id)
 
 // -----------------------------------------------------------------------------
 
+function addMapMarkerPath( dataBasicId, colorStr, addLink)
+{
+	if( typeof dataBasics[dataBasicId]['path'] !== "undefined") {
+		for( var p = 0; p < dataBasics[dataBasicId]['path'].length; ++p) {
+			var path = dataBasics[dataBasicId]['path'][p];
+			var strip = new nokia.maps.geo.Strip();
+
+			for( var c = 0; c < path.length; c += 2) {
+				strip.add({ lat: path[c], lng: path[c+1]});
+			}
+
+			var marker = new nokia.maps.map.Polygon( strip, {
+				brush: {color: colorStr},
+				pen: {lineWidth: 0},
+				coordinate: new nokia.maps.geo.Coordinate( dataBasics[ dataBasicId]['lat'], dataBasics[ dataBasicId]['lon']),
+				nr: (addLink ? dataBasicId : -1)
+			});
+			mapContainer.objects.add( marker);
+		}
+	}
+}
+
+// -----------------------------------------------------------------------------
+
+function addMapMarker( dataBasicId, colorStr)
+{
+	if( 0 <= dataBasics[dataBasicId]['group'].indexOf( 'other')) {
+		var marker = new nokia.maps.map.Circle([dataBasics[ dataBasicId]['lat'], dataBasics[ dataBasicId]['lon']], 4000, {
+			brush: {color: colorStr+'a0'},
+			pen: {lineWidth: 0},
+			coordinate: new nokia.maps.geo.Coordinate( dataBasics[ dataBasicId]['lat'], dataBasics[ dataBasicId]['lon']),
+			nr: dataBasicId
+		});
+		mapContainer.objects.add( marker);
+	} else if( typeof dataBasics[dataBasicId]['path'] !== "undefined") {
+		addMapMarkerPath( dataBasicId, colorStr+'a0', true);
+	} else {
+		var marker = new nokia.maps.map.StandardMarker([dataBasics[ dataBasicId]['lat'], dataBasics[ dataBasicId]['lon']], {
+			brush: colorStr,
+			nr: dataBasicId
+		});
+		mapContainer.objects.add( marker);
+	}
+}
+
+// -----------------------------------------------------------------------------
+
 var objectDefault = {
 	getDataset: function() {
 		var ret = [];
@@ -244,13 +294,10 @@ var objectAllPortals = {
 	addMarker: function( vec) {
 		var max = vec.length;
 		var cGreen = '#31a354';
+
 		for( var i = 0; i < max; ++i) {
 			var id = vec[ i];
-			var marker = new nokia.maps.map.StandardMarker([dataBasics[ id]['lat'], dataBasics[ id]['lon']], {
-				brush: {color: cGreen},
-				nr: id
-			});
-			mapContainer.objects.add( marker);
+			addMapMarker( id, cGreen);
 		}
 	},
 	getCharts: function() {
@@ -315,14 +362,17 @@ var objectAllFirstnames = {
 		var cRed = '#f03b20';
 		var cYellow = '#e1c64b';
 		var cGreen = '#31a354';
+
 		for( var i = 0; i < max; ++i) {
 			var id = vec[ i];
 			var idata = basicIndexGetDataIndex( id);
-			var marker = new nokia.maps.map.StandardMarker([dataBasics[ id]['lat'], dataBasics[ id]['lon']], {
-				brush: {color: (-1 == idata ? cRed : (typeof dataFirstnames[idata]['linkOGData'] !== "undefined") ? cGreen : ((typeof dataFirstnames[idata]['linkWebData'] !== "undefined") ? cYellow :cRed)) },
-				nr: id
-			});
-			mapContainer.objects.add( marker);
+			var color = (-1 == idata ? cRed : (typeof dataFirstnames[idata]['linkOGData'] !== "undefined") ? cGreen : ((typeof dataFirstnames[idata]['linkWebData'] !== "undefined") ? cYellow :cRed));
+
+			if((cRed == color) && (0 <= dataBasics[id].group.indexOf( 'state')) && (0 == dataBasics[id].nuts.indexOf( 'DE'))) {
+				continue;
+			}
+
+			addMapMarker( id, color);
 		}
 	},
 	getCharts: function() {
@@ -370,13 +420,10 @@ var objectNuts1Portals = {
 		var max = vec.length;
 		var cGreen = '#31a354';
 		var cRed = '#f03b20';
+
 		for( var i = 0; i < max; ++i) {
 			var id = vec[ i];
-			var marker = new nokia.maps.map.StandardMarker([dataBasics[ id]['lat'], dataBasics[ id]['lon']], {
-				brush: {color: (typeof dataBasics[id]['linkOGD'] !== "undefined") ? cGreen : cRed},
-				nr: id
-			});
-			mapContainer.objects.add( marker);
+			addMapMarker( id, (typeof dataBasics[id]['linkOGD'] !== "undefined") ? cGreen : cRed);
 		}
 	},
 	getCharts: function() {
@@ -462,16 +509,15 @@ var objectNuts1Firstnames = {
 	},
 	addMarker: function( vec) {
 		var max = vec.length;
-		var cGreen = '#31a354';
 		var cRed = '#f03b20';
+		var cYellow = '#e1c64b';
+		var cGreen = '#31a354';
+
 		for( var i = 0; i < max; ++i) {
 			var id = vec[ i];
 			var idata = basicIndexGetDataIndex( id);
-			var marker = new nokia.maps.map.StandardMarker([dataBasics[ id]['lat'], dataBasics[ id]['lon']], {
-				brush: {color: (-1 == idata ? cRed : (typeof dataFirstnames[idata]['linkOGData'] !== "undefined") ? cGreen : ((typeof dataFirstnames[idata]['linkWebData'] !== "undefined") ? cYellow :cRed)) },
-				nr: id
-			});
-			mapContainer.objects.add( marker);
+
+			addMapMarker( id, (-1 == idata ? cRed : (typeof dataFirstnames[idata]['linkOGData'] !== "undefined") ? cGreen : ((typeof dataFirstnames[idata]['linkWebData'] !== "undefined") ? cYellow :cRed)));
 		}
 	},
 	getCharts: function() {
@@ -552,13 +598,10 @@ var objectDistrictPortals = {
 	addMarker: function( vec) {
 		var max = vec.length;
 		var cGreen = '#31a354';
+
 		for( var i = 0; i < max; ++i) {
 			var id = vec[ i];
-			var marker = new nokia.maps.map.StandardMarker([dataBasics[ id]['lat'], dataBasics[ id]['lon']], {
-				brush: {color: cGreen},
-				nr: id
-			});
-			mapContainer.objects.add( marker);
+			addMapMarker( id, cGreen);
 		}
 	},
 	getCharts: function() {
@@ -586,8 +629,16 @@ var objectDistrictFirstnames = {
 
 		return ret;
 	},
-	getListItem: function( nr) {
-		return '<li><a href="#" onClick="clickOnDataItem(\'' + nr + '\');" border=0><i class="fa fa-map-marker marker-green"></i>' + dataBasics[nr].name + '</a></li>';
+	getListItem: function( id) {
+		var idata = basicIndexGetDataIndex( id);
+		var marker = 'red';
+		if( -1 == idata) {
+		} else if( typeof dataFirstnames[idata]['linkOGData'] !== "undefined") {
+			marker = 'green';
+		} else if( typeof dataFirstnames[idata]['linkWebData'] !== "undefined") {
+			marker = 'yellow';
+		}
+		return '<li><a href="#" onClick="clickOnDataItem(\'' + id + '\');" border=0><i class="fa fa-map-marker marker-' + marker + '"></i>' + dataBasics[id].name + '</a></li>';
 	},
 	sort: function( left, right) {
 		return (dataBasics[left].population < dataBasics[right].population) ? 1 : -1;
@@ -596,18 +647,21 @@ var objectDistrictFirstnames = {
 		return geoSort( left, right);
 	},
 	getLegend: function() {
-		return '<i class="fa fa-map-marker marker-green"></i>Open Data-Datensatz mit Vornamen<br>'
+		return '<i class="fa fa-map-marker marker-red"></i>Keine Vornamen vorhanden<br>'
+		     + '<i class="fa fa-map-marker marker-yellow"></i>Daten mit Vornamen erhältlich<br>'
+		     + '<i class="fa fa-map-marker marker-green"></i>Open Data-Datensatz mit Vornamen<br>';
 	},
 	addMarker: function( vec) {
 		var max = vec.length;
+		var cRed = '#f03b20';
+		var cYellow = '#e1c64b';
 		var cGreen = '#31a354';
+
 		for( var i = 0; i < max; ++i) {
 			var id = vec[ i];
-			var marker = new nokia.maps.map.StandardMarker([dataBasics[ id]['lat'], dataBasics[ id]['lon']], {
-				brush: {color: cGreen},
-				nr: id
-			});
-			mapContainer.objects.add( marker);
+			var idata = basicIndexGetDataIndex( id);
+
+			addMapMarker( id, -1 == idata ? cRed : (typeof dataFirstnames[idata]['linkOGData'] !== "undefined") ? cGreen : ((typeof dataFirstnames[idata]['linkWebData'] !== "undefined") ? cYellow :cRed));
 		}
 	},
 	getCharts: function() {
@@ -668,13 +722,10 @@ var objectCityPortals = {
 		var max = vec.length;
 		var cGreen = '#31a354';
 		var cRed = '#f03b20';
+
 		for( var i = 0; i < max; ++i) {
 			var id = vec[ i];
-			var marker = new nokia.maps.map.StandardMarker([dataBasics[ id]['lat'], dataBasics[ id]['lon']], {
-				brush: {color: (typeof dataBasics[id]['linkOGD'] !== "undefined") ? cGreen : cRed},
-				nr: id
-			});
-			mapContainer.objects.add( marker);
+			addMapMarker( id, (typeof dataBasics[id]['linkOGD'] !== "undefined") ? cGreen : cRed);
 		}
 	},
 	getCharts: function() {
@@ -776,14 +827,12 @@ var objectCityFirstnames = {
 		var cRed = '#f03b20';
 		var cYellow = '#e1c64b';
 		var cGreen = '#31a354';
+
 		for( var i = 0; i < max; ++i) {
 			var id = vec[ i];
 			var idata = basicIndexGetDataIndex( id);
-			var marker = new nokia.maps.map.StandardMarker([dataBasics[ id]['lat'], dataBasics[ id]['lon']], {
-				brush: {color: (-1 == idata ? cRed : (typeof dataFirstnames[idata]['linkOGData'] !== "undefined") ? cGreen : ((typeof dataFirstnames[idata]['linkWebData'] !== "undefined") ? cYellow :cRed)) },
-				nr: id
-			});
-			mapContainer.objects.add( marker);
+
+			addMapMarker( id, (-1 == idata ? cRed : (typeof dataFirstnames[idata]['linkOGData'] !== "undefined") ? cGreen : ((typeof dataFirstnames[idata]['linkWebData'] !== "undefined") ? cYellow :cRed)));
 		}
 	},
 	getCharts: function() {
@@ -1079,6 +1128,19 @@ var objectOtherFirstnames = {
 
 function geoSort( left, right)
 {
+	if(( 'Niedersachsen' == dataBasics[left].name) && (0 <= dataBasics[right].name.indexOf( 'Breme'))) {
+		return -1;
+	}
+	if(( 'Niedersachsen' == dataBasics[right].name) && (0 <= dataBasics[left].name.indexOf( 'Breme'))) {
+		return 1;
+	}
+	if(( 'Brandenburg' == dataBasics[left].name) && ('Berlin' == dataBasics[right].name)) {
+		return -1;
+	}
+	if(( 'Brandenburg' == dataBasics[right].name) && ('Berlin' == dataBasics[left].name)) {
+		return 1;
+	}
+
 	if( dataBasics[left].lat == dataBasics[right].lat) {
 		return (dataBasics[left].lon < dataBasics[right].lon) ? 1 : -1;
 	}
@@ -1175,8 +1237,13 @@ function generateDataList()
 	var arr = obj.getDataset();
 	arr.sort( obj.sort);
 
-	txt += '<ul id="dataList" data-role="listview" data-inset="false">';
-	txt += '<li data-role="list-divider">' + arr.length + ' Einträge</li>';
+	if( arr.length > 20) {
+		txt += '<form style="margin:1em -1em -1em -1em;padding:0.1em 1em .1em 1em;background:#E9E9E9;border-top:1px solid #ddd;"><input id="filterBasic-input" data-type="search"></form>';
+		txt += '<ul id="dataList" data-role="listview" data-inset="false" data-filter="true" data-input="#filterBasic-input">';
+	} else {
+		txt += '<ul id="dataList" data-role="listview" data-inset="false">';
+	}
+	txt += '<li data-role="list-divider">' + arr.length + ' ' + (1 == arr.length ? 'Eintrag' : 'Einträge') + '</li>';
 
 	for( var i = 0; i < arr.length; ++i) {
 		txt += obj.getListItem( arr[ i]);
@@ -1201,9 +1268,16 @@ function generateDataList()
 		generateDataList();
 	});
 
+	var id = nutsGetBasicIndex( filterCountry);
+	if( id >= 0) {
+		addMapMarkerPath( id, '#ffffffc0', false);
+	}
+
 	arr.sort( obj.geoSort);
 	obj.addMarker( arr);
 	obj.createCharts( arr);
+
+	saveURL();
 }
 
 // -----------------------------------------------------------------------------
@@ -1211,7 +1285,6 @@ function generateDataList()
 function clickOnDataItem( nr)
 {
 	nr = parseInt( nr);
-//	map.set( 'zoomLevel', 10);
 	map.set( 'center', [dataBasics[nr].lat, dataBasics[nr].lon]);
 
 	var TOUCH = nokia.maps.dom.Page.browser.touch;
@@ -1235,24 +1308,84 @@ function clickOnDataItem( nr)
 
 function showPage( pageName)
 {
+	filterPage = pageName;
+
 	$( '#mapDetailsDiv').html( $( pageName).html());
 //	$( pageName).popup( 'open');
 
 	if( '#popupData' == pageName) {
 		generateDataList();
 	}
+
+	saveURL();
 }
 
 // -----------------------------------------------------------------------------
 
-$( document).on( "pagecreate", "#pageMap", function()
+function saveURL()
+{
+	var url = '/?page=' + filterPage.substr( 6);
+	url += '&level=' + filterLevel;
+	url += '&dataset=' + filterDataset;
+	url += '&country=' + filterCountry;
+	url += '&lat=' + parseInt( map.center.latitude * 10000) / 10000;
+	url += '&lng=' + parseInt( map.center.longitude * 10000) / 10000;
+	url += '&zoom=' + parseInt( map.zoomLevel * 100) / 100;
+
+//	history.pushState( {}, '', url);
+	history.replaceState( {}, '', url);
+}
+
+// -----------------------------------------------------------------------------
+
+//$( document).on( "pagecreate", "#pageMap", function()
+$( document).ready( function()
 {
 	initNokiaMap( 'mapContainer', 52.516, 13.4795, 6);
 
 	$.mobile.selectmenu.prototype.options.nativeMenu = false;
 
 	map.addListener( "displayready", function () {
-		showPage( '#popupData');
+		var queries = location.search.replace(/^\?/, '').split('&');
+		var params = {};
+		for( var i = 0; i < queries.length; ++i) {
+			split = queries[i].split( '=');
+			params[split[0]] = split[1];
+		}
+
+		if( typeof params['country'] !== 'undefined') {
+			filterCountry = params['country'];
+		}
+		if( typeof params['level'] !== 'undefined') {
+			filterLevel = params['level'];
+		}
+		if( typeof params['dataset'] !== 'undefined') {
+			filterDataset = params['dataset'];
+		}
+
+		var page = '';
+		if( typeof params['page'] !== 'undefined') {
+			page = '#popup' + params['page'];
+		}
+		if( -1 == $.inArray( page, ['#popupData','#popupSamples','#popupContests','#popupShare','#popupCopyright'])) {
+			page = '#popupData';
+		}
+		showPage( page);
+
+		map.addObserver( 'zoomLevel', function() {
+			saveURL();
+		});
+		map.addObserver( 'center', function() {
+			saveURL();
+		});
+
+		if( typeof params['zoom'] !== 'undefined') {
+			map.set( 'zoomLevel', params['zoom']);
+		}
+		if(( typeof params['lat'] !== 'undefined') && (typeof params['lng'] !== 'undefined')) {
+			map.set( 'center', new nokia.maps.geo.Coordinate( parseFloat( params['lat']), parseFloat( params['lng'])));
+		}
+
 	});
 
 	$( '#aPopupData').on( 'click', function( e) { showPage( '#popupData'); return false; });
