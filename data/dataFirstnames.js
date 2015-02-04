@@ -1,5 +1,27 @@
 var dataFirstnames = [
 {
+	"nuts":"DEG0M001",
+	"linkWebData":"http://www.stadt-altenburg.de/sixcms/detail.php?id=117470&_nav_id1=2504&_nav_id2=5179&_lang=de",
+	"history":[
+		{"date":"04.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DE222",
+	"linkWebData":"http://www.passau.de/Rathaus-Politik/Behoerdenwegweiser.aspx?view=~/kxp/orgdata/default&orgid=a9b23b84-070b-4d95-90f3-05cc558ec19f",
+	"history":[
+		{"date":"03.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"03.02.2015","event":"Antwort: Alle Vornamen 2013+2014 als PDF per Mail bekommen"},
+	],
+},
+{
+	"nuts":"DE923006",
+	"linkWebData":"http://www.hameln.de/stadtportal/aktuelles-presse/1402.htm",
+	"history":[
+		{"date":"03.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
 	"nuts":"DED2F270",
 	"linkWebData":"http://www.pirna.de/Pressemitteilungen.4289/?nr=5252",
 	"history":[
@@ -36,8 +58,10 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEF0B135",
+	"linkWebData":"",
 	"history":[
 		{"date":"29.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"04.02.2015","event":"Antwort: Top 30-Bilder der letzten 10 Jahre per Mail bekommen"},
 	],
 },
 {
@@ -70,6 +94,7 @@ var dataFirstnames = [
 	"nuts":"DE949041",
 	"history":[
 		{"date":"28.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"30.01.2015","event":"Antwort: Daten werden nicht für private Zwecke herausgeben"},
 	],
 },
 {
@@ -80,15 +105,19 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA37028",
+	"linkWebData":"",
 	"history":[
 		{"date":"28.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"03.02.2015","event":"Antwort: Komplette Namen aus 2014 per Mail bekommen"},
 	],
 },
 {
 	"nuts":"DE94E019",
 	"linkWebData":"http://www.georgsmarienhuette.de/buergerservice/dienstleistungen/vornamensstatistik-900000387-0.html?myMedium=1&auswahl=0",
+	"fee":"23,00 Euro",
 	"history":[
 		{"date":"28.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"03.02.2015","event":"Antwort: 23,00 Euro für die Jahre 2010-2014 per Mail (laut Gebührenordnung)"},
 	],
 },
 {
@@ -117,8 +146,10 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DE148081",
+	"linkWebData":"",
 	"history":[
 		{"date":"27.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"30.01.2015","event":"Antwort: Komplette Namen 2014 als Bild per Mail bekommen"},
 	],
 },
 {
@@ -159,8 +190,10 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEE0E375",
+	"linkWebData":"",
 	"history":[
 		{"date":"20.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"22.01.2015","event":"Antwort: Daten ab 1990 sollen per Brief versandt werden"},
 	],
 },
 {
@@ -190,6 +223,7 @@ var dataFirstnames = [
 	"linkWebData":"https://www.falkensee.de/news/1/266988/nachrichten/266988.html",
 	"history":[
 		{"date":"15.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"15.01.2015","event":"Antwort: Strichliste für 2014 per Mail bekommen"},
 	],
 },
 {
@@ -241,6 +275,7 @@ var dataFirstnames = [
 	"nuts":"DEA35016",
 	"history":[
 		{"date":"10.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"10.01.2015","event":"Antwort: Keine Geburten mehr in Dülmen. Ich solle nachfragen in Coesfeld, Münster und Haltern am See"},
 	],
 },
 {
@@ -261,8 +296,10 @@ var dataFirstnames = [
 {
 	"nuts":"DE94B015",
 	"linkWebData":"http://www.nordhorn.de/magazin/artikel.php?artikel=1542&type=2&menuid=45&topmenu=1290",
+	"fee":"12,00 Euro",
 	"history":[
 		{"date":"09.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2015","event":"Antwort: 12,00 Euro für die Jahre ab 1995"},
 	],
 },
 {
@@ -288,10 +325,12 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DE803",
+	"linkWebData":"",
 	"history":[
 		{"date":"31.05.2013","event":"Datensatzanfrage im Open Data Portal wurde erstellt"},
 		{"date":"05.06.2013","event":"Interne Klärung. Dauert noch an"},
 		{"date":"29.01.2015","event":"Anfrage an das Standesamt"},
+		{"date":"30.01.2015","event":"Antwort: PDF-Datei mit allen Vornamen 2014 per Mail erhalten"},
 	],
 },
 {
@@ -304,6 +343,7 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DE6",
+	"linkWebData":"",
 	"history":[
 		{"date":"15.03.2014","event":"Anfrage nach Vornamen"},
 		{"date":"19.03.2014","event":"Antwort: Keine Daten vorhanden"},
@@ -458,6 +498,7 @@ var dataFirstnames = [
 		{"date":"17.10.2014","event":"Anfrage nach Vornamen"},
 		{"date":"21.10.2014","event":"10 PDF-Dateien mit Top 100-Listen per Mail bekommen"},
 		{"date":"12.01.2015","event":"Anfrage nach Vornamen 2014"},
+		{"date":"16.01.2015","event":"1 PDF-Dateien mit Top 100-Listen per Mail bekommen"},
 	],
 },
 {
@@ -578,6 +619,7 @@ var dataFirstnames = [
 	"history":[
 		{"date":"12.08.2014","event":"Anfrage nach Vornamen"},
 		{"date":"15.01.2015","event":"Erneute Anfrage nach Vornamen"},
+		{"date":"16.01.2015","event":"Antwort: Top 30 von der Pressemitteilung im Web nehmen"},
 	],
 },
 {
@@ -709,10 +751,11 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEB14",
-	"linkWebData":"http://www.bad-kreuznach.de/sv_bad_kreuznach/Politik%20und%20Verwaltung/Nachrichtenarchiv/Jahresarchiv%202014/Januar%202014/%C3%9Cber%201.600%20Geburten%20in%20Bad%20Kreuznach%20-%20Sophie%20und%20Elias%20sind%20die%20beliebtesten%20Vornamen/2014-01-21%20PM%20Vornamen%20Vornamenstatistik%202013.pdf",
+	"linkWebData":"http://www.bad-kreuznach.de/sv_bad_kreuznach/Politik%20und%20Verwaltung/Nachrichtenarchiv/Januar%202015/Marie,%20Sophie,%20Alexander%20und%20Noah%20sind%20die%20beliebtesten%20Vornamen/",
 	"history":[
 		{"date":"16.10.2014","event":"Anfrage nach Vornamen"},
 		{"date":"20.01.2015","event":"Erneute Anfrage nach Vornamen"},
+		{"date":"21.01.2015","event":"Antwort: Daten im Internet für 2014 aktualisiert"},
 	],
 },
 {
@@ -748,7 +791,7 @@ var dataFirstnames = [
 	"history":[
 		{"date":"16.10.2014","event":"Anfrage nach Vornamen"},
 		{"date":"19.01.2015","event":"Erneute Anfrage nach Vornamen"},
-		{"date":"19.01.2015","event":"Antwort: Beim Standesamt nachgefragt, meldet sich wieder"},
+		{"date":"22.01.2015","event":"Antwort: Fehlende Jahre (vgl. Web) als Top30-Bild per Mail bekommen"},
 	],
 },
 {
