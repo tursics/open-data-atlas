@@ -1,5 +1,101 @@
 var dataFirstnames = [
 {
+	"nuts":"DEA14",
+	"linkWebData":"https://www.krefeld.de/de/presse/maximilian-und-marie-waren-die-beliebtesten-vornamen-2014/",
+	"history":[
+		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEA53",
+	"history":[
+		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEA55",
+	"history":[
+		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEA54",
+	"history":[
+		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEG01",
+	"history":[
+		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEG03",
+	"history":[
+		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEE02",
+	"history":[
+		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEA1B012",
+	"history":[
+		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"06.02.2015","event":"Antwort: Listen werden (eventuell) per Post gesendet"},
+	],
+},
+{
+	"nuts":"DEA1F048",
+	"history":[
+		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEA1F020",
+	"status":"nodata",
+	"history":[
+		{"date":"Oktober 2014","event":"Anfrage nach Vornamen"},
+		{"date":"31.10.2014","event":"Antwort: Seit 2008 keine Geburten mehr. Ich solle nachfragen in z.B. Geldern, Wesel"},
+	],
+},
+{
+	"nuts":"DEE03",
+	"linkWebData":"http://www.magdeburg.de/PDF/Magdeburger_Statistik_Quartalsbericht_02_2014.PDF?ObjSvrID=37&ObjID=13492&ObjLa=1&Ext=PDF&WTR=1&_ts=1407758817",
+	"history":[
+		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"06.02.2015","event":"Antwort: Link s.o. auf Seite 6: 2012 und 2013"},
+	],
+},
+{
+	"nuts":"DEF03",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"05.02.2015","event":"Antwort: Top 28 aus dem Jahr 2014 per Mail bekommen"},
+	],
+},
+{
+	"nuts":"DEA35012",
+	"linkWebData":"http://buergerservice.coesfeld.de/service/dienstleistung/vornamen-von-kindern-in-coesfeld/index.html",
+	"history":[
+		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"05.02.2015","event":"Antwort: Komplette Listen 2012-2014 per Mail bekommen"},
+	],
+},
+{
+	"nuts":"DEA36016",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"05.02.2015","event":"Antwort: Bild der Top 30 aus 2014 per Mail bekommen"},
+	],
+},
+{
 	"nuts":"DEG0M001",
 	"linkWebData":"http://www.stadt-altenburg.de/sixcms/detail.php?id=117470&_nav_id1=2504&_nav_id2=5179&_lang=de",
 	"history":[
@@ -19,6 +115,7 @@ var dataFirstnames = [
 	"linkWebData":"http://www.hameln.de/stadtportal/aktuelles-presse/1402.htm",
 	"history":[
 		{"date":"03.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"05.02.2015","event":"Antwort: Bild aller Vornamen aus 2014 per Mail bekommen"},
 	],
 },
 {
@@ -32,8 +129,10 @@ var dataFirstnames = [
 {
 	"nuts":"DE21K182",
 	"linkWebData":"http://www.wasserburg.de/de//buerger/datenstatistiken/vornamenstatistikstandesamt/",
+	"status":"denied",
 	"history":[
 		{"date":"29.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"04.02.2015","event":"Antwort: Nutzung wegen Datenschutz untersagt"},
 	],
 },
 {
@@ -88,10 +187,12 @@ var dataFirstnames = [
 	"linkWebData":"http://www.meppen.de/aktuelles-und-service/aktuelle-nachrichten/2015-01-06/maria-und-jan-auf-platz-1-der-beliebtesten-vornamen.html?type=2",
 	"history":[
 		{"date":"28.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"06.02.2015","event":"Antwort: Jahreslisten existieren nicht. Einfach Pressemitteilungen nehmen"},
 	],
 },
 {
 	"nuts":"DE949041",
+	"status":"denied",
 	"history":[
 		{"date":"28.01.2015","event":"Anfrage nach Vornamen"},
 		{"date":"30.01.2015","event":"Antwort: Daten werden nicht für private Zwecke herausgeben"},
@@ -114,7 +215,7 @@ var dataFirstnames = [
 {
 	"nuts":"DE94E019",
 	"linkWebData":"http://www.georgsmarienhuette.de/buergerservice/dienstleistungen/vornamensstatistik-900000387-0.html?myMedium=1&auswahl=0",
-	"fee":"23,00 Euro",
+	"status":"fee",
 	"history":[
 		{"date":"28.01.2015","event":"Anfrage nach Vornamen"},
 		{"date":"03.02.2015","event":"Antwort: 23,00 Euro für die Jahre 2010-2014 per Mail (laut Gebührenordnung)"},
@@ -163,6 +264,7 @@ var dataFirstnames = [
 {
 	"nuts":"DE236147",
 	"linkWebData":"https://www.neumarkt.de/de/rathaus/aktuelles/artikel/neumarkt_nicht_im_bundestrend_haeufigste_vornamen_sind_jonas_anna_und_marie.html",
+	"status":"denied",
 	"history":[
 		{"date":"23.01.2015","event":"Anfrage nach Vornamen"},
 		{"date":"27.01.2015","event":"Antwort: Interne Auflistung wird nicht weitergegeben"},
@@ -273,6 +375,7 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA35016",
+	"status":"nodata",
 	"history":[
 		{"date":"10.01.2015","event":"Anfrage nach Vornamen"},
 		{"date":"10.01.2015","event":"Antwort: Keine Geburten mehr in Dülmen. Ich solle nachfragen in Coesfeld, Münster und Haltern am See"},
@@ -296,7 +399,7 @@ var dataFirstnames = [
 {
 	"nuts":"DE94B015",
 	"linkWebData":"http://www.nordhorn.de/magazin/artikel.php?artikel=1542&type=2&menuid=45&topmenu=1290",
-	"fee":"12,00 Euro",
+	"status":"fee",
 	"history":[
 		{"date":"09.01.2015","event":"Anfrage nach Vornamen"},
 		{"date":"14.01.2015","event":"Antwort: 12,00 Euro für die Jahre ab 1995"},
@@ -420,8 +523,7 @@ var dataFirstnames = [
 {
 	"nuts":"DE911",
 	"history":[
-		{"date":"03.04.2014","event":"Anfrage nach Vornamen"},
-		{"date":"08.04.2014","event":"Antwort: Kein OGD-Portal geplant"},
+		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
 	],
 },
 {
@@ -609,6 +711,7 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DED",
+	"status":"nodata",
 	"history":[
 		{"date":"07.10.2014","event":"Anfrage nach Vornamen"},
 	],
@@ -744,6 +847,7 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEB",
+	"status":"nodata",
 	"history":[
 		{"date":"25.05.2013","event":"Anfrage nach Vornamen"},
 		{"date":"31.05.2013","event":"Angebot zum Kauf einer Liste mit Standesämtern bekommen"},
@@ -796,6 +900,7 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DE117",
+	"status":"denied",
 	"history":[
 		{"date":"15.03.2014","event":"Anfrage nach Vornamen"},
 		{"date":"18.03.2014","event":"Absage wegen Aufwand und Datenschutz"},
