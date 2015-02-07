@@ -115,6 +115,14 @@ function getBubbleHTML( id)
 				} else if( typeof dataBasics[ id]['linkOGD'] === 'undefined') {
 					str += '<i class="fa fa-times"></i> Keine Vornamen vorhanden<br>';
 				}
+
+				if((-1 != idata) && ( typeof dataFirstnames[ idata]['status'] !== 'undefined')) {
+					if( 'nodata' == dataFirstnames[ idata]['status']) {
+						str += '<i class="fa fa-circle-o"></i> Keine Geburten registriert<br>';
+					} else if( 'fee' == dataFirstnames[ idata]['status']) {
+						str += '<i class="fa fa-warning"></i> Kostenpflichtige Auskunft<br>';
+					}
+				}
 			}
 		}
 
@@ -326,6 +334,10 @@ var objectAllFirstnames = {
 		var idata = basicIndexGetDataIndex( id);
 		var marker = 'red';
 		if( -1 == idata) {
+		} else if( typeof dataFirstnames[idata]['status'] !== "undefined") {
+			if( 'nodata' == dataFirstnames[idata]['status']) {
+				marker = 'white';
+			}
 		} else if( typeof dataFirstnames[idata]['linkOGData'] !== "undefined") {
 			marker = 'green';
 		} else if( typeof dataFirstnames[idata]['linkWebData'] !== "undefined") {
@@ -355,18 +367,30 @@ var objectAllFirstnames = {
 	getLegend: function() {
 		return '<i class="fa fa-map-marker marker-red"></i>Keine Vornamen vorhanden<br>'
 		     + '<i class="fa fa-map-marker marker-yellow"></i>Daten mit Vornamen erhältlich<br>'
-		     + '<i class="fa fa-map-marker marker-green"></i>Open Data-Datensatz mit Vornamen<br>';
+		     + '<i class="fa fa-map-marker marker-green"></i>Open Data-Datensatz mit Vornamen<br>'
+		     + '<i class="fa fa-map-marker marker-white"></i>Keine Geburten registriert<br>'
 	},
 	addMarker: function( vec) {
 		var max = vec.length;
 		var cRed = '#f03b20';
 		var cYellow = '#e1c64b';
 		var cGreen = '#31a354';
+		var cWhite = '#c0c0c0';
 
 		for( var i = 0; i < max; ++i) {
 			var id = vec[ i];
 			var idata = basicIndexGetDataIndex( id);
-			var color = (-1 == idata ? cRed : (typeof dataFirstnames[idata]['linkOGData'] !== "undefined") ? cGreen : ((typeof dataFirstnames[idata]['linkWebData'] !== "undefined") ? cYellow :cRed));
+			var color = cRed;
+			if( -1 == idata) {
+			} else if( typeof dataFirstnames[idata]['status'] !== "undefined") {
+				if( 'nodata' == dataFirstnames[idata]['status']) {
+					color = cWhite;
+				}
+			} else if( typeof dataFirstnames[idata]['linkOGData'] !== "undefined") {
+				color = cGreen;
+			} else if( typeof dataFirstnames[idata]['linkWebData'] !== "undefined") {
+				color = cYellow;
+			}
 
 			if((cRed == color) && (0 <= dataBasics[id].group.indexOf( 'state')) && (0 == dataBasics[id].nuts.indexOf( 'DE'))) {
 				continue;
