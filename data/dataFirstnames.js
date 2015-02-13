@@ -1,5 +1,69 @@
 var dataFirstnames = [
 {
+	"nuts":"DEA1C020",
+	"linkWebData":"",
+	"history":[
+		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"11.02.2015","event":"Antwort: Top141 von 2014 als PDF per Mail bekommen"},
+	],
+},
+{
+	"nuts":"DEA2B004",
+	"linkWebData":"",
+	"history":[
+		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"13.02.2015","event":"Antwort: Top20 aus 2014 als Word-Datei per Mail bekommen"},
+	],
+},
+{
+	"nuts":"DEA1D024",
+	"linkWebData":"http://www.neuss.de/rathaus/aemter/32/3240/geburt/namenshitliste",
+	"history":[
+		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEA18",
+	"history":[
+		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEA19",
+	"history":[
+		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEA17",
+	"linkWebData":"",
+	"history":[
+		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"10.02.2015","event":"Antwort: Top30 aus 2010-2014 als Bild per Mail bekommen"},
+	],
+},
+{
+	"nuts":"DEA31",
+	"history":[
+		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DE8",
+	"status":"nodata",
+	"history":[
+		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"09.02.2015","event":"Antwort: Solch eine Statistik wird nicht geführt"},
+	],
+},
+{
+	"nuts":"DEA1F008",
+	"linkWebData":"https://www.dinslaken.de/de/aktuelles/neugeborene/",
+	"history":[
+		{"date":"09.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
 	"nuts":"DEA14",
 	"linkWebData":"https://www.krefeld.de/de/presse/maximilian-und-marie-waren-die-beliebtesten-vornamen-2014/",
 	"history":[
@@ -20,8 +84,10 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA54",
+	"linkWebData":"",
 	"history":[
 		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"09.02.2015","event":"Antwort: Bilder der Top30 aus 2013 und 2014 per Mail erhalten"},
 	],
 },
 {
@@ -40,13 +106,15 @@ var dataFirstnames = [
 	"nuts":"DEE02",
 	"history":[
 		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"12.02.2015","event":"Antwort: Nein, ich kann kein 'rechtliches Interesse' nachweisen."},
 	],
 },
 {
 	"nuts":"DEA1B012",
+	"linkWebData":"",
 	"history":[
 		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
-		{"date":"06.02.2015","event":"Antwort: Listen werden (eventuell) per Post gesendet"},
+		{"date":"11.02.2015","event":"Antwort: TOP30 aus 2006 bis heute per Post"},
 	],
 },
 {
@@ -69,6 +137,7 @@ var dataFirstnames = [
 	"history":[
 		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
 		{"date":"06.02.2015","event":"Antwort: Link s.o. auf Seite 6: 2012 und 2013"},
+		{"date":"09.02.2015","event":"Antwort: 2014 ist noch nicht ausgewertet"},
 	],
 },
 {
@@ -288,6 +357,7 @@ var dataFirstnames = [
 	"linkWebData":"http://www.darmstadt.de/darmstadt-aktuell/article/beliebteste-vornamen/index.htm",
 	"history":[
 		{"date":"20.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"04.02.2015","event":"Einfach den Pressetext nehmen"},
 	],
 },
 {
@@ -295,7 +365,7 @@ var dataFirstnames = [
 	"linkWebData":"",
 	"history":[
 		{"date":"20.01.2015","event":"Anfrage nach Vornamen"},
-		{"date":"22.01.2015","event":"Antwort: Daten ab 1990 sollen per Brief versandt werden"},
+		{"date":"06.02.2015","event":"Antwort: Alle Vornamen von 1990-2014 per Brief bekommen"},
 	],
 },
 {
@@ -522,8 +592,10 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DE911",
+	"linkWebData":"",
 	"history":[
 		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"12.02.2015","event":"Antwort: Top150 aus 2009-2014 als PDF per Mail erhalten"},
 	],
 },
 {
@@ -915,9 +987,10 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DE111",
+	"linkWebData":"http://www.stuttgart.de/vornamen",
 	"history":[
-		{"date":"02.04.2014","event":"Anfrage nach Vornamen"},
-		{"date":"07.04.2014","event":"Antwort: Open Data sei zu teuer"},
+		{"date":"11.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"13.02.2015","event":"Antwort: Top30 der letzten 5 Jahre als Bild per Mail"},
 	],
 },
 {
