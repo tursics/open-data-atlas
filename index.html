@@ -114,6 +114,99 @@
 			margin:1em -1em 0 -1em;
 			padding:1em 1em 0 1em;
 		}
+		#headSlotCfB {
+			float:left;
+		}
+		#headSlotCfB img {
+			height:3.5em;
+		}
+		#headSlotTitle {
+			float:left;
+			font-size:2em;
+			font-weight:100 !important;
+			padding:0.3em 0 0 1em;
+		}
+		#headSlotButtons {
+			float:right;
+			margin:0.5em 1em 0.5em 0;
+		}
+		#headSlotDonut {
+			float:right;
+			margin:0;
+			display:none;
+		}
+@media only screen and (max-width:768px) and (min-width:480px) {
+		#headSlotCfB img {
+			height:2.5em;
+		}
+		#headSlotTitle {
+			font-size:1.5em;
+			padding:0.3em 0 0 0;
+		}
+		#headSlotButtons {
+			margin:0.3em 0.7em 0.3em 0;
+		}
+		#headSlotButtons .ui-btn {
+			font-size:0.7em;
+		}
+}
+@media only screen and (max-width:480px) and (min-width:370px) {
+		#headSlotCfB img {
+			height:2.5em;
+		}
+		#headSlotTitle {
+			font-size:1.5em;
+			padding:0.3em 0 0 0;
+		}
+		#headSlotButtons {
+			display:none;
+		}
+		#headSlotDonut {
+			margin:0 0.7em 0 0;
+			display:block;
+		}
+		#headSlotDonut .ui-btn {
+			font-size:0.7em;
+		}
+}
+@media only screen and (max-width:370px) {
+		#headSlotCfB {
+			display:none;
+		}
+		#headSlotTitle {
+			font-size:1.5em;
+			padding:0.3em 0 0 0.3em;
+		}
+		#headSlotButtons {
+			display:none;
+		}
+		#headSlotDonut {
+			margin:0 0.7em 0 0;
+			display:block;
+		}
+		#headSlotDonut .ui-btn {
+			font-size:0.7em;
+		}
+}
+@media only screen and (max-width:768px) {
+		#mapContainer {
+			width:100%;
+			height:50%;
+			margin-top:-1.5em;
+		}
+		#mapDetails {
+			width:100%;
+			height:50%;
+			left:0;
+			top:50%;
+			border-left:none !important;
+			border-top:1px solid #000000 !important;
+		}
+		#mapDetailsDiv {
+			margin:0 0 3.5em 0;
+			padding:1em;
+		}
+}
 	</style>
 	<script src="jquery.mobile-1.4.2/jquery-1.10.2.min.js"></script>
 	<script src="data/dataBasics.js"></script>
@@ -125,16 +218,26 @@
 <body>
 	<div data-role="page" id="pageMap">
 		<div data-role="header" data-position="fixed">
-			<div style="float:left;">
-				<a href="http://codefor.de/berlin/" class="ui-link" target="_blank"><img src="images/cfg_berlin.svg" style="height:3.5em" /></a>
+			<div id="headSlotCfB">
+				<a href="http://codefor.de/berlin/" class="ui-link" target="_blank"><img src="images/cfg_berlin.svg" /></a>
 			</div>
-			<div style="float:left;font-size:2em;font-weight:100 !important;padding:0.3em 0 0 1em;">Open Data Atlas</div>
-			<div data-role="controlgroup" data-type="horizontal" style="float:right;margin-right:1em;">
-				<a href="#" id="aPopupData"      data-rel="popup" class="ui-btn"><i class="fa fa-map-marker" style="font-size:1.5em;"></i></a>
-				<a href="#" id="aPopupSamples"   data-rel="popup" class="ui-btn"><i class="fa fa-flask" style="font-size:1.5em;"></i></a>
-				<a href="#" id="aPopupContests"  data-rel="popup" class="ui-btn"><i class="fa fa-trophy" style="font-size:1.5em;"></i></a>
-				<a href="#" id="aPopupShare"     data-rel="popup" class="ui-btn"><i class="fa fa-share-alt" style="font-size:1.5em;"></i></a>
-				<a href="#" id="aPopupCopyright" data-rel="popup" class="ui-btn"><i class="fa fa-info-circle" style="font-size:1.5em;"></i></a>
+			<div id="headSlotTitle">Open Data Atlas</div>
+			<div data-role="controlgroup" data-type="horizontal" id="headSlotButtons">
+				<a href="#" id="aPopupData1"      data-rel="popup" class="ui-btn"><i class="fa fa-map-marker" style="font-size:1.5em;"></i></a>
+				<a href="#" id="aPopupSamples1"   data-rel="popup" class="ui-btn"><i class="fa fa-flask" style="font-size:1.5em;"></i></a>
+				<a href="#" id="aPopupShare1"     data-rel="popup" class="ui-btn"><i class="fa fa-share-alt" style="font-size:1.5em;"></i></a>
+				<a href="#" id="aPopupCopyright1" data-rel="popup" class="ui-btn"><i class="fa fa-info-circle" style="font-size:1.5em;"></i></a>
+			</div>
+			<div id="headSlotDonut">
+				<a href="#popupDonut" data-rel="popup" class="ui-btn ui-corner-all" data-transition="pop"><i class="fa fa-navicon" style="font-size:1.5em;"></i></a>
+				<div data-role="popup" id="popupDonut" data-theme="none">
+					<div data-role="controlgroup" data-type="vertical" id="headSlotButtons2">
+						<a href="#" id="aPopupData2"      data-rel="popup" class="ui-btn"><i class="fa fa-map-marker" style="font-size:1.5em;"></i> Karte</a>
+						<a href="#" id="aPopupSamples2"   data-rel="popup" class="ui-btn"><i class="fa fa-flask" style="font-size:1.5em;"></i> Beispiele</a>
+						<a href="#" id="aPopupShare2"     data-rel="popup" class="ui-btn"><i class="fa fa-share-alt" style="font-size:1.5em;"></i> Teilen</a>
+						<a href="#" id="aPopupCopyright2" data-rel="popup" class="ui-btn"><i class="fa fa-info-circle" style="font-size:1.5em;"></i> Info</a>
+					</div>
+				</div>
 			</div>
 			<div data-role="popup" id="popupSamples" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">
 				<div style="font-size:2em;font-weight:100;padding:0 0 .5em 0;">Beispiele</div>
@@ -151,22 +254,6 @@
 					<li><a href="https://www.stadt-zuerich.ch/prd/de/index/statistik/ueber_uns/externe-projekte/2014_ZHDK_measuring-zurich.html#growing_names_" target="blank_"><img src="vornamen/zurich.png"><h2>Growing Names</h2><p>von Marlo Limacher</p></a></li>
 					<li><a href="http://blog.tagesanzeiger.ch/datenblog/index.php/6859/alles-mueller-oder-was" target="blank_"><img src="vornamen/kantonsnameskarte.png"><h2>Alles Müller</h2><p>von Tages-Anzeiger, Schweiz</p></a></li>
 					<li><a href="http://infogr.am/die_beliebtesten_vornamen_in_hameln" target="blank_"><img src=""><h2>Die beliebtesten Vornamen in Hameln</h2><p>von Dewezet</p></a></li>
-				</ul>
-			</div>
-			<div data-role="popup" id="popupContests" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">
-				<div style="font-size:2em;font-weight:100;padding:0 0 .5em 0;">Wettbewerbe</div>
-				<div>
-					Aktuell laufen Wettbewerbe rund um Open Data.<br>
-				</div>
-				<ul data-role="listview" data-inset="true">
-					<li><a href="https://www.tirol.gv.at/data/App-Wettbewerb/" target="blank_">
-						<img src="https://wwwstatic.tirol.gv.at/t3tiro/fileadmin/_processed_/csm_App_Wettbewerb_Tirol15_slogan_3d9cd9915b.jpg">
-						<h2>APP-Wettbewerb Tirol `15</h2>
-						<p>- Anwendungen und mobile Applikationen (Apps)<br>- Ideen und Konzepte</p>
-						<p>Jeder darf teilnehmen, auch Teams<br>
-						Nur neue Konzepte, Ideen, Apps (nach dem 1. Juli 2014)<br>
-						Einreichungsfrist: <b>28. Februar 2015</b> um 24.00 Uhr MEZ</p>
-					</a></li>
 				</ul>
 			</div>
 			<div data-role="popup" id="popupShare" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">

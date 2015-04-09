@@ -36,7 +36,7 @@ function initNokiaMap( elementName, lat, lon, zoom)
 			components: [
 				new nokia.maps.map.component.Behavior(),
 				new nokia.maps.map.component.ZoomBar(),
-				new nokia.maps.map.component.TypeSelector(),
+//				new nokia.maps.map.component.TypeSelector(),
 				// ScaleBar Overview ZoomRectangle Positioning ContextMenu InfoBubbles PublicTransport Traffic
 			],
 			zoomLevel: zoom,
@@ -73,8 +73,8 @@ function getBubbleHTML( id)
 		}
 		str += '</div>';
 
-		str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
 		if( typeof dataBasics[ id]['territorial'] !== 'undefined') {
+			str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
 			var data = dataBasics[ id]['territorial'];
 			var level = new Array;
 
@@ -108,14 +108,17 @@ function getBubbleHTML( id)
 //					str += '<i class="fa fa-map-marker"></i> ' + level[ l] + '<br>';
 				}
 			}
+//			str += '<i class="fa fa-map-marker"></i> ' + dataBasics[ id]['nuts'] + '<br>';
+			str += '</div>';
 		}
-//		str += '<i class="fa fa-map-marker"></i> ' + dataBasics[ id]['nuts'] + '<br>';
-		str += '</div>';
 
 		if( typeof dataBasics[ id]['linkOGD'] !== 'undefined') {
 			str += '<i class="fa fa-check"></i> Hat ein <a href="' + dataBasics[ id]['linkOGD'] + '" target="_blank">Open Data Portal</a><br>';
 		} else {
 			str += '<i class="fa fa-times"></i> Hat kein Open Data Portal<br>';
+		}
+		if( typeof dataBasics[ id]['linkOGDMail'] !== 'undefined') {
+			str += '<i class="fa fa-check"></i> Hat einen <a href=mailto:"' + dataBasics[ id]['linkOGDMail'] + '">Open Data Ansprechpartner</a><br>';
 		}
 
 		if( 'firstnames' == filterDataset) {
@@ -440,6 +443,107 @@ var objectAllFirstnames = {
 	},
 	getCharts: function() {
 		return '';
+	},
+	createCharts: function( vec) {
+	}
+};
+
+// -----------------------------------------------------------------------------
+
+var objectSupremePortals = {
+	getDataset: function() {
+		var ret = [];
+		var group = 'supreme';
+
+		for( var i = 0; i < dataBasics.length; ++i) {
+			if( filterCountry == dataBasics[i].nuts.substr( 0, 2)) {
+				if( 0 <= dataBasics[i].group.indexOf( group)) {
+					ret[ ret.length] = i;
+				}
+			}
+		}
+
+		return ret;
+	},
+	getListItem: function( nr) {
+		var marker = 'red';
+		if( typeof dataBasics[nr]['linkOGD'] !== "undefined") {
+			marker = 'green';
+		}
+		return '<li><a href="#" onClick="clickOnDataItem(\'' + nr + '\');" border=0><i class="fa fa-map-marker marker-' + marker + '"></i>' + dataBasics[nr].name + '</a></li>';
+	},
+	sort: function( left, right) {
+		return (dataBasics[left].name > dataBasics[right].name) ? 1 : -1;
+	},
+	geoSort: function( left, right) {
+		return geoSort( left, right);
+	},
+	getLegend: function() {
+		return '<i class="fa fa-map-marker marker-red"></i>Hat kein Open Data Portal<br>'
+		     + '<i class="fa fa-map-marker marker-green"></i>Hat ein Open Data Portal<br>';
+	},
+	addMarker: function( vec) {
+		var max = vec.length;
+		var cGreen = '#31a354';
+		var cRed = '#f03b20';
+
+		for( var i = 0; i < max; ++i) {
+			var id = vec[ i];
+			addMapMarker( id, (typeof dataBasics[id]['linkOGD'] !== "undefined") ? cGreen : cRed);
+		}
+	},
+	getCharts: function() {
+		var txt = '';
+		txt += '<div class="chart chart' + filterCountry + '" id="chartCount"></div>';
+
+		return txt;
+	},
+	createCharts: function( vec) {
+		var maxCount = vec.length;
+		var valCount = 0;
+		var txtCount = '% der<br>Behörden';
+		for( var i = 0; i < maxCount; ++i) {
+			var id = vec[ i];
+			if( typeof dataBasics[id]['linkOGD'] !== "undefined") {
+				++valCount;
+			}
+		}
+		if( 0 == maxCount) {
+			maxCount = 1;
+		}
+		var chartCount = Circles.create({
+			id:'chartCount',value:valCount,maxValue:maxCount,
+			colors:['#9ac9c6','#33a1df'],radius:50,width:10,duration:500,text:function(value){if(Math.round( value / maxCount * 100) < 10) {return '<span>'+Math.round( value / maxCount * 1000)/10+txtCount+'</span>';} else {return '<span>'+Math.round( value / maxCount * 100)+txtCount+'</span>';}},wrpClass:'circles-wrp',textClass:'circles-text',
+		});
+	}
+};
+
+// -----------------------------------------------------------------------------
+
+var objectSupremeFirstnames = {
+	getDataset: function() {
+		var ret = [];
+		return ret;
+	},
+	getListItem: function( id) {
+		var idata = basicIndexGetDataIndex( id);
+		var marker = 'red';
+		return '<li><a href="#" onClick="clickOnDataItem(\'' + id + '\');" border=0><i class="fa fa-map-marker marker-' + marker + '"></i>' + dataBasics[id].name + '</a></li>';
+	},
+	sort: function( left, right) {
+		return (dataBasics[left].name > dataBasics[right].name) ? 1 : -1;
+	},
+	geoSort: function( left, right) {
+		return geoSort( left, right);
+	},
+	getLegend: function() {
+		return '';
+	},
+	addMarker: function( vec) {
+	},
+	getCharts: function() {
+		var txt = '';
+		return txt;
 	},
 	createCharts: function( vec) {
 	}
@@ -1258,7 +1362,10 @@ function generateDataList()
 
 	txt += '<select name="filterLevel" id="filterLevel">';
 	txt += '<option value="all"' + ('all' == filterLevel ? ' selected="selected"' : '') + '>Alle</option>';
-	txt += '<option value="bund"' + ('bund' == filterLevel ? ' selected="selected"' : '') + ' disabled="disabled">Obere Behörden</option>';
+	// federal authorities
+	txt += '<option value="supreme"' + ('supreme' == filterLevel ? ' selected="selected"' : '') + '>Oberste Bundesbehörden mit</option>';
+	txt += '<option value="higher"' + ('higher' == filterLevel ? ' selected="selected"' : '') + ' disabled="disabled">Bundesoberbehörden mit</option>';
+	txt += '<option value="middle"' + ('middle' == filterLevel ? ' selected="selected"' : '') + ' disabled="disabled">Bundesmittelbehörden mit</option>';
 	if( 'CH' == filterCountry) {
 		txt += '<option value="nuts1"' + ('nuts1' == filterLevel ? ' selected="selected"' : '') + '>Die Kantone mit</option>';
 	} else {
@@ -1293,6 +1400,10 @@ function generateDataList()
 		obj = objectAllPortals;
 	} else if(( 'all' == filterLevel) && ('firstnames' == filterDataset)) {
 		obj = objectAllFirstnames;
+	} else if(( 'supreme' == filterLevel) && ('portals' == filterDataset)) {
+		obj = objectSupremePortals;
+	} else if(( 'supreme' == filterLevel) && ('firstnames' == filterDataset)) {
+		obj = objectSupremeFirstnames;
 	} else if(( 'nuts1' == filterLevel) && ('portals' == filterDataset)) {
 		obj = objectNuts1Portals;
 	} else if(( 'nuts1' == filterLevel) && ('firstnames' == filterDataset)) {
@@ -1479,11 +1590,14 @@ $( document).ready( function()
 
 	});
 
-	$( '#aPopupData').on( 'click', function( e) { showPage( '#popupData'); return false; });
-	$( '#aPopupSamples').on( 'click', function( e) { showPage( '#popupSamples'); return false; });
-	$( '#aPopupContests').on( 'click', function( e) { showPage( '#popupContests'); return false; });
-	$( '#aPopupShare').on( 'click', function( e) { showPage( '#popupShare'); return false; });
-	$( '#aPopupCopyright').on( 'click', function( e) { showPage( '#popupCopyright'); return false; });
+	$( '#aPopupData1').on( 'click', function( e) { showPage( '#popupData'); return false; });
+	$( '#aPopupData2').on( 'click', function( e) { showPage( '#popupData'); window.history.back(); return false; });
+	$( '#aPopupSamples1').on( 'click', function( e) { showPage( '#popupSamples'); return false; });
+	$( '#aPopupSamples2').on( 'click', function( e) { showPage( '#popupSamples'); window.history.back(); return false; });
+	$( '#aPopupShare1').on( 'click', function( e) { showPage( '#popupShare'); return false; });
+	$( '#aPopupShare2').on( 'click', function( e) { showPage( '#popupShare'); window.history.back(); return false; });
+	$( '#aPopupCopyright1').on( 'click', function( e) { showPage( '#popupCopyright'); return false; });
+	$( '#aPopupCopyright2').on( 'click', function( e) { showPage( '#popupCopyright'); window.history.back(); return true; });
 });
 
 // -----------------------------------------------------------------------------
