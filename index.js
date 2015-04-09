@@ -1469,6 +1469,11 @@ function generateDataList()
 		filterDataset = $( this).val();
 		generateDataList();
 	});
+	$( '#filterBasic-input').keydown( function( e) {
+		if( e.keyCode == 13) {
+			return false;
+		}
+	});
 
 	var id = nutsGetBasicIndex( filterCountry);
 	if( id >= 0) {
