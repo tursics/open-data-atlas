@@ -1,5 +1,34 @@
 var dataFirstnames = [
 {
+	"nuts":"DEA1B036",
+	"history":[
+		{"date":"25.03.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEA2C068",
+	"history":[
+		{"date":"25.03.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"LI",
+	"linkWebData":"http://www.llv.li/#/115427",
+},
+{
+	"nuts":"DEA36024",
+	"linkWebData":"http://www.marl.de/marl-nach-themen/stadtportrait/nachrichten-aus-dem-rathaus/ansicht.html?tx_ttnews[tt_news]=3752&cHash=04951fd73c5b5b958e7dc86679d13d4b",
+	"history":[
+		{"date":"02.03.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DE135049",
+	"history":[
+		{"date":"19.02.2015","event":"Anfrage nach Vornamen"},
+	],
+},
+{
 	"nuts":"DEA1C020",
 	"linkWebData":"",
 	"history":[
@@ -728,10 +757,11 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA16",
-	"linkOGData":"https://geo.muelheim-ruhr.de/vornamen",
-	"linkOGDLicense":"DL DE BY 1.0",
+	"linkOGData":"https://geo.muelheim-ruhr.de/open-data/vornamen/10035",
+	"linkOGDLicense":"CC BY 3.0",
 	"history":[
 		{"date":"08.08.2014","event":"Bereits verfügbar"},
+		{"date":"26.02.2015","event":"Wurde angeschrieben, dass sie Vornamen-Daten bereitstellen"},
 	],
 },
 {
@@ -746,6 +776,7 @@ var dataFirstnames = [
 	"linkWebData":"http://www.leipzig.de/buergerservice-und-verwaltung/lebenslagen-und-themen/geburt/vornamen-und-familiennamen/hitliste-vornamen/",
 	"history":[
 		{"date":"15.10.2014","event":"Anfrage nach Vornamen"},
+		{"date":"17.02.2015","event":"Erneute Anfrage nach Vornamen"},
 	],
 },
 {
@@ -1163,14 +1194,16 @@ var dataFirstnames = [
 },
 {
 	"nuts":"AT332",
-	"linkWebData":"",
+	"linkWebData":"https://www.innsbruck.gv.at/page.cfm?vpath=verwaltung/statistiken--zahlen/bevoelkerung/natuerliche-bevoelkerungsbewegungen",
 	"history":[
 		{"date":"14.10.2013","event":"Anfrage nach Vornamen"},
 		{"date":"15.10.2013","event":"6 Excel-Dateien per Mail bekommen"},
 		{"date":"16.10.2013","event":"Soll ab Januar 2014 ins OGD-Portal"},
 		{"date":"heute","event":"Nicht im OGD-Portal"},
-		{"date":"11.07.2014","event":"Nachfrage nach Vornamen"},
+		{"date":"11.07.2014","event":"Nachfrage nach Vornamen für 2013"},
 		{"date":"14.07.2014","event":"1 Excel-Dateien per Mail bekommen"},
+		{"date":"23.02.2015","event":"Nachfrage nach Vornamen für 2014"},
+		{"date":"24.02.2015","event":"1 Excel-Dateien per Mail bekommen"},
 	],
 },
 {
