@@ -73,8 +73,6 @@
 //				dbf: "vg2500_bld.dbf"
 //				shp: "vg2500_sta.shp", // Staat
 //				dbf: "vg2500_sta.dbf"
-//				shp: "RBS_OD_LOR_1412.shp", // LOR
-//				dbf: "RBS_OD_LOR_1412.dbf"
 			}, function(data){
 				shpData = data;
 				console.log("took",new Date - starttime,"milliseconds")
@@ -117,76 +115,46 @@
 				var found = false;
 				for( var i = 0; i < shpData.geojson.features.length; ++i) {
 					var obj = shpData.geojson.features[i];
-					var key = 'RS';
-					var keyDescr = '';
-					var keyName = 'Regionalschlüssel';
-					var keyFound = false;
-					var key2Found = false;
-					if( typeof obj.properties['Plr'] !== 'undefined') {
-						key = 'Plr';
-						keyDescr = 'Plrname';
-						keyName = 'Schlüssel des Gebiets';
-						keyFound = (( 8 == ars.length) && (ars == obj.properties[key]));
-						key2Found = true;
-					} else {
-						keyFound = (( pre == obj.properties[key].substr( 0, 5)) && (post == obj.properties[key].substr( 9, 3)));
-						key2Found = (( parseInt( obj.properties['GF']) >= 3) || (2 == obj.properties[key].length) || ('000000000000' == obj.properties[key]));
-					}
-
-					if( keyFound) {
+					if(( pre == obj.properties['RS'].substr( 0, 5)) && (post == obj.properties['RS'].substr( 9, 3))) {
 						found = true;
-
-						var strPath = '';
-						var strJSON = '';
-						if( key2Found) {
-							strPath += '[';
-							strJSON += '{&quot;type&quot;:&quot;GeometryCollection&quot;,&quot;geometries&quot;:[{&quot;type&quot;:&quot;Polygon&quot;,&quot;coordinates&quot;:['
+						str += 'Regionalschlüssel: <input type="text" value="' + obj.properties['RS'] + '"><br>';
+						str += 'Pfadangaben: <input type="text" value="';
+						if(( parseInt( obj.properties['GF']) >= 3) || (2 == obj.properties['RS'].length) || ('000000000000' == obj.properties['RS'])) {
+							str += '[';
 							for( var coordinate = 0; coordinate < obj.geometry.coordinates.length; ++coordinate) {
 								var coordinates = obj.geometry.coordinates[ coordinate];
 								if( coordinate > 0) {
-									strPath += ',';
-									strJSON += ',';
+									str += ',';
 								}
-								strPath += '[';
-								strJSON += '[';
+								str += '[';
 								for( var path = 0; path < coordinates.length; ++path) {
 									var coord = proj4( utm32, proj4.WGS84, coordinates[ path]);
-									strPath += (parseInt(coord[1]*100000)/100000)+','+(parseInt(coord[0]*100000)/100000)+',';
-									strJSON += '['+(parseInt(coord[0]*100000)/100000)+','+(parseInt(coord[1]*100000)/100000)+'],';
+									str += (parseInt(coord[1]*100000)/100000)+','+(parseInt(coord[0]*100000)/100000)+',';
 								}
-								strPath = strPath.substr( 0, strPath.length - 1);
-								strJSON = strJSON.substr( 0, strJSON.length - 1);
-								strPath += ']';
-								strJSON += ']';
+								str = str.substr( 0, str.length - 1);
+								str += ']';
 							}
-							strPath += ']';
-							strJSON += ']}]}'
-							console.log( obj);
+							str += ']';
+							console.log(obj);
 						} else {
 							console.log( obj);
 						}
-						str += keyName +': <input type="text" value="' + obj.properties[key] + '"><br>';
-						str += 'Pfadangaben: <input type="text" value="' + strPath + '"><br>';
-						str += 'GeoJSON: <input type="text" value="' + strJSON + '"><br>';
+						str += '"><br>';
 					}
 				}
 
 				if( !found) {
 					for( var i = 0; i < shpData.geojson.features.length; ++i) {
 						var obj = shpData.geojson.features[i];
-						if( ars == obj.properties[key].substr( 0, ars.length)) {
+						if( ars == obj.properties['RS'].substr( 0, ars.length)) {
 							found = true;
-							str += keyName + ': ' + [obj.properties[key].slice(0, ars.length),' ', obj.properties[key].slice(ars.length)].join('');
-							if( '' != keyDescr) {
-								str += ' (' + obj.properties[keyDescr] + ')';
-							}
-							str += '<br>';
+							str += 'Regionalschlüssel: ' + [obj.properties['RS'].slice(0, ars.length),' ', obj.properties['RS'].slice(ars.length)].join('') + '<br>';
 						}
 					}
 				}
 
 				if( !found) {
-					str += 'Kein ' + keyName + ' gefunden. Entferne alle Leerzeichen...<br>';
+					str += 'Kein Regionalschlüssel gefunden. Entferne alle Leerzeichen...<br>';
 				}
 
 				$( '#result').html( str);
