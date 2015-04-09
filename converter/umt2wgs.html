@@ -65,16 +65,16 @@
 			var starttime = new Date;
 			var shpData = null;
 			var shapefile = new Shapefile({
-//				shp: "VG250_F.shp",    // Gemeinde
-//				dbf: "VG250_F.dbf"
+				shp: "VG250_F.shp",    // Gemeinde
+				dbf: "VG250_F.dbf"
 //				shp: "VG1000_F.shp",   // Kreis
 //				dbf: "VG1000_F.dbf"
 //				shp: "vg2500_bld.shp", // Bundesland
 //				dbf: "vg2500_bld.dbf"
 //				shp: "vg2500_sta.shp", // Staat
 //				dbf: "vg2500_sta.dbf"
-				shp: "RBS_OD_LOR_1412.shp", // LOR
-				dbf: "RBS_OD_LOR_1412.dbf"
+//				shp: "RBS_OD_LOR_1412.shp", // LOR
+//				dbf: "RBS_OD_LOR_1412.dbf"
 			}, function(data){
 				shpData = data;
 				console.log("took",new Date - starttime,"milliseconds")
@@ -123,7 +123,6 @@
 					var keyFound = false;
 					var key2Found = false;
 					if( typeof obj.properties['Plr'] !== 'undefined') {
-						utm32 = "+proj=utm +zone=33";
 						key = 'Plr';
 						keyDescr = 'Plrname';
 						keyName = 'Schlüssel des Gebiets';
