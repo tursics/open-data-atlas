@@ -148,8 +148,12 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA1F048",
+	"linkOGData":"https://www.offenesdatenportal.de/dataset/vornamenstatistik-fur-neugeborene-2014-in-wesel",
+	"linkOGDLicense":"DL DE 0 2.0",
 	"history":[
-		{"date":"05.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"05.02.2015","event":"Anfrage nach Vornamen beim Standesamt"},
+		{"date":"15.09.2015","event":"Anfrage nach Vornamen im Open Data-Portal"},
+		{"date":"18.09.2015","event":"Vornamen-Statistik 2014 im Portal veröffentlicht"},
 	],
 },
 {
@@ -527,12 +531,15 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DE803",
-	"linkWebData":"",
+	"linkOGData":"http://www.opendata-hro.de/de/dataset/vornamen_von_neugeborenen_2012",
+	"linkOGDLicense":"ODC-BY 1.0",
 	"history":[
 		{"date":"31.05.2013","event":"Datensatzanfrage im Open Data Portal wurde erstellt"},
 		{"date":"05.06.2013","event":"Interne Klärung. Dauert noch an"},
 		{"date":"29.01.2015","event":"Anfrage an das Standesamt"},
 		{"date":"30.01.2015","event":"Antwort: PDF-Datei mit allen Vornamen 2014 per Mail erhalten"},
+		{"date":"01.04.2015","event":"Daten werden vorbereitet"},
+		{"date":"16.04.2015","event":"Daten für 2012-2014 werden Open Data"},
 	],
 },
 {
@@ -767,8 +774,11 @@ var dataFirstnames = [
 {
 	"nuts":"DEA5705958004",
 	"linkWebData":"http://www.arnsberg.de/standesamt/geburt/statistik-geburten.php",
+	"linkOGData":"http://www.arnsberg.de/open-data/bevoelkerung/index.php",
+	"linkOGDLicense":"DL DE 0 2.0",
 	"history":[
 		{"date":"25.11.2014","event":"Anfrage nach Vornamen"},
+		{"date":"28.08.2015","event":"Daten von 2014 im Open Data Portal"},
 	],
 },
 {
