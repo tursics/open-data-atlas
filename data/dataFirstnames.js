@@ -988,10 +988,13 @@ var dataFirstnames = [
 {
 	"nuts":"DE126",
 	"linkWebData":"https://www.mannheim.de/buerger-sein/geburten",
+	"linkOGData":"http://opendata.mannheim.de/dataset/bev%C3%B6lkerung",
+	"linkOGDLicense":"DL DE BY 2.0",
 	"history":[
 		{"date":"16.07.2014","event":"Anfrage nach Vornamen"},
 		{"date":"16.07.2014","event":"Screenshot der Top 30 für 2012, 2013 bekommen"},
 		{"date":"10.01.2015","event":"Anfrage nach Vornamen 2014"},
+		{"date":"24.11.2015","event":"Top 30 aus 2014 im Portal gefunden"},
 	],
 },
 {
