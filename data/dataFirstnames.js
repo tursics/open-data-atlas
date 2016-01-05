@@ -1,5 +1,115 @@
 var dataFirstnames = [
 {
+	"nuts":"DE933040",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"05.01.2016","event":"Antwort: Top 30 von 2013-2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DE914009",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"05.01.2016","event":"Antwort: Top 10 von 2010-2015 als Bild per Mail bekommen"},
+	],
+},
+{
+	"nuts":"DE932011",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"05.01.2016","event":"Antwort: Top 30 von 2010-2015 als Bild per Mail bekommen"},
+	],
+},
+{
+	"nuts":"DE912000",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"05.01.2016","event":"Antwort: Top 30 von 2013-2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DEA58040",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"05.01.2016","event":"Antwort: Top 30 aus 2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DE401000",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"05.01.2016","event":"Antwort: Ans Statistische Landesamt wenden"},
+	],
+},
+{
+	"nuts":"DEA45020",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"05.01.2016","event":"Antwort: Alle Vornamen aus 2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DE241000",
+	"linkWebData":"",
+	"history":[
+		{"date":"04.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"04.01.2016","event":"Antwort: Top 30 von 2000-2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DEA5B040",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"05.01.2016","event":"Antwort: Bitte wenden Sie sich an die Gesellschaft für deutsche Sprache"},
+	],
+},
+{
+	"nuts":"DE93A025",
+	"linkWebData":"http://www.uelzen.de/Portaldata/23/Resources/stue_dateien/stue_dokumente/allgemeines/Vornamenhitliste_2011.pdf",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEF0E044",
+	"status":"nodata",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"05.01.2016","event":"Antwort: 2015 nur eine Hausgeburt. Wenden Sie sich an Itzehoe oder Pinneberg"},
+	],
+},
+{
+	"nuts":"DE949032",
+	"linkWebData":"http://www.lingen.de/familie_und_bildung/familienfreundlich/geburt/vornamenstatistik_2015.html",
+	"history":[
+		{"date":"04.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"04.01.2016","event":"Antwort: Top 10 auf Webseite vorhanden"},
+	],
+},
+{
+	"nuts":"DED42030",
+	"linkWebData":"http://www.erzgebirge.tv/kurz-knapp/1480-marie-und-leon-sind-d-i-e-vornamen-des-jahres-2015",
+	"history":[
+		{"date":"04.01.2016","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DE252",
+	"linkWebData":"http://www.erlangen.de/desktopdefault.aspx/tabid-1446/110_read-7032/",
+	"history":[
+		{"date":"31.10.2014","event":"Anfrage nach offenen Vornamen"},
+		{"date":"06.11.2014","event":"Antwort: Alle Daten werden an GfdS gesandt. Ich soll dort nachfragen"},
+		{"date":"07.11.2014","event":"Anfrage: Alle Daten per Mail an mich"},
+		{"date":"04.01.2016","event":"Anfrage nach aktuellen Vornamen"},
+	],
+},
+{
 	"nuts":"DEA1B036",
 	"history":[
 		{"date":"25.03.2015","event":"Anfrage nach Vornamen"},
@@ -453,6 +563,8 @@ var dataFirstnames = [
 	"history":[
 		{"date":"12.01.2015","event":"Anfrage nach Vornamen"},
 		{"date":"15.01.2015","event":"Antwort: 3 Jahre á 3 Bilder per Mail bekommen"},
+		{"date":"04.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"04.01.2016","event":"Antwort: Top50 aus 2015 als PDF bekommen"},
 	],
 },
 {
