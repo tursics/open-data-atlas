@@ -1,5 +1,68 @@
 var dataFirstnames = [
 {
+	"nuts":"DEF05044",
+	"linkWebData":"",
+	"history":[
+		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"07.01.2016","event":"Antwort: Top 30 von 2015 als Bild bekommen"},
+	],
+},
+{
+	"nuts":"DEA36020",
+	"status":"nodata",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"07.01.2016","event":"Antwort: Keine Geburtenabteilung. Nur bis 6 Hausgeburten pro Jahr"},
+	],
+},
+{
+	"nuts":"DEF0E029",
+	"status":"nodata",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"07.01.2016","event":"Antwort: Keine Entbindungsstation, nächste in Itzehoe, Pinneberg, Heide und Hamburg"},
+	],
+},
+{
+	"nuts":"DE925021",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"07.01.2016","event":"Antwort: Top 10 von 1875+1964-2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DE93B012",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"06.01.2016","event":"Antwort: Top 30 von 2013-2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DEE01000",
+	"linkWebData":"http://www.dessau-rosslau.de/Deutsch/News/?NewsID=2763",
+	"history":[
+		{"date":"06.01.2016","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEF0E046",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"06.01.2016","event":"Antwort: Top 5 von 2010-2015 als Excel-Datei bekommen"},
+	],
+},
+{
+	"nuts":"DE936007",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"06.01.2016","event":"Antwort: Top 25 von 2011-2015 als gefaxtes PDF per Mail bekommen"},
+	],
+},
+{
 	"nuts":"DE933040",
 	"linkWebData":"",
 	"history":[
@@ -86,7 +149,7 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DE949032",
-	"linkWebData":"http://www.lingen.de/familie_und_bildung/familienfreundlich/geburt/vornamenstatistik_2015.html",
+	"linkWebData":"http://www.lingen.de/Newsmeldungen/startseiten_meldungen/sophie_und_ben_in_lingen_an_der_spitze_der_beliebtesten_vornamen_2015.html",
 	"history":[
 		{"date":"04.01.2016","event":"Anfrage nach Vornamen"},
 		{"date":"04.01.2016","event":"Antwort: Top 10 auf Webseite vorhanden"},
@@ -187,14 +250,14 @@ var dataFirstnames = [
 		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
 	],
 },
-{
-	"nuts":"DE8",
-	"status":"nodata",
-	"history":[
-		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
-		{"date":"09.02.2015","event":"Antwort: Solch eine Statistik wird nicht geführt"},
-	],
-},
+//{
+//	"nuts":"DE8",
+//	"status":"nodata",
+//	"history":[
+//		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+//		{"date":"09.02.2015","event":"Antwort: Solch eine Statistik wird nicht geführt"},
+//	],
+//},
 {
 	"nuts":"DEA1F008",
 	"linkWebData":"https://www.dinslaken.de/de/aktuelles/neugeborene/",
@@ -764,6 +827,8 @@ var dataFirstnames = [
 		{"date":"16.10.2014","event":"Antwort: Top 100-PDF der Jahre 2009 bis heute per Mail bekommen"},
 		{"date":"29.01.2015","event":"Anfrage nach Vornamen für 2014"},
 		{"date":"29.01.2015","event":"Antwort: Komplettes Jahr 2014 als PDF per Mail bekommen"},
+		{"date":"06.01.2016","event":"Anfrage nach Vornamen für 2015"},
+		{"date":"07.01.2016","event":"Antwort: Top 150 aus 2015 als PDF per Mail bekommen"},
 	],
 },
 {
@@ -821,6 +886,8 @@ var dataFirstnames = [
 		{"date":"21.10.2014","event":"10 PDF-Dateien mit Top 100-Listen per Mail bekommen"},
 		{"date":"12.01.2015","event":"Anfrage nach Vornamen 2014"},
 		{"date":"16.01.2015","event":"1 PDF-Dateien mit Top 100-Listen per Mail bekommen"},
+		{"date":"06.01.2015","event":"Anfrage nach Vornamen 2015"},
+		{"date":"07.01.2015","event":"1 PDF-Dateien mit Top 100-Listen per Mail bekommen"},
 	],
 },
 {
@@ -891,6 +958,8 @@ var dataFirstnames = [
 	"history":[
 		{"date":"25.11.2014","event":"Anfrage nach Vornamen"},
 		{"date":"28.08.2015","event":"Daten von 2014 im Open Data Portal"},
+		{"date":"06.01.2016","event":"Anfrage nach Vornamen für 2015"},
+		{"date":"06.01.2016","event":"Daten von 2015 im Open Data Portal"},
 	],
 },
 {
