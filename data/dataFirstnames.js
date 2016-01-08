@@ -1,5 +1,28 @@
 var dataFirstnames = [
 {
+	"nuts":"DEC05114",
+	"linkWebData":"http://www.homburg.de/content/releases/49011.htm",
+	"history":[
+		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"08.01.2016","event":"Antwort: Siehe PM. Weitere Infos bei Gesellschaft für deutsche Sprache"},
+	],
+},
+{
+	"nuts":"DE40I452",
+	"status":"nodata",
+	"history":[
+		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"08.01.2016","event":"Antwort: Keine Entbindungsstation. Im Umfeld: Schwedt, Pasewalk, Templin und Neubrandenburg"},
+	],
+},
+{
+	"nuts":"DE408252",
+	"history":[
+		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"08.01.2016","event":"Antwort: Standesamt Rathenow erteilt keine Auskünfte über die beliebtesten Vornamen"},
+	],
+},
+{
 	"nuts":"DEF05044",
 	"linkWebData":"",
 	"history":[
@@ -639,7 +662,7 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA36",
-	"linkWebData":"www.recklinghausen.de/Inhalte/Startseite/Rathaus_Politik/Standesamt/Geburt/_Aufstellung_der_beliebtesten_Vornamen.asp",
+	"linkWebData":"http://www.recklinghausen.de/Inhalte/Startseite/Rathaus_Politik/Standesamt/Geburt/_Aufstellung_der_beliebtesten_Vornamen.asp",
 	"history":[
 		{"date":"12.01.2015","event":"Anfrage nach Vornamen"},
 		{"date":"20.01.2015","event":"Antwort: Laut Impressum Nutzung von Webseite erlaubt"},
@@ -841,9 +864,10 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA3805570004",
-	"linkWebData":"http://www.ahlen.de/fileadmin/pdf/Allgemein/Vornamenliste-2012.pdf",
+	"linkWebData":"https://www.ahlen.de/start/aktuelles/aktuelle/information/nachricht/aus-ahlen/marie-leon-sind-die-favoriten/",
 	"history":[
 		{"date":"17.10.2014","event":"Anfrage nach Vornamen"},
+		{"date":"03.11.2014","event":"Antwort: Vornamen von 2011 und 2013 per Post zusenden"},
 	],
 },
 {
