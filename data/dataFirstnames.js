@@ -1,10 +1,105 @@
 var dataFirstnames = [
 {
+	"nuts":"DEB11",
+	"history":[
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"13.01.2016","event":"Antwort: Keine Hitlisten vorgehalten"},
+	],
+},
+{
+	"nuts":"DEA58032",
+	"linkWebData":"",
+	"history":[
+		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"12.01.2016","event":"Antwort: Top 30 von 2009-2015 als Bild bekommen"},
+	],
+},
+{
+	"nuts":"DE40D320",
+	"history":[
+		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"12.01.2016","event":"Antwort: Verweis auf die Gesellschaft für deutsche Sprache"},
+	],
+},
+{
+	"nuts":"DE80N105",
+	"linkWebData":"",
+	"history":[
+		{"date":"08.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"12.01.2016","event":"Antwort: Top 30 von 2014-2015 als Bild bekommen, aber 'Ausnahme' normalerweise nicht für Privatpersonen"},
+	],
+},
+{
+	"nuts":"DEA27008",
+	"linkWebData":"",
+	"history":[
+		{"date":"06.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"11.01.2016","event":"Antwort: Top 30 von 2010-2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DE406260",
+	"linkWebData":"",
+	"history":[
+		{"date":"08.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"11.01.2016","event":"Antwort: Top 30 von 2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DEA2C060",
+	"status":"nodata",
+	"history":[
+		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"11.01.2016","event":"Antwort: Nur 3-4 Hausgeburten pro Jahr. Standesämter in Umgebung: Sankt Augustin, Troisdorf, Bad Honnef"},
+	],
+},
+{
+	"nuts":"DE722008",
+	"linkWebData":"",
+	"history":[
+		{"date":"08.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"11.01.2016","event":"Antwort: Top 15 von 2013-2015 als Bild bekommen"},
+	],
+},
+{
+	"nuts":"DE40B304",
+	"status":"nodata",
+	"history":[
+		{"date":"08.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"11.01.2016","event":"Antwort: Keine Geburtenstation"},
+	],
+},
+{
+	"nuts":"DE722023",
+	"linkWebData":"http://www.wetzlar.de/showobject.phtml?object=tx|370.872.1&sub=0",
+	"history":[
+		{"date":"08.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"11.01.2016","event":"Antwort: Hitliste 2015 ist in Vorbereitung"},
+	],
+},
+{
+	"nuts":"DE80L088",
+	"history":[
+		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"08.01.2016","event":"Antwort: Wenden sie sich an die Gesellschaft für deutsche Sprache"},
+	],
+},
+{
+	"nuts":"DE409448",
+	"status":"nodata",
+	"history":[
+		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"08.01.2016","event":"Antwort: Kein Geburtsstandesamt. Standesämter in Umgebung: Frankfurt (Oder), Wriezen und Strausberg."},
+	],
+},
+{
 	"nuts":"DEC05114",
 	"linkWebData":"http://www.homburg.de/content/releases/49011.htm",
 	"history":[
 		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
 		{"date":"08.01.2016","event":"Antwort: Siehe PM. Weitere Infos bei Gesellschaft für deutsche Sprache"},
+		{"date":"08.01.2016","event":"Nachfrage"},
+		{"date":"13.01.2016","event":"Antwort: Nicht an Privatpersonen + gebührenpflichtig. 'ausnahmsweise' alle Daten 2015 als CVS erhalten"},
 	],
 },
 {
@@ -193,6 +288,7 @@ var dataFirstnames = [
 		{"date":"06.11.2014","event":"Antwort: Alle Daten werden an GfdS gesandt. Ich soll dort nachfragen"},
 		{"date":"07.11.2014","event":"Anfrage: Alle Daten per Mail an mich"},
 		{"date":"04.01.2016","event":"Anfrage nach aktuellen Vornamen"},
+		{"date":"13.01.2016","event":"Antwort: Neue Daten auf der Webseite"},
 	],
 },
 {
@@ -251,12 +347,14 @@ var dataFirstnames = [
 	"nuts":"DEA18",
 	"history":[
 		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
 	],
 },
 {
 	"nuts":"DEA19",
 	"history":[
 		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
 	],
 },
 {
@@ -271,6 +369,7 @@ var dataFirstnames = [
 	"nuts":"DEA31",
 	"history":[
 		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
 	],
 },
 //{
@@ -299,12 +398,15 @@ var dataFirstnames = [
 	"nuts":"DEA53",
 	"history":[
 		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"09.02.2015","event":"Antwort: kann nicht weiterhelfen. Vielleicht aber die Uni Leipzig"},
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
 	],
 },
 {
 	"nuts":"DEA55",
 	"history":[
 		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
 	],
 },
 {
@@ -319,6 +421,7 @@ var dataFirstnames = [
 	"nuts":"DEG01",
 	"history":[
 		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
 	],
 },
 {
@@ -962,7 +1065,7 @@ var dataFirstnames = [
 		{"date":"16.10.2014","event":"Anfrage nach Vornamen"},
 		{"date":"20.10.2014","event":"Antwort: Bilder der letzten Jahre per Mail bekommen"},
 		{"date":"10.01.2015","event":"Anfrage nach Vornamen 2014"},
-		{"date":"12.01.2014","event":"Antwort: Top50 der letzen 2 Jahre, pro Standesamt"},
+		{"date":"12.01.2015","event":"Antwort: Top50 der letzen 2 Jahre, pro Standesamt"},
 	],
 },
 {
@@ -1006,8 +1109,11 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA1A",
+	"linkWebData":"",
 	"history":[
 		{"date":"19.11.2014","event":"Anfrage nach Vornamen"},
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"13.01.2016","event":"Antwort: Top 50 von 2015 als Fax-Bild per Mail bekommen"},
 	],
 },
 {
