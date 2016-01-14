@@ -1,5 +1,53 @@
 var dataFirstnames = [
 {
+	"nuts":"DEA34004",
+	"linkWebData":"http://www.ahaus.de/jahresstatistik.0.html",
+	"history":[
+		{"date":"14.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Antwort: Alle Namen von 2011-2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DED42020",
+	"linkWebData":"",
+	"history":[
+		{"date":"14.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Antwort: Alle Namen von 2012-2015 als CSV bekommen"},
+	],
+},
+{
+	"nuts":"DE409512",
+	"status":"nodata",
+	"history":[
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Antwort: Kein Geburtsstandesamt mehr. Geburtsstandesämter: Strausberg, Rüdersdorf, Eberswalde, Berlin u.v.m."},
+	],
+},
+{
+	"nuts":"DEA37084",
+	"status":"nodata",
+	"history":[
+		{"date":"06.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Antwort: Umliegenden Geburtskrankenhäuser: Rheine, Münster, Coesfeld, Gronau"},
+	],
+},
+{
+	"nuts":"DEF09044",
+	"status":"nodata",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Antwort: So gut wie keine Geburten. Standesamt in Umgebung: Itzehoe"},
+	],
+},
+{
+	"nuts":"DE927022",
+	"linkWebData":"",
+	"history":[
+		{"date":"05.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Antwort: Alle Namen von 2014-2015 als PDF bekommen"},
+	],
+},
+{
 	"nuts":"DEB11",
 	"history":[
 		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
@@ -352,9 +400,11 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA19",
+	"linkWebData":"",
 	"history":[
 		{"date":"10.02.2015","event":"Anfrage nach Vornamen"},
 		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Antwort: Top31 aus 2015 als Bild per Mail bekommen"},
 	],
 },
 {
@@ -419,9 +469,11 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEG01",
+	"linkWebData":"http://www.erfurt.de/ef/de/service/mediathek/veroeffentlichungen/2000/111133.html",
 	"history":[
 		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
 		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Antwort: Siehe Statistik-Seite. Auswertung für 2015 im Mai/Juni erwartet"},
 	],
 },
 {
@@ -811,8 +863,11 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA34008",
+	"linkWebData":"",
 	"history":[
 		{"date":"09.01.2015","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Antwort: Alle Namen von 2012-2015 als PDF bekommen"},
 	],
 },
 {
@@ -1178,8 +1233,10 @@ var dataFirstnames = [
 	"nuts":"DED41",
 	"linkWebData":"http://www.chemnitz.de/chemnitz/de/buerger-rathaus/aemterservice/standesamt/namen/index.html",
 	"history":[
-		{"date":"19.03.2013","event":"Anfrage nach Vornamen"},
-		{"date":"04.04.2014","event":"5 CVS-Dateien per Mail bekommen"},
+		{"date":"19.03.2014","event":"Anfrage nach Vornamen"},
+		{"date":"04.04.2014","event":"Antwort: Alle Namen von 2009-2013 als CVS-Dateien bekommen"},
+		{"date":"14.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Antwort: Alle Namen von 2014-2015 als CVS-Dateien bekommen"},
 	],
 },
 {
