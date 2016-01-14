@@ -442,9 +442,48 @@ var objectAllFirstnames = {
 		}
 	},
 	getCharts: function() {
-		return '';
+		var txt = '';
+		txt += '<div class="chart chart' + filterCountry + '" id="chartOpenData"></div>';
+		txt += '<div class="chart chart' + filterCountry + '" id="chartNames"></div>';
+
+		return txt;
 	},
 	createCharts: function( vec) {
+		var maxCount = vec.length;
+		var maxOpenData = 0;
+		var maxNames = 0;
+		var valOpenData = 0;
+		var valNames = 0;
+		var txtOpenData = '% ist<br>Open Data';
+		var txtNames = '% hat<br>Vornamen';
+		for( var i = 0; i < maxCount; ++i) {
+			var id = vec[ i];
+			var idata = basicIndexGetDataIndex( id);
+			if(( -1 != idata) && (typeof dataFirstnames[idata]['linkOGData'] !== "undefined")) {
+				valOpenData += dataBasics[id]['population'];
+			} else if(( -1 != idata) && (typeof dataFirstnames[idata]['linkWebData'] !== "undefined")) {
+				valNames += dataBasics[id]['population'];
+			}
+		}
+		for( var i = 0; i < dataBasics.length; ++i) {
+			if( dataBasics[i]['nuts'] == filterCountry) {
+				maxOpenData = dataBasics[i]['population'];
+			}
+		}
+		maxNames = maxOpenData;
+		if( 0 == maxCount) {
+			maxCount = 1;
+		}
+		var chartOpenData = Circles.create({
+			id:'chartOpenData',value:valOpenData,maxValue:maxOpenData,
+			colors:['#c1e3cb','#31A354'],radius:50,width:10,duration:500,text:function(value){if(Math.round( value / maxOpenData * 100) < 10) {return '<span>'+Math.round( value / maxOpenData * 1000)/10+txtOpenData+'</span>';} else {return '<span>'+Math.round( value / maxOpenData * 100)+txtOpenData+'</span>';}},wrpClass:'circles-wrp',textClass:'circles-text',
+		});
+		var chartNames = Circles.create({
+			id:'chartNames',value:valNames,maxValue:maxNames,
+			colors:['#f6edc9','#E1C64B'],radius:50,width:10,duration:500,text:function(value){if(Math.round( value / maxNames * 100) < 10) {return '<span>+ '+Math.round( value / maxNames * 1000)/10+txtNames+'</span>';} else {return '<span>+ '+Math.round( value / maxNames * 100)+txtNames+'</span>';}},wrpClass:'circles-wrp',textClass:'circles-text',
+		});
+//		colors:['#fac4bc','#F03B20'] red
+//		colors:['#f0f0f0','#D0D0D0'] gray
 	}
 };
 
@@ -1020,6 +1059,9 @@ var objectCityFirstnames = {
 			var id = vec[ i];
 			var idata = basicIndexGetDataIndex( id);
 			if(( -1 != idata) && (typeof dataFirstnames[idata]['linkOGData'] !== "undefined")) {
+				++valCount;
+				valPeople += dataBasics[id]['population'];
+			} else if(( -1 != idata) && (typeof dataFirstnames[idata]['linkWebData'] !== "undefined")) {
 				++valCount;
 				valPeople += dataBasics[id]['population'];
 			}
