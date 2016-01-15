@@ -1,5 +1,37 @@
 var dataFirstnames = [
 {
+	"nuts":"DE211",
+	"linkWebData":"",
+	"history":[
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"15.01.2016","event":"Antwort: Top 30 von 2013-2015 als Bild bekommen"},
+	],
+},
+{
+	"nuts":"DE721005",
+	"linkWebData":"",
+	"history":[
+		{"date":"06.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"15.01.2016","event":"Antwort: Top 10 von 2014-2015 als Bild bekommen"},
+	],
+},
+{
+	"nuts":"DE804000",
+	"linkWebData":"",
+	"history":[
+		{"date":"07.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"15.01.2016","event":"Antwort: Alle Namen von 2015 als PDF bekommen"},
+	],
+},
+{
+	"nuts":"DED2C240",
+	"linkWebData":"",
+	"history":[
+		{"date":"14.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"15.01.2016","event":"Antwort: Alle Namen von 2014-2015 als Bild bekommen"},
+	],
+},
+{
 	"nuts":"DEA34004",
 	"linkWebData":"http://www.ahaus.de/jahresstatistik.0.html",
 	"history":[
@@ -51,7 +83,7 @@ var dataFirstnames = [
 	"nuts":"DEB11",
 	"history":[
 		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
-		{"date":"13.01.2016","event":"Antwort: Keine Hitlisten vorgehalten"},
+		{"date":"13.01.2016","event":"Antwort: Führt keine Statistik"},
 	],
 },
 {
@@ -454,9 +486,11 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA55",
+	"status":"denied",
 	"history":[
 		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
 		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"15.01.2016","event":"Antwort: Für private Zwecke nicht möglich"},
 	],
 },
 {
@@ -723,12 +757,12 @@ var dataFirstnames = [
 		{"date":"27.01.2015","event":"Antwort: Interne Auflistung wird nicht weitergegeben"},
 	],
 },
-{
-	"nuts":"DEG0C",
-	"history":[
-		{"date":"20.01.2015","event":"Anfrage nach Vornamen"},
-	],
-},
+//{
+//	"nuts":"DEG0C",
+//	"history":[
+//		{"date":"20.01.2015","event":"Anfrage nach Vornamen"},
+//	],
+//},
 {
 	"nuts":"DEA56036",
 	"linkWebData":"http://www.witten.de/buergerservicerat-amp-verwaltung/buergerservice/nutzergruppen/nutzergruppen.html?tx_civserv_pi1%5Bcommunity_id%5D=5954036&tx_civserv_pi1%5Bmode%5D=service&tx_civserv_pi1%5Bid%5D=5730&cHash=44a3579b350673e5d3248c10906f50cd",
@@ -1121,6 +1155,8 @@ var dataFirstnames = [
 		{"date":"20.10.2014","event":"Antwort: Bilder der letzten Jahre per Mail bekommen"},
 		{"date":"10.01.2015","event":"Anfrage nach Vornamen 2014"},
 		{"date":"12.01.2015","event":"Antwort: Top50 der letzen 2 Jahre, pro Standesamt"},
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen 2015"},
+		{"date":"15.01.2016","event":"Antwort: Top30 als PDF erhalten, pro Standesamt"},
 	],
 },
 {
@@ -1188,13 +1224,13 @@ var dataFirstnames = [
 		{"date":"29.01.2015","event":"Antwort: Top30 Bild von 2014 per Mail bekommen + PMs 2011-2013"},
 	],
 },
-{
-	"nuts":"DED",
-	"status":"nodata",
-	"history":[
-		{"date":"07.10.2014","event":"Anfrage nach Vornamen"},
-	],
-},
+//{
+//	"nuts":"DED",
+//	"status":"nodata",
+//	"history":[
+//		{"date":"07.10.2014","event":"Anfrage nach Vornamen"},
+//	],
+//},
 {
 	"nuts":"DED21",
 	"linkWebData":"http://www.dresden.de/de/02/035/01/2013/01/pm_022.php",
@@ -1326,14 +1362,14 @@ var dataFirstnames = [
 		{"date":"17.10.2014","event":"Anfrage nach Vornamen"},
 	],
 },
-{
-	"nuts":"DEB",
-	"status":"nodata",
-	"history":[
-		{"date":"25.05.2013","event":"Anfrage nach Vornamen"},
-		{"date":"31.05.2013","event":"Angebot zum Kauf einer Liste mit Standesämtern bekommen"},
-	],
-},
+//{
+//	"nuts":"DEB",
+//	"status":"nodata",
+//	"history":[
+//		{"date":"25.05.2013","event":"Anfrage nach Vornamen"},
+//		{"date":"31.05.2013","event":"Angebot zum Kauf einer Liste mit Standesämtern bekommen"},
+//	],
+//},
 {
 	"nuts":"DEB14",
 	"linkWebData":"http://www.bad-kreuznach.de/sv_bad_kreuznach/Politik%20und%20Verwaltung/Nachrichtenarchiv/Januar%202015/Marie,%20Sophie,%20Alexander%20und%20Noah%20sind%20die%20beliebtesten%20Vornamen/",
