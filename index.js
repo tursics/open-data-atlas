@@ -444,25 +444,46 @@ var objectAllFirstnames = {
 	getCharts: function() {
 		var txt = '';
 		txt += '<div class="chart chart' + filterCountry + '" id="chartOpenData"></div>';
-		txt += '<div class="chart chart' + filterCountry + '" id="chartNames"></div>';
+		if( 'DE' == filterCountry) {
+			txt += '<div class="chart chart' + filterCountry + '" id="chartNames"></div>';
+			txt += '<div class="chart chart' + filterCountry + '" id="chartNoNames"></div>';
+			txt += '<div class="chart chart' + filterCountry + '" id="chartNone"></div>';
+		}
 
 		return txt;
 	},
 	createCharts: function( vec) {
+		var cRed = '#f03b20',    cRedLight = '#fac4bc';
+		var cYellow = '#e1c64b', cYellowLight = '#f6edc9';
+		var cGreen = '#31a354',  cGreenLight = '#c1e3cb';
+		var cWhite = '#d0d0d0',  cWhiteLight = '#f0f0f0';
+
 		var maxCount = vec.length;
 		var maxOpenData = 0;
 		var maxNames = 0;
+		var maxNoNames = 0;
+		var maxNone = 0;
 		var valOpenData = 0;
 		var valNames = 0;
+		var valNoNames = 0;
+		var valNone = 0;
 		var txtOpenData = '% ist<br>Open Data';
 		var txtNames = '% hat<br>Vornamen';
+		var txtNoNames = '% keine<br>Vornamen';
+		var txtNone = '% keine<br>Geburten';
 		for( var i = 0; i < maxCount; ++i) {
 			var id = vec[ i];
 			var idata = basicIndexGetDataIndex( id);
-			if(( -1 != idata) && (typeof dataFirstnames[idata]['linkOGData'] !== "undefined")) {
+			if( -1 == idata) {
+				valNoNames += dataBasics[id]['population'];
+			} else if( typeof dataFirstnames[idata]['linkOGData'] !== "undefined") {
 				valOpenData += dataBasics[id]['population'];
-			} else if(( -1 != idata) && (typeof dataFirstnames[idata]['linkWebData'] !== "undefined")) {
+			} else if( typeof dataFirstnames[idata]['linkWebData'] !== "undefined") {
 				valNames += dataBasics[id]['population'];
+			} else if(( typeof dataFirstnames[idata]['status'] !== "undefined") && ('nodata' == dataFirstnames[idata]['status'])) {
+				valNone += dataBasics[id]['population'];
+			} else {
+				valNoNames += dataBasics[id]['population'];
 			}
 		}
 		for( var i = 0; i < dataBasics.length; ++i) {
@@ -471,19 +492,27 @@ var objectAllFirstnames = {
 			}
 		}
 		maxNames = maxOpenData;
+		maxNoNames = maxOpenData;
+		maxNone = maxOpenData;
 		if( 0 == maxCount) {
 			maxCount = 1;
 		}
 		var chartOpenData = Circles.create({
 			id:'chartOpenData',value:valOpenData,maxValue:maxOpenData,
-			colors:['#c1e3cb','#31A354'],radius:50,width:10,duration:500,text:function(value){if(Math.round( value / maxOpenData * 100) < 10) {return '<span>'+Math.round( value / maxOpenData * 1000)/10+txtOpenData+'</span>';} else {return '<span>'+Math.round( value / maxOpenData * 100)+txtOpenData+'</span>';}},wrpClass:'circles-wrp',textClass:'circles-text',
+			colors:[cGreenLight,cGreen],radius:50,width:10,duration:500,text:function(value){if(Math.round( value / maxOpenData * 100) < 10) {return '<span>'+Math.round( value / maxOpenData * 1000)/10+txtOpenData+'</span>';} else {return '<span>'+Math.round( value / maxOpenData * 100)+txtOpenData+'</span>';}},wrpClass:'circles-wrp',textClass:'circles-text',
 		});
 		var chartNames = Circles.create({
 			id:'chartNames',value:valNames,maxValue:maxNames,
-			colors:['#f6edc9','#E1C64B'],radius:50,width:10,duration:500,text:function(value){if(Math.round( value / maxNames * 100) < 10) {return '<span>+ '+Math.round( value / maxNames * 1000)/10+txtNames+'</span>';} else {return '<span>+ '+Math.round( value / maxNames * 100)+txtNames+'</span>';}},wrpClass:'circles-wrp',textClass:'circles-text',
+			colors:[cYellowLight,cYellow],radius:50,width:10,duration:500,text:function(value){if(Math.round( value / maxNames * 100) < 10) {return '<span>+ '+Math.round( value / maxNames * 1000)/10+txtNames+'</span>';} else {return '<span>+ '+Math.round( value / maxNames * 100)+txtNames+'</span>';}},wrpClass:'circles-wrp',textClass:'circles-text',
 		});
-//		colors:['#fac4bc','#F03B20'] red
-//		colors:['#f0f0f0','#D0D0D0'] gray
+		var chartNoNames = Circles.create({
+			id:'chartNoNames',value:valNoNames,maxValue:maxNoNames,
+			colors:[cRedLight,cRed],radius:50,width:10,duration:500,text:function(value){if(Math.round( value / maxNoNames * 100) < 10) {return '<span>'+Math.round( value / maxNoNames * 1000)/10+txtNoNames+'</span>';} else {return '<span>'+Math.round( value / maxNoNames * 100)+txtNoNames+'</span>';}},wrpClass:'circles-wrp',textClass:'circles-text',
+		});
+		var chartNone = Circles.create({
+			id:'chartNone',value:valNone,maxValue:maxNone,
+			colors:[cWhiteLight,cWhite],radius:50,width:10,duration:500,text:function(value){if(Math.round( value / maxNone * 100) < 10) {return '<span>'+Math.round( value / maxNone * 1000)/10+txtNone+'</span>';} else {return '<span>'+Math.round( value / maxNone * 100)+txtNone+'</span>';}},wrpClass:'circles-wrp',textClass:'circles-text',
+		});
 	}
 };
 
