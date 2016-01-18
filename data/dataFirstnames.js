@@ -1,5 +1,26 @@
 var dataFirstnames = [
 {
+	"nuts":"DED52160",
+	"history":[
+		{"date":"15.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"18.01.2016","event":"Antwort: Schicken die Listen zur GfdS"},
+	],
+},
+{
+	"nuts":"DE244000",
+	"history":[
+		{"date":"15.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"18.01.2016","event":"Antwort: Für extra Statistiken keine Kapazitäten"},
+	],
+},
+{
+	"nuts":"DE918011",
+	"history":[
+		{"date":"15.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"18.01.2016","event":"Antwort: Listen werden nicht geführt."},
+	],
+},
+{
 	"nuts":"DE211",
 	"linkWebData":"",
 	"history":[
@@ -1399,6 +1420,8 @@ var dataFirstnames = [
 		{"date":"16.07.2014","event":"Screenshot der Top 30 für 2012, 2013 bekommen"},
 		{"date":"10.01.2015","event":"Anfrage nach Vornamen 2014"},
 		{"date":"24.11.2015","event":"Top 30 aus 2014 im Portal gefunden"},
+		{"date":"14.01.2016","event":"Anfrage nach Vornamen 2015"},
+		{"date":"18.01.2016","event":"Top 30 aus 2015 vorhanden"},
 	],
 },
 {
