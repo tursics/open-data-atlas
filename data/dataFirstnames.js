@@ -1,5 +1,45 @@
 var dataFirstnames = [
 {
+	"nuts":"DEB18045",
+	"linkWebData":"",
+	"history":[
+		{"date":"20.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"20.01.2016","event":"Antwort: Top30 von 2012-2015 als PDF per Mail"},
+	],
+},
+{
+	"nuts":"DE253",
+	"linkWebData":"http://www.fuerth.de/Home/fuerther-rathaus/Newsarchiv/Archiv-2010-Rathaus/standesamt-blickt-zurueck.aspx",
+	"history":[
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"20.01.2016","event":"Antwort: Top30 von 2014-2015 als Bild per Mail"},
+	],
+},
+{
+	"nuts":"DEA2C056",
+	"linkWebData":"",
+	"history":[
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"19.01.2016","event":"Antwort: Alle Namen von 2015 als Bild per Mail"},
+	],
+},
+{
+	"nuts":"DED2E140",
+	"linkWebData":"http://www.stadt-meissen.de/7530.html",
+	"history":[
+		{"date":"15.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"19.01.2016","event":"Antwort: Top10 von 2015 per Mail"},
+	],
+},
+{
+	"nuts":"DE142041",
+	"linkWebData":"http://www.tuebingen.de/1620.html#16090",
+	"history":[
+		{"date":"14.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"18.01.2016","event":"Antwort: Top5 von 2011-2015 per Mail"},
+	],
+},
+{
 	"nuts":"DED52160",
 	"history":[
 		{"date":"15.01.2016","event":"Anfrage nach Vornamen"},
@@ -400,8 +440,11 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA2C068",
+	"linkWebData":"",
 	"history":[
 		{"date":"25.03.2015","event":"Anfrage nach Vornamen"},
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"20.01.2016","event":"Antwort: Top30 kumuliert aus 2005-2015 als Bild per Mail"},
 	],
 },
 {
