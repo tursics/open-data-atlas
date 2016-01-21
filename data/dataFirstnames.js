@@ -1,5 +1,28 @@
 var dataFirstnames = [
 {
+	"nuts":"DE112003",
+	"history":[
+		{"date":"21.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"21.01.2016","event":"Antwort: Machen keine Auswertung"},
+	],
+},
+{
+	"nuts":"DE134096",
+	"linkWebData":"http://offenburg.de/html/aktuell/aktuell_u.html?&cataktuell=&m=4402&artikel=5798&stichwort_aktuell=&default=true",
+	"history":[
+		{"date":"20.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"21.01.2016","event":"Antwort: Alle Namen von 2010-2015 als PDF per Mail"},
+	],
+},
+{
+	"nuts":"DE724014",
+	"linkWebData":"https://www.marburg.de/buergerservice/dienstleistungen/vornamen-900000517-0.html?myMedium=1&auswahl=0",
+	"history":[
+		{"date":"20.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"21.01.2016","event":"Antwort: Alle Namen von 2015 als Bild per Mail"},
+	],
+},
+{
 	"nuts":"DEB18045",
 	"linkWebData":"",
 	"history":[
