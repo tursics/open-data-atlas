@@ -3113,5 +3113,14 @@ var dataBasics = [
 	"lat":52.50,
 	"lon":13.37,
 	"linkOGD":"http://data.deutschebahn.com/",
+},
+{
+	"name":"Regionalverband Ruhr - Geodatenshop",
+	"group":"other",
+	"nuts":"DE_rvrgds",
+	"population":0,
+	"lat":51.44,
+	"lon":7.01,
+	"linkOGD":"http://www.geoshop.metropoleruhr.de/public/rvr/Startseite",
 }
 ];
