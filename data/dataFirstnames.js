@@ -1,5 +1,21 @@
 var dataFirstnames = [
 {
+	"linkWebData":"",
+	"nuts":"DEB37000",
+	"history":[
+		{"date":"20.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"22.01.2016","event":"Antwort: Top4 von 2012-2015 per Mail"},
+	],
+},
+{
+	"linkWebData":"http://www.nordhausen.de/news/news_lang.php?ArtNr=21565",
+	"nuts":"DEG07041",
+	"history":[
+		{"date":"15.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"22.01.2016","event":"Antwort: Bitte wenden sie sich an die GfdS"},
+	],
+},
+{
 	"nuts":"DE112003",
 	"history":[
 		{"date":"21.01.2016","event":"Anfrage nach Vornamen"},
