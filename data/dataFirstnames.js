@@ -1,5 +1,13 @@
 var dataFirstnames = [
 {
+	"linkWebData":"http://www.esslingen.de/,Lde/start/es_services/Standesamt.html",
+	"nuts":"DE113019",
+	"history":[
+		{"date":"20.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"27.01.2016","event":"Antwort: Top30 von 2012-2015 als Bild per Mail"},
+	],
+},
+{
 	"linkWebData":"",
 	"nuts":"DEB37000",
 	"history":[
@@ -13,6 +21,7 @@ var dataFirstnames = [
 	"history":[
 		{"date":"15.01.2016","event":"Anfrage nach Vornamen"},
 		{"date":"22.01.2016","event":"Antwort: Bitte wenden sie sich an die GfdS"},
+		{"date":"25.01.2016","event":"Antwort: Keine Informationen an Privatpersonen"},
 	],
 },
 {
@@ -575,8 +584,12 @@ var dataFirstnames = [
 {
 	"nuts":"DEA14",
 	"linkWebData":"https://www.krefeld.de/de/presse/maximilian-und-marie-waren-die-beliebtesten-vornamen-2014/",
+	"linkOGData":"https://www.offenesdatenportal.de/dataset/vornamenstatistik-fur-neugeborene-2015-in-krefeld",
+	"linkOGDLicense":"DL DE 0 2.0",
 	"history":[
 		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"14.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"27.01.2016","event":"Antwort: Alle Vornamen 2011-2015 im neuen OpenData Portal"},
 	],
 },
 {
@@ -615,8 +628,11 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEG03",
+	"linkWebData":"",
 	"history":[
 		{"date":"06.02.2015","event":"Anfrage nach Vornamen"},
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"28.01.2016","event":"Antwort: Alle Vornamen 2014-2015 per Mail bekommen"},
 	],
 },
 {
@@ -1116,7 +1132,9 @@ var dataFirstnames = [
 	"history":[
 		{"date":"19.11.2014","event":"Anfrage nach Vornamen"},
 		{"date":"13.01.2015","event":"Erneute Anfrage nach Vornamen"},
-		{"date":"14.01.2015","event":"Antwort: Bild mit Top30 Vornamen per Mail bekommen"},
+		{"date":"14.01.2015","event":"Antwort: Top30 aus 2015 als Bild per Mail bekommen"},
+		{"date":"07.01.2015","event":"Anfrage nach Vornamen 2015"},
+		{"date":"26.01.2015","event":"Antwort: Top30 aus 2014-2015 als Bild per Mail bekommen"},
 	],
 },
 {
