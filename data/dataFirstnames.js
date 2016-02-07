@@ -1,5 +1,92 @@
 var dataFirstnames = [
 {
+	"linkWebData":"http://www.amberg.de/rathaus/presseinformationen/2014/0792014/?L=0",
+	"nuts":"DE231000",
+	"history":[
+		{"date":"01.02.2016","event":"Anfrage nach Vornamen"},
+		{"date":"04.02.2016","event":"Antwort: Beteiligen sich an keinerlei Umfragen"},
+	],
+},
+{
+	"linkWebData":"http://www.plauen.de/de/rathaus/presse-mitteilungen/pressemitteilungen.php",
+	"nuts":"DED44320",
+	"history":[
+		{"date":"15.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"04.02.2016","event":"Antwort: Bitte wenden sie sich an die GfdS"},
+	],
+},
+{
+	"linkWebData":"",
+	"nuts":"DE213000",
+	"history":[
+		{"date":"01.02.2016","event":"Anfrage nach Vornamen"},
+		{"date":"03.02.2016","event":"Antwort: Top12 von 2010-2015 per Mail"},
+	],
+},
+{
+	"linkWebData":"",
+	"nuts":"DE732009",
+	"history":[
+		{"date":"01.02.2016","event":"Anfrage nach Vornamen"},
+		{"date":"03.02.2016","event":"Antwort: Alle Namen von 2015 per Mail"},
+	],
+},
+{
+	"linkWebData":"",
+	"nuts":"DED2D610",
+	"history":[
+		{"date":"15.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"02.02.2016","event":"Antwort: Alle Namen von 2014-2015 per Mail"},
+	],
+},
+{
+	"linkWebData":"",
+	"nuts":"DE221000",
+	"history":[
+		{"date":"01.02.2016","event":"Anfrage nach Vornamen"},
+		{"date":"02.02.2016","event":"Antwort: Alle Namen von 2013-2015 per Mail"},
+	],
+},
+{
+	"linkWebData":"",
+	"nuts":"DE274000",
+	"history":[
+		{"date":"01.02.2016","event":"Anfrage nach Vornamen"},
+		{"date":"02.02.2016","event":"Antwort: Möchte gerne 2014-2015 per Post schicken"},
+	],
+},
+{
+	"linkWebData":"http://www.freising.de/rathaus/standesamt/standesamt-in-zahlen/",
+	"nuts":"DE21B124",
+	"history":[
+		{"date":"01.02.2016","event":"Anfrage nach Vornamen"},
+		{"date":"01.02.2016","event":"Antwort: Alle Namen von 2014-2015 per Fax"},
+	],
+},
+{
+	"nuts":"DE251000",
+	"history":[
+		{"date":"01.02.2016","event":"Anfrage nach Vornamen"},
+		{"date":"01.02.2016","event":"Antwort: das Standesamt erstellt solche Listen nicht"},
+	],
+},
+{
+	"linkWebData":"",
+	"nuts":"DE262000",
+	"history":[
+		{"date":"01.02.2016","event":"Anfrage nach Vornamen"},
+		{"date":"01.02.2016","event":"Antwort: Top10 von 2013-2015 per Mail"},
+	],
+},
+{
+	"linkWebData":"",
+	"nuts":"DEB34",
+	"history":[
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"01.02.2016","event":"Antwort: Alle Namen von 2015 als PDF per Mail"},
+	],
+},
+{
 	"linkWebData":"http://www.esslingen.de/,Lde/start/es_services/Standesamt.html",
 	"nuts":"DE113019",
 	"history":[
@@ -53,6 +140,8 @@ var dataFirstnames = [
 	"history":[
 		{"date":"20.01.2016","event":"Anfrage nach Vornamen"},
 		{"date":"20.01.2016","event":"Antwort: Top30 von 2012-2015 als PDF per Mail"},
+		{"date":"20.01.2016","event":"Nachfrage nach kompletten Listen"},
+		{"date":"04.02.2016","event":"Antwort: Datenschutzbeauftragter sagt ja, aber nur gegen 8,40 Euro Aufwandsgebühr"},
 	],
 },
 {
@@ -122,6 +211,8 @@ var dataFirstnames = [
 	"history":[
 		{"date":"06.01.2016","event":"Anfrage nach Vornamen"},
 		{"date":"15.01.2016","event":"Antwort: Top 10 von 2014-2015 als Bild bekommen"},
+		{"date":"15.01.2016","event":"Nachfrage"},
+		{"date":"01.02.2016","event":"Antwort: Top 30 von 2014-2015 als Bild bekommen"},
 	],
 },
 {
@@ -941,6 +1032,8 @@ var dataFirstnames = [
 	"history":[
 		{"date":"15.01.2015","event":"Anfrage nach Vornamen"},
 		{"date":"20.01.2015","event":"Antwort: Top31 aus 2014 als Bild per Mail bekommen"},
+		{"date":"01.02.2016","event":"Anfrage nach Vornamen 2015"},
+		{"date":"03.02.2016","event":"Antwort: Alle Namen aus 2015 als PDF per Mail bekommen"},
 	],
 },
 {
