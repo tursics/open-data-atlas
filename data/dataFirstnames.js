@@ -1,5 +1,28 @@
 var dataFirstnames = [
 {
+	"linkWebData":"",
+	"nuts":"DE141",
+	"history":[
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"10.02.2016","event":"Antwort: Top30 von 2015 als Bild per Mail"},
+	],
+},
+{
+	"linkWebData":"",
+	"nuts":"DEA2C008",
+	"history":[
+		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
+		{"date":"09.02.2016","event":"Antwort: Top30 von 2015 als Bild per Mail"},
+	],
+},
+{
+	"nuts":"DE114026",
+	"history":[
+		{"date":"01.02.2016","event":"Anfrage nach Vornamen"},
+		{"date":"09.02.2016","event":"Antwort: Stellen besonders schützenswerte Daten nicht für kommerzielle Zwecke zur Verfügung"},
+	],
+},
+{
 	"linkWebData":"http://www.amberg.de/rathaus/presseinformationen/2014/0792014/?L=0",
 	"nuts":"DE231000",
 	"history":[
