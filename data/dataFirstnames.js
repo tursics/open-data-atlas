@@ -1441,10 +1441,14 @@ var dataFirstnames = [
 {
 	"nuts":"DEA1A",
 	"linkWebData":"",
+	"linkOGData":"http://offenedaten-wuppertal.de/dataset/vornamen-statistiken",
+	"linkOGDLicense":"CC BY 4.0",
 	"history":[
 		{"date":"19.11.2014","event":"Anfrage nach Vornamen"},
 		{"date":"13.01.2016","event":"Anfrage nach Vornamen"},
 		{"date":"13.01.2016","event":"Antwort: Top 50 von 2015 als Fax-Bild per Mail bekommen"},
+		{"date":"06.09.2016","event":"Anfrage über neues Datenportal"},
+		{"date":"09.09.2016","event":"Alle Namen von 2012 bis 2015 im Open Data Portal"},
 	],
 },
 {
@@ -1550,7 +1554,7 @@ var dataFirstnames = [
 	],
 },
 {
-	"nuts":"DEA28",
+	"nuts":"DEA28016",
 	"linkWebData":"http://www.euskirchen.de/index.php?id=136&pm_show=v",
 	"history":[
 		{"date":"26.11.2014","event":"Anfrage nach Vornamen"},
