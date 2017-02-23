@@ -133,6 +133,8 @@ function getBubbleHTML( id)
 
 					if( 'CC 0' == license) {
 						good = true;
+					} else if( 'CC BY 4.0' == license) {
+						good = true;
 					} else if( 'CC BY 3.0' == license) {
 						good = true;
 					} else if( 'DL DE 0 2.0' == license) {
@@ -1434,7 +1436,11 @@ function generateDataList()
 	txt += '<select name="filterLevel" id="filterLevel">';
 	txt += '<option value="all"' + ('all' == filterLevel ? ' selected="selected"' : '') + '>Alle</option>';
 	// federal authorities
-	txt += '<option value="supreme"' + ('supreme' == filterLevel ? ' selected="selected"' : '') + '>Oberste Bundesbehörden mit</option>';
+	if( 'CH' == filterCountry) {
+		txt += '<option value="supreme"' + ('supreme' == filterLevel ? ' selected="selected"' : '') + '>Bundesverwaltung mit</option>';
+	} else {
+		txt += '<option value="supreme"' + ('supreme' == filterLevel ? ' selected="selected"' : '') + '>Oberste Bundesbehörden mit</option>';
+	}
 	txt += '<option value="higher"' + ('higher' == filterLevel ? ' selected="selected"' : '') + ' disabled="disabled">Bundesoberbehörden mit</option>';
 	txt += '<option value="middle"' + ('middle' == filterLevel ? ' selected="selected"' : '') + ' disabled="disabled">Bundesmittelbehörden mit</option>';
 	if( 'CH' == filterCountry) {
@@ -1497,9 +1503,6 @@ function generateDataList()
 		obj = objectOtherFirstnames;
 	}
 
-	if( 'CH' == filterCountry) {
-		txt += '<div style="color:crimson;margin:.4em 0 .4em 0;">Die Schweizer Daten sind noch nicht komplett evaluiert.</div>';
-	}
 	txt += '<div id="dataInfo">';
 	txt += obj.getLegend();
 	txt += '</div>';
