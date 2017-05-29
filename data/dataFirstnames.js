@@ -337,10 +337,12 @@ var dataFirstnames = [
 },
 {
 	"nuts":"DEA27008",
-	"linkWebData":"",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-stadt-bergheim",
+	"linkOGDLicense":"CC BY 3.0",
 	"history":[
 		{"date":"06.01.2016","event":"Anfrage nach Vornamen"},
 		{"date":"11.01.2016","event":"Antwort: Top 30 von 2010-2015 als PDF bekommen"},
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
 	],
 },
 {
@@ -1816,6 +1818,126 @@ var dataFirstnames = [
 	"linkWebData":"http://www.tettnang.de/tt/rathaus-service/buergerservice/standesamt.php",
 	"history":[
 		{"date":"17.10.2014","event":"Anfrage nach Vornamen"},
+	],
+},
+{
+	"nuts":"DEA26060",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-gemeinde-vettwei%C3%9F",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA26056",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-titz",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA26016",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-gemeinde-h%C3%BCrtgenwald",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA26024",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-stadt-j%C3%BClich",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA26012",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-stadt-heimbach",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA26028",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-gemeinde-kreuzau",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA26032",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-gemeinde-langerwehe",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA26036",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-linnich",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA26040",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-gemeinde-merzenich",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA27012",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-stadt-br%C3%BChl",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA27040",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtjahres-stadt-wesseling",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA28004",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-bad-m%C3%BCnstereifel",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA28024",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-gemeinde-kall",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA27032",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-kerpen",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
+	],
+},
+{
+	"nuts":"DEA27016",
+	"linkOGData":"http://offenedaten.kdvz-frechen.de/dataset/d01-vornamen-eines-geburtsjahres-elsdorf",
+	"linkOGDLicense":"CC BY 3.0",
+	"history":[
+		{"date":"08.11.2016","event":"Portal gestartet, Daten vorhanden"},
 	],
 },
 /*{
