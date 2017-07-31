@@ -3752,5 +3752,17 @@ var dataBasics = [
 	"lat":51.44,
 	"lon":7.01,
 	"linkOGD":"http://www.geoshop.metropoleruhr.de/public/rvr/Startseite",
+},
+{
+	"name":"Deutscher Wetterdienst",
+	"group":"higher",
+	"nuts":"DE_BMVI_DWD",
+	"population":0,
+	"lat":50.10,
+	"lon":8.74,
+	"linkOGD":"http://opendata.dwd.de/",
+	"history":[
+		{"date":"31.07.2017","event":"Neues Open Data Portal"},
+	],
 }
 ];
