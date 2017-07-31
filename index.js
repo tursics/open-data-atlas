@@ -1648,7 +1648,7 @@ $( document).ready( function()
 		if( typeof params['page'] !== 'undefined') {
 			page = '#popup' + params['page'];
 		}
-		if( -1 == $.inArray( page, ['#popupData','#popupSamples','#popupContests','#popupShare','#popupCopyright'])) {
+		if( -1 == $.inArray( page, ['#popupData','#popupContests','#popupShare','#popupCopyright'])) {
 			page = '#popupData';
 		}
 		showPage( page);
@@ -1671,8 +1671,6 @@ $( document).ready( function()
 
 	$( '#aPopupData1').on( 'click', function( e) { showPage( '#popupData'); return false; });
 	$( '#aPopupData2').on( 'click', function( e) { showPage( '#popupData'); window.history.back(); return false; });
-	$( '#aPopupSamples1').on( 'click', function( e) { showPage( '#popupSamples'); return false; });
-	$( '#aPopupSamples2').on( 'click', function( e) { showPage( '#popupSamples'); window.history.back(); return false; });
 	$( '#aPopupShare1').on( 'click', function( e) { showPage( '#popupShare'); return false; });
 	$( '#aPopupShare2').on( 'click', function( e) { showPage( '#popupShare'); window.history.back(); return false; });
 	$( '#aPopupCopyright1').on( 'click', function( e) { showPage( '#popupCopyright'); return false; });

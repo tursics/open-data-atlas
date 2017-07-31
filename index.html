@@ -12,9 +12,9 @@
 	<meta property="og:title" content="Open Data Atlas" />
 	<meta name="twitter:title" content="Open Data Atlas" />
 
-	<meta name="description" content="Wo gibt es Open Data Vornamen in Deutschland, Österreich und der Schweiz?" />
-	<meta property="og:description" content="Wo gibt es Open Data Vornamen in Deutschland, Österreich und der Schweiz?" />
-	<meta name="twitter:description" content="Wo gibt es Open Data Vornamen in Deutschland, Österreich und der Schweiz?" />
+	<meta name="description" content="Alle Open Data Portale in Deutschland, Österreich und der Schweiz." />
+	<meta property="og:description" content="Alle Open Data Portale in Deutschland, Österreich und der Schweiz." />
+	<meta name="twitter:description" content="Alle Open Data Portale in Deutschland, Österreich und der Schweiz." />
 
 	<link rel="image_src" type="image/png" href="http://opendata.tursics.de/images/facebookimage.png" />
 	<meta property="og:image" content="http://opendata.tursics.de/images/facebookimage.png" />
@@ -27,7 +27,7 @@
 	<meta name="twitter:creator" content="@tursics">
 
 	<link rel="stylesheet" href="jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
 
 	<script src="http://js.api.here.com/se/2.5.4/jsl.js?with=maps,places,directions,positioning" type="text/javascript" charset="utf-8"></script>
 
@@ -118,7 +118,8 @@
 			float:left;
 		}
 		#headSlotCfB img {
-			height:3.5em;
+			height:2.5em;
+			padding: .3em 0 .3em 1em;
 		}
 		#headSlotTitle {
 			float:left;
@@ -219,12 +220,11 @@
 	<div data-role="page" id="pageMap">
 		<div data-role="header" data-position="fixed">
 			<div id="headSlotCfB">
-				<a href="http://codefor.berlin/" class="ui-link" target="_blank"><img src="images/cfg_berlin.svg" /></a>
+				<a href="http://codefor.berlin/" class="ui-link" target="_blank"><img src="images/cfg_berlin_hex.svg" /></a>
 			</div>
 			<div id="headSlotTitle">Open Data Atlas</div>
 			<div data-role="controlgroup" data-type="horizontal" id="headSlotButtons">
 				<a href="#" id="aPopupData1"      data-rel="popup" class="ui-btn"><i class="fa fa-map-marker" style="font-size:1.5em;"></i></a>
-				<a href="#" id="aPopupSamples1"   data-rel="popup" class="ui-btn"><i class="fa fa-flask" style="font-size:1.5em;"></i></a>
 				<a href="#" id="aPopupShare1"     data-rel="popup" class="ui-btn"><i class="fa fa-share-alt" style="font-size:1.5em;"></i></a>
 				<a href="#" id="aPopupCopyright1" data-rel="popup" class="ui-btn"><i class="fa fa-info-circle" style="font-size:1.5em;"></i></a>
 			</div>
@@ -233,28 +233,10 @@
 				<div data-role="popup" id="popupDonut" data-theme="none">
 					<div data-role="controlgroup" data-type="vertical" id="headSlotButtons2">
 						<a href="#" id="aPopupData2"      data-rel="popup" class="ui-btn"><i class="fa fa-map-marker" style="font-size:1.5em;"></i> Karte</a>
-						<a href="#" id="aPopupSamples2"   data-rel="popup" class="ui-btn"><i class="fa fa-flask" style="font-size:1.5em;"></i> Beispiele</a>
 						<a href="#" id="aPopupShare2"     data-rel="popup" class="ui-btn"><i class="fa fa-share-alt" style="font-size:1.5em;"></i> Teilen</a>
 						<a href="#" id="aPopupCopyright2" data-rel="popup" class="ui-btn"><i class="fa fa-info-circle" style="font-size:1.5em;"></i> Info</a>
 					</div>
 				</div>
-			</div>
-			<div data-role="popup" id="popupSamples" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">
-				<div style="font-size:2em;font-weight:100;padding:0 0 .5em 0;">Beispiele</div>
-				<div>
-					Die offenen Daten über Vornamen werden bereits verwendet. Hier eine Beispiele:<br>
-				</div>
-				<ul data-role="listview" data-inset="true">
-					<li><a href="http://tursics.de/nameyourbabe/" target="blank_"><img src="vornamen/babybenamsen.png"><h2>Baby benamsen</h2><p>von Thomas Tursics</p></a></li>
-					<li><a href="http://codefor.de/projekte/2014-07-04-Vornamen-in-Berlin.html" target="blank_"><img src="vornamen/berlinervornamen.png"><h2>Berliner Vornamen</h2><p>von Knud Möller</p></a></li>
-					<li><a href="http://derstandard.at/1341845196023/Florian-und-Jessica-Muhammed-und-Leonie-Vornamen-in-Wien" target="blank_"><img src="vornamen/vornameninwien.png"><h2>Florian und Jessica, Muhammed und Leonie: Vornamen in Wien</h2><p>von Florian Gossy</p></a></li>
-					<li><a href="http://www.newmediaart.at/" target="blank_"><img src="vornamen/ratemyname.png"><h2>rate my name</h2><p>von Benjamin Grabner</p></a></li>
-					<li><a href="http://data.gv.at/anwendungen/statistik-niederosterreich/" target="blank_"><img src="vornamen/statistikniederoesterreich.png"><h2>Statistik Niederösterreich</h2><p>von Benjamin Grabner</p></a></li>
-					<li><a href="http://issy.netcomdev.com/" target="blank_"><img src="vornamen/issylesmoulineaux.png"><h2>Les prénoms les plus portés</h2><p>von Ville d'Issy-les-Moulineaux</p></a></li>
-					<li><a href="https://www.stadt-zuerich.ch/prd/de/index/statistik/ueber_uns/externe-projekte/2014_ZHDK_measuring-zurich.html#growing_names_" target="blank_"><img src="vornamen/zurich.png"><h2>Growing Names</h2><p>von Marlo Limacher</p></a></li>
-					<li><a href="http://blog.tagesanzeiger.ch/datenblog/index.php/6859/alles-mueller-oder-was" target="blank_"><img src="vornamen/kantonsnameskarte.png"><h2>Alles Müller</h2><p>von Tages-Anzeiger, Schweiz</p></a></li>
-					<li><a href="http://infogr.am/die_beliebtesten_vornamen_in_hameln" target="blank_"><img src=""><h2>Die beliebtesten Vornamen in Hameln</h2><p>von Dewezet</p></a></li>
-				</ul>
 			</div>
 			<div data-role="popup" id="popupShare" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">
 				<div style="font-size:2em;font-weight:100;padding:0 0 .5em 0;">Teilen</div>
@@ -281,9 +263,8 @@
 			</div>
 			<div data-role="popup" id="popupCopyright" data-theme="a" data-position-to="window" data-transition="slidedown" class="ui-corner-all ui-content">
 				<div style="font-size:2em;font-weight:100;padding:0 0 .5em 0;">Wo gibt es Open Data?</div>
-				Wo im deutschsprachigen Raum gibt es Open Data Portale? Und bieten sie auch Vornamen-Daten neugeborener Kinder an?<br>
-				<br>
-				Diese Karte zeigt den aktuellen Stand in Sachen Open Data und Vornamen in Deutschland, Österreich und der Schweiz an.<br>
+				Im deutschsprachigen Raum gibt es immer mehr Open Data Portale.
+				Diese Karte zeigt den aktuellen Stand in Sachen Open Data in Deutschland, Österreich und der Schweiz an.<br>
 				<br>
 				Habe ich ein Datenportal übersehen? Sag es mir:<br>
 				<center><div data-role="controlgroup" data-type="horizontal">
