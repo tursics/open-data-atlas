@@ -13,8 +13,9 @@ var filterPage = '#popupData';
 
 // -----------------------------------------------------------------------------
 
-function initNokiaMap( elementName, lat, lon, zoom)
-{
+function initNokiaMap(elementName, lat, lon, zoom) {
+	'use strict';
+
 	// https://developer.here.com/myapps/create-eval
 	// test key for
 	// url: http://www.tursics.de/sample/vornamen/
@@ -27,84 +28,89 @@ function initNokiaMap( elementName, lat, lon, zoom)
 	// PLAN: Free
 	// url: http://www.tursics.de/sample/vornamen/
 	// limit: 100,000 monthly transactions
-	nokia.Settings.set( 'app_id', 'bgDmVjIXSo2vkcxMYcdb');
-	nokia.Settings.set( 'app_code', '0Kn_z4FcPn2Wxpbz--j7xw');
-	nokia.Settings.set( 'defaultLanguage', 'de-DE');
+	nokia.Settings.set('app_id', 'bgDmVjIXSo2vkcxMYcdb');
+	nokia.Settings.set('app_code', '0Kn_z4FcPn2Wxpbz--j7xw');
+	nokia.Settings.set('defaultLanguage', 'de-DE');
 
 	map = new nokia.maps.map.Display(
-		document.getElementById( elementName), {
+		document.getElementById(elementName),
+		{
 			components: [
 				new nokia.maps.map.component.Behavior(),
-				new nokia.maps.map.component.ZoomBar(),
+				new nokia.maps.map.component.ZoomBar()
 //				new nokia.maps.map.component.TypeSelector(),
 				// ScaleBar Overview ZoomRectangle Positioning ContextMenu InfoBubbles PublicTransport Traffic
 			],
 			zoomLevel: zoom,
 			center: [lat, lon],
 			baseMapType: nokia.maps.map.Display.TERRAIN // NORMAL NORMAL_COMMUNITY SATELLITE SATELLITE_COMMUNITY SMARTMAP SMART_PT TERRAIN TRAFFIC
-	});
+		}
+	);
 //	map.removeComponent( map.getComponentById( "zoom.MouseWheel"));
 
 	mapBubbles = new nokia.maps.map.component.InfoBubbles();
-	var TOUCH = nokia.maps.dom.Page.browser.touch;
-	var CLICK = TOUCH ? 'tap' : 'click';
+	var TOUCH = nokia.maps.dom.Page.browser.touch,
+		CLICK = TOUCH ? 'tap' : 'click';
 
 	mapContainer = new nokia.maps.map.Container();
-	mapContainer.addListener( CLICK, function( evt) {
-		if( evt.target.nr >= 0) {
-			mapBubble = mapBubbles.openBubble( getBubbleHTML( evt.target.nr), evt.target.coordinate);
+	mapContainer.addListener(CLICK, function (evt) {
+		if (evt.target.nr >= 0) {
+			mapBubble = mapBubbles.openBubble(getBubbleHTML(evt.target.nr), evt.target.coordinate);
 		}
 	}, false);
 
-	map.components.add( mapBubbles);
-	map.objects.add( mapContainer);
+	map.components.add(mapBubbles);
+	map.objects.add(mapContainer);
 }
 
 // -----------------------------------------------------------------------------
 
-function getBubbleHTML( id)
-{
+function getBubbleHTML(id) {
+	'use strict';
+
 	try {
-		var str = '<div style="font-size:1.25em;">';
+		var str, i, l, data, level;
+
+		str = '<div style="font-size:1.25em;">';
 		str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
-		str += '<i class="fa fa-map-marker"></i> ' + dataBasics[ id]['name'] + '<br>';
-		if( dataBasics[ id]['population'] > 0) {
-			str += '<i class="fa fa-male"></i> ' + formatPopulation( dataBasics[ id]['population']) + ' Einwohner<br>';
+		str += '<i class="fa fa-map-marker"></i> ' + dataBasics[id].name + '<br>';
+		if (dataBasics[id].population > 0) {
+			str += '<i class="fa fa-male"></i> ' + formatPopulation(dataBasics[id].population) + ' Einwohner<br>';
 		}
 		str += '</div>';
 
-		if( typeof dataBasics[ id]['territorial'] !== 'undefined') {
+		if (typeof dataBasics[id].territorial !== 'undefined') {
 			str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
-			var data = dataBasics[ id]['territorial'];
-			var level = new Array;
+			data = dataBasics[id].territorial;
+			level = [];
 
-			if( data.length >= 2) {
-				level.push( data.substr( 0, 2)); // state
+			if (data.length >= 2) {
+				level.push(data.substr(0, 2)); // state
 			}
-			if( data.length >= 3) {
-				level.push( data.substr( 0, 3)); // governorate
+			if (data.length >= 3) {
+				level.push(data.substr(0, 3)); // governorate
 			}
-			if( data.length >= 5) {
-				level.push( data.substr( 0, 5)); // county
+			if (data.length >= 5) {
+				level.push(data.substr(0, 5)); // county
 			}
-			if( data.length >= 9) {
-				level.push( data.substr( 0, 9)); // union
+			if (data.length >= 9) {
+				level.push(data.substr(0, 9)); // union
 			}
-			if( data.length >= 12) {
-				level.push( data.substr( 0, 12)); // municipal
+			if (data.length >= 12) {
+				level.push(data.substr(0, 12)); // municipal
 			}
 
 			str += '<i class="fa fa-chevron-right"></i> Deutschland<br>';
-			for( var l = 0; l < level.length; ++l) {
-				for( var i = 0; i < dataBasics.length; ++i) {
-					if( typeof dataBasics[i]['territorial'] !== 'undefined') {
-						if( level[ l] == dataBasics[i].territorial) {
+			for (l = 0; l < level.length; ++l) {
+				for (i = 0; i < dataBasics.length; ++i) {
+					if (typeof dataBasics[i].territorial !== 'undefined') {
+						if (level[l] === dataBasics[i].territorial) {
 							str += '<i class="fa fa-chevron-right"></i> ' + dataBasics[i].name + '<br>';
 							break;
 						}
 					}
 				}
-				if( i >= dataBasics.length) {
+				if (i >= dataBasics.length) {
 //					str += '<i class="fa fa-map-marker"></i> ' + level[ l] + '<br>';
 				}
 			}
@@ -112,73 +118,73 @@ function getBubbleHTML( id)
 			str += '</div>';
 		}
 
-		if( typeof dataBasics[ id]['linkOGD'] !== 'undefined') {
-			str += '<i class="fa fa-check"></i> Hat ein <a href="' + dataBasics[ id]['linkOGD'] + '" target="_blank">Open Data Portal</a><br>';
+		if (typeof dataBasics[id].linkOGD !== 'undefined') {
+			str += '<i class="fa fa-check"></i> Hat ein <a href="' + dataBasics[id].linkOGD + '" target="_blank">Open Data Portal</a><br>';
 		} else {
 			str += '<i class="fa fa-times"></i> Hat kein Open Data Portal<br>';
 		}
-		if( typeof dataBasics[ id]['linkOGDMail'] !== 'undefined') {
-			str += '<i class="fa fa-check"></i> Hat einen <a href=mailto:"' + dataBasics[ id]['linkOGDMail'] + '">Open Data Ansprechpartner</a><br>';
+		if (typeof dataBasics[id].linkOGDMail !== 'undefined') {
+			str += '<i class="fa fa-check"></i> Hat einen <a href=mailto:"' + dataBasics[id].linkOGDMail + '">Open Data Ansprechpartner</a><br>';
 		}
 
-		if( 'firstnames' == filterDataset) {
-			var idata = basicIndexGetDataIndex( id);
+		if ('firstnames' === filterDataset) {
+			var idata = basicIndexGetDataIndex(id);
 
-			if(( -1 != idata) && (typeof dataFirstnames[ idata]['linkOGData'] !== 'undefined')) {
-				str += '<i class="fa fa-heart"></i> Enthält einen <a href="' + dataFirstnames[ idata]['linkOGData'] + '" target="_blank">Vornamen-Datensatz</a><br>';
+			if ((-1 !== idata) && (typeof dataFirstnames[idata]['linkOGData'] !== 'undefined')) {
+				str += '<i class="fa fa-heart"></i> Enthält einen <a href="' + dataFirstnames[idata]['linkOGData'] + '" target="_blank">Vornamen-Datensatz</a><br>';
 
-				if( typeof dataFirstnames[ idata]['linkOGDLicense'] !== 'undefined') {
-					var license = dataFirstnames[ idata]['linkOGDLicense'];
+				if (typeof dataFirstnames[idata]['linkOGDLicense'] !== 'undefined') {
+					var license = dataFirstnames[idata]['linkOGDLicense'];
 					var good = false;
 
-					if( 'CC 0' == license) {
+					if ('CC 0' === license) {
 						good = true;
-					} else if( 'CC BY 4.0' == license) {
+					} else if ('CC BY 4.0' === license) {
 						good = true;
-					} else if( 'CC BY 3.0' == license) {
+					} else if ('CC BY 3.0' === license) {
 						good = true;
-					} else if( 'DL DE 0 2.0' == license) {
+					} else if ('DL DE 0 2.0' === license) {
 						good = true;
-					} else if( 'DL DE BY 2.0' == license) {
+					} else if ('DL DE BY 2.0' === license) {
 						good = true;
 					}
 
-					if( good) {
+					if (good) {
 						str += '<i class="fa fa-heart"></i> Mit der Lizenz ' + license + '<br>';
 					} else {
 						str += '<i class="fa fa-check"></i> Mit der Lizenz ' + license + '<br>';
 					}
 				}
 			} else {
-				if( typeof dataBasics[ id]['linkOGD'] !== 'undefined') {
+				if (typeof dataBasics[id]['linkOGD'] !== 'undefined') {
 					str += '<i class="fa fa-times"></i> Kein Vornamen-Datensatz vorhanden<br>';
 				}
 
-				if((-1 != idata) && ( typeof dataFirstnames[ idata]['linkWebData'] !== 'undefined') && (dataFirstnames[ idata]['linkWebData'] != '')) {
-					str += '<i class="fa fa-check"></i> Vornamen auf der <a href="' + dataFirstnames[ idata]['linkWebData'] + '" target="_blank">Webseite</a><br>';
-				} else if( typeof dataBasics[ id]['linkOGD'] === 'undefined') {
+				if ((-1 != idata) && (typeof dataFirstnames[idata]['linkWebData'] !== 'undefined') && (dataFirstnames[ idata]['linkWebData'] != '')) {
+					str += '<i class="fa fa-check"></i> Vornamen auf der <a href="' + dataFirstnames[idata]['linkWebData'] + '" target="_blank">Webseite</a><br>';
+				} else if (typeof dataBasics[id]['linkOGD'] === 'undefined') {
 					str += '<i class="fa fa-times"></i> Keine Vornamen vorhanden<br>';
 				}
 
-				if((-1 != idata) && ( typeof dataFirstnames[ idata]['status'] !== 'undefined')) {
-					if( 'nodata' == dataFirstnames[ idata]['status']) {
+				if ((-1 != idata) && (typeof dataFirstnames[idata]['status'] !== 'undefined')) {
+					if ('nodata' == dataFirstnames[ idata]['status']) {
 						str += '<i class="fa fa-circle-o"></i> Keine Geburten registriert<br>';
-					} else if( 'fee' == dataFirstnames[ idata]['status']) {
+					} else if ('fee' == dataFirstnames[idata]['status']) {
 						str += '<i class="fa fa-warning"></i> Kostenpflichtige Auskunft<br>';
 					}
 				}
 			}
 		}
 
-		if( 'firstnames' == filterDataset) {
-			if(( -1 != idata) && (typeof dataFirstnames[ idata]['history'] !== 'undefined')) {
+		if ('firstnames' === filterDataset) {
+			if(( -1 != idata) && (typeof dataFirstnames[idata]['history'] !== 'undefined')) {
 				str += '<br>';
 
-				var historySize = dataFirstnames[ idata]['history'].length;
+				var historySize = dataFirstnames[idata]['history'].length;
 				for( var h = 0; h < historySize; ++h) {
 					str += '<div style="border-top:1px solid #aaaaaa;color:#aaaaaa;padding-top:0.5em;margin-top:0.5em;">';
-					str += '<i class="fa fa-calendar"></i> ' + dataFirstnames[ idata]['history'][ h]['date'] + '<br>';
-					str += '<i class="fa fa-comment-o"></i> ' + dataFirstnames[ idata]['history'][ h]['event'] + '</div>';
+					str += '<i class="fa fa-calendar"></i> ' + dataFirstnames[idata]['history'][h]['date'] + '<br>';
+					str += '<i class="fa fa-comment-o"></i> ' + dataFirstnames[idata]['history'][h]['event'] + '</div>';
 				}
 			}
 		} else {
