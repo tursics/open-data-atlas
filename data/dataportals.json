@@ -1,4 +1,4 @@
-var dataportals = [
+[
 	{
 		"name": "Bad Münstereifel",
 		"group": "city",
@@ -1123,4 +1123,4 @@ var dataportals = [
 		"linkOGD": "http://opendata.dwd.de/",
 		"beginOpenDataPortal": "2017-07-31"
 	}
-];
+]
