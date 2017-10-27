@@ -505,16 +505,6 @@
 		"territorial": "130030000000"
 	},
 	{
-		"name": "Neubrandenburg",
-		"group": "city",
-		"nuts": "DE802",
-		"population": 63437,
-		"lat": 53.55,
-		"lon": 13.26,
-		"linkOGD": "http://www.neubrandenburg.de/opendata/",
-		"territorial": "130710107107"
-	},
-	{
 		"name": "Hamburg",
 		"group": "city,state",
 		"municipality": 1,
