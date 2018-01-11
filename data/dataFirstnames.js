@@ -1456,9 +1456,12 @@ var dataFirstnames = [
 {
 	"nuts":"DEA11",
 	"linkWebData":"http://www.duesseldorf.de/standesamt/geburt/vorname/index.shtml",
+	"linkOGData":"https://opendata.duesseldorf.de/dataset/vornamen",
+	"linkOGDLicense":"DL DE 0 2.0",
 	"history":[
 		{"date":"18.10.2014","event":"Anfrage nach Vornamen"},
 		{"date":"12.01.2015","event":"Erneute Anfrage nach Vornamen"},
+		{"date":"06.12.2017","event":"Alle Namen von 2016 im Open Data Portal"},
 	],
 },
 {
