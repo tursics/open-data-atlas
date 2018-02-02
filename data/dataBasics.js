@@ -1066,6 +1066,14 @@ var dataBasics = [
 	],
 },
 {
+	"name":"Deutscher Wetterdienst",
+	"group":"other",
+	"nuts":"DE_DWD",
+	"lat":50.10,
+	"lon":8.74,
+	"linkOGD":"https://opendata.dwd.de/",
+},
+{
 	"name":"Bundesministerium für Umwelt, Naturschutz, Bau und Reaktorsicherheit (BMUB)",
 	"group":"supreme",
 	"nuts":"DE_BMUB",
