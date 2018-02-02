@@ -7,9 +7,7 @@
 	"lat":50.55,
 	"lon":6.76,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/bad-m%C3%BCnstereifel",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053660004004",
 },
 {
@@ -20,9 +18,7 @@
 	"lat":50.96,
 	"lon":6.65,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/bergheim",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053620008008",
 },
 {
@@ -33,9 +29,7 @@
 	"lat":50.83,
 	"lon":6.9,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/br%C3%BChl",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053620012012",
 },
 {
@@ -46,9 +40,7 @@
 	"lat":50.93,
 	"lon":6.56,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/elsdorf",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053620016016",
 },
 {
@@ -59,9 +51,7 @@
 	"lat":50.63,
 	"lon":6.48,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/heimbach",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053580012012",
 },
 {
@@ -72,9 +62,7 @@
 	"lat":50.71,
 	"lon":6.37,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/h%C3%BCrtgenwald",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053580016016",
 },
 {
@@ -85,9 +73,7 @@
 	"lat":50.92,
 	"lon":6.35,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/j%C3%BClich",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053580024024",
 },
 {
@@ -98,9 +84,7 @@
 	"lat":50.54,
 	"lon":6.55,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/kall",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053660024024",
 },
 {
@@ -111,9 +95,7 @@
 	"lat":50.87,
 	"lon":6.69,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/kerpen",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053620032032",
 },
 {
@@ -124,9 +106,7 @@
 	"lat":50.74,
 	"lon":6.48,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/kreuzau",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053580028028",
 },
 {
@@ -137,9 +117,7 @@
 	"lat":50.81,
 	"lon":6.34,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/langerwehe",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053580032032",
 },
 {
@@ -150,9 +128,7 @@
 	"lat":50.97,
 	"lon":6.26,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/linnich",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053580036036",
 },
 {
@@ -163,9 +139,7 @@
 	"lat":50.83,
 	"lon":6.53,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/merzenich",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053580040040",
 },
 {
@@ -176,9 +150,7 @@
 	"lat":51.00,
 	"lon":6.42,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/titz",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053580056056",
 },
 {
@@ -189,9 +161,7 @@
 	"lat":50.73,
 	"lon":6.59,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/vettwei%C3%9F",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053580060060",
 },
 {
@@ -202,9 +172,7 @@
 	"lat":50.82,
 	"lon":6.97,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/wesseling",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"053620040040",
 },
 {
@@ -213,10 +181,8 @@
 	"nuts":"DEA1_Niederrhein",
 	"lat":51.38,
 	"lon":6.57,
-	"_linkOGD":"http://offenesdatenportal.de/",
-	"_history":[
-		{"date":"16.04.2015","event":"Als Beta-Version gestartet"},
-	],
+	"linkOGD":"http://offenesdatenportal.de/",
+	"startPortal":"2015-04-16",
 },
 {
 	"name":"Wennigsen (Deister)",
@@ -235,9 +201,7 @@
 	"lat":52.52,
 	"lon":13.37,
 	"linkOGD":"https://mcloud.de/",
-	"history":[
-		{"date":"18.05.2016","event":"Open Data Portal startet"},
-	],
+	"startPortal":"2016-05-18",
 },
 {
 	"name":"Deutscher Wetterdienst",
@@ -335,10 +299,7 @@
 	"lon":10.57,
 	"linkOGD":"https://open.lklg.net/",
 	"territorial":"03355",
-	"history":[
-		{"date":"23.09.2015","event":"Portal ist im Aufbau (0 Datensätze)"},
-		{"date":"18.08.2016","event":"Start des Portals (104 Datensätze)"},
-	],
+	"startPortal":"2016-08-18",
 },
 {
 	"name":"Bedburg",
@@ -348,10 +309,7 @@
 	"lat":51.00,
 	"lon":6.56,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/bedburg",
-	"territorial_":"05 3 62 004",
-	"history":[
-		{"date":"29.04.2017","event":"Open Data Portal startet"},
-	],
+	"startPortal":"2017-04-29",
 },
 {
 	"name":"Baustelleninformationssystem des Bundes und der Länder",
@@ -406,10 +364,6 @@
 	"lat":48.18,
 	"lon":16.42,
 	"linkOGD":"http://data.statistik.gv.at",
-	"history":[
-		{"date":"05.08.2013","event":"Anfrage nach Open Data"},
-		{"date":"20.08.2013","event":"Antwort: Portal kommt voraussichtlich Q1 2014"},
-	],
 },
 {
 	"name":"Rostock",
@@ -473,9 +427,7 @@
 	"lon":13.06,
 	"territorial":"120540000000",
 	"linkOGD":"https://opendata.potsdam.de/",
-	"history":[
-		{"date":"11.01.2018","event":"Open Data Portal startet"},
-	],
+	"startPortal":"2018-01-11",
 },
 {
 	"name":"Braunschweig",
@@ -485,10 +437,6 @@
 	"lat":52.26,
 	"lon":10.52,
 	"linkOGD":"http://www.braunschweig.de/leben/stadtplanung_bauen/geoinformationen/opengeodata.html",
-	"history":[
-		{"date":"03.04.2014","event":"Anfrage nach Open Data"},
-		{"date":"08.04.2014","event":"Antwort: Kein OGD-Portal geplant - nur Open Geodaten"},
-	],
 	"territorial":"031010000000",
 },
 {
@@ -520,9 +468,7 @@
 	"lon":7.10,
 	"territorial":"055130000000",
 	"linkOGD":"https://opendata.gelsenkirchen.de/",
-	"history":[
-		{"date":"23.05.2017","event":"Open Data Portal öffnet sich"},
-	],
+	"startPortal":"2017-05-23",
 },
 {
 	"name":"Halle (Saale)",
@@ -593,9 +539,7 @@
 	"lat":51.33,
 	"lon":6.56,
 	"linkOGD":"https://www.offenesdatenportal.de/organization/krefeld",
-	"history":[
-		{"date":"13.01.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-01-13",
 	"territorial":"051140000000",
 },
 {
@@ -606,9 +550,7 @@
 	"lat":51.26,
 	"lon":6.67,
 	"linkOGD":"https://opendata.meerbusch.de/",
-	"history":[
-		{"date":"11.02.2017","event":"Open Data Portal startet"},
-	],
+	"startPortal":"2017-02-11",
 	"territorial":"051620022022",
 },
 {
@@ -619,9 +561,7 @@
 	"lat":51.25,
 	"lon":7.21,
 	"linkOGD":"http://www.offenedaten-wuppertal.de/",
-	"history":[
-		{"date":"05.09.2016","event":"Open Data öffnet"},
-	],
+	"startPortal":"2016-09-05",
 	"territorial":"051240000000",
 },
 {
@@ -632,9 +572,7 @@
 	"lat":51.22,
 	"lon":6.78,
 	"linkOGD":"https://opendata.duesseldorf.de/",
-	"history":[
-		{"date":"06.12.2017","event":"Open Data öffnet"},
-	],
+	"startPortal":"2017-12-06",
 	"territorial":"051110000000",
 },
 {
@@ -646,9 +584,7 @@
 	"lon":6.44,
 	"territorial":"051160000000",
 	"linkOGD":"http://offenedaten.moenchengladbach.de/",
-	"history":[
-		{"date":"11.05.2015","event":"Start des Datenportals"},
-	],
+	"startPortal":"2015-05-11",
 },
 {
 	"name":"govdata - Datenportal für Deutschland",
@@ -691,10 +627,7 @@
 	"lon":11.58,
 	"territorial":"160530000000",
 	"linkOGD":"https://opendata.jena.de/",
-	"history":[
-		{"date":"14.01.2016","event":"Test von CKAN. Qualität der Daten wird verbessert."},
-		{"date":"20.12.2016","event":"Start des Datenportals"},
-	],
+	"startPortal":"2016-12-20",
 },
 {
 	"name":"Chemnitz",
@@ -704,9 +637,7 @@
 	"lat":50.83,
 	"lon":12.92,
 	"linkOGD":"http://portal-chemnitz.opendata.arcgis.com/",
-	"history":[
-		{"date":"07.03.2017","event":"Start des Datenportals"},
-	],
+	"startPortal":"2017-03-07",
 	"territorial":"145110000000",
 },
 {
@@ -737,9 +668,7 @@
 	"lat":50.78,
 	"lon":6.85,
 	"linkOGD":"http://offenedaten.kdvz-frechen.de/group/kreis-euskirchen",
-	"history":[
-		{"date":"08.11.2016","event":"Open Data startet"},
-	],
+	"startPortal":"2016-11-08",
 	"territorial":"05366",
 },
 {
@@ -750,9 +679,7 @@
 	"lat":50.11,
 	"lon":8.68,
 	"linkOGD":"http://offenedaten.frankfurt.de/",
-	"history":[
-		{"date":"15.10.2014","event":"Portal gestartet"},
-	],
+	"startPortal":"2014-10-15",
 	"territorial":"064120000000",
 },
 {
@@ -763,9 +690,7 @@
 	"lat":51.09,
 	"lon":6.84,
 	"linkOGD":"https://opendata.dormagen.de",
-	"history":[
-		{"date":"07.12.2017","event":"Portal gestartet"},
-	],
+	"startPortal":"2017-12-07",
 },
 {
 	"name":"Rheinland-Pfalz",
@@ -786,11 +711,7 @@
 	"lat":49.48,
 	"lon":8.46,
 	"linkOGD":"https://opendata.mannheim.de/",
-	"history":[
-		{"date":"10.01.2015","event":"Anfrage nach Open Data"},
-		{"date":"14.01.2015","event":"Antwort: In Q1 gibt es eine Gemeinderatsentscheidung, in Q3 geht Portal online"},
-		{"date":"24.11.2015","event":"Beta-Version vom Open Data ist da"},
-	],
+	"startPortal":"2015-11-24",
 	"territorial":"082220000000",
 },
 {
@@ -822,9 +743,7 @@
 	"population":10512000,
 	"lat":48.53,
 	"lon":9.05,
-	"history":[
-		{"date":"08.10.2014","event":"Der Testbetrieb wurde gestartet"},
-	],
+	"startPortal":"2014-10-08",
 	"linkOGD":"http://opendata.service-bw.de",
 	"territorial":"08",
 },
@@ -884,9 +803,7 @@
 	"lat":48.13,
 	"lon":11.57,
 	"linkOGD":"http://www.opengov-muenchen.de",
-	"history":[
-		{"date":"19.12.2014","event":"Testbetrieb Open Data Portal"},
-	],
+	"startPortal":"2014-12-19",
 	"territorial":"091620000000",
 },
 {
@@ -926,11 +843,6 @@
 	"lat":47.99,
 	"lon":7.84,
 	"linkOGD":"http://opendata.freiburg.de",
-	"history":[
-		{"date":"16.07.2014","event":"Anfrage bei Koordinierungsstelle OGD"},
-		{"date":"28.07.2014","event":"Antwort: Open Data soll im Jahr 2015 kommen"},
-		{"date":"irgendwann","event":"Start des Datenportals"},
-	],
 	"territorial":"083110000000",
 },
 {
@@ -942,9 +854,7 @@
 	"lat":47.84,
 	"lon":13.28,
 	"linkOGD":"http://data.salzburg.gv.at/",
-	"history":[
-		{"date":"30.06.2014","event":"Portal gestartet"},
-	],
+	"startPortal":"2014-06-30",
 },
 {
 	"name":"Salzburg (Stadt)",
@@ -1067,10 +977,6 @@
 	"lat":46.80,
 	"lon":8.23,
 	"linkOGD":"http://opendata.swiss/",
-	"history":[
-		{"date":"2013","event":"Pilot Portal"},
-		{"date":"02.02.2016","event":"Neues Portal"},
-	],
 },
 {
 	"name":"Kärnten",
