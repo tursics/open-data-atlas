@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=7; IE=EmulateIE9; IE=10" />
+
+	<meta name="author" content="Thomas Tursics" />
+	<meta name="keywords" content="Open Data,Open,Data,Daten,Atlas" />
+	<meta name="robots" content="index,follow" />
+
+ 	<title>Open Data Atlas</title>
+	<meta property="og:title" content="Open Data Atlas" />
+	<meta name="twitter:title" content="Open Data Atlas">
+
+	<meta name="description" content="Alle Open Data Portale in Deutschland, Österreich und der Schweiz." />
+	<meta property="og:description" content="Alle Open Data Portale in Deutschland, Österreich und der Schweiz." />
+	<meta name="twitter:description" content="Alle Open Data Portale in Deutschland, Österreich und der Schweiz.">
+
+	<link rel="image_src" type="image/png" href="http://opendata.tursics.de/images/facebookimage.png" />
+	<meta property="og:image" content="http://opendata.tursics.de/images/facebookimage.png" />
+	<meta name="twitter:image:src" content="http://opendata.tursics.de/images/facebookimage.png">
+
+	<meta property="og:url" content="http://opendata.tursics.de/">
+	<meta name="twitter:domain" content="http://opendata.tursics.de/">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:creator" content="@tursics">
+
+	<link rel="stylesheet" href="lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
+	<link rel="stylesheet" href="lib/font-awesome-4.6.3/css/font-awesome.css">
+	<link rel="stylesheet" href="lib/leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" href="index-new.css" />
+	<link rel="stylesheet" href="lib/leaflet.awesome-markers-2.0.2/leaflet.awesome-markers.css">
+
+	<script src="lib/leaflet-0.7.3/leaflet.js"></script>
+	<script src="lib/jquery.mobile-1.4.2/jquery-1.11.1.min.js"></script>
+	<script src="index-new.js"></script>
+	<script src="lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	<script src="lib/jquery.autocomplete-1.2.25/jquery.autocomplete.min.js"></script>
+	<script src="lib/leaflet.awesome-markers-2.0.2/leaflet.awesome-markers.min.js"></script>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/assets/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./assets/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon-96x96.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/assets/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div data-role="page" id="pageMap">
+		<div role="main" class="ui-content" id="mapContainer"></div>
+		<div id="searchBox">
+			<h3>Open Data Atlas</h3>
+			<div class="sample">
+				Wähle das Land aus:
+			</div>
+			<div class="module">
+				<select>
+				</select>
+			</div>
+			<div class="searchInput">
+				<input type="text" name="schools" id="autocomplete" placeholder="Gebe einen Schulnamen ein" />
+				<div><i class="fa fa-search" aria-hidden="true"></i></div>
+			</div>
+		</div>
+		<div id="receiptBox">
+			<div id="receiptClose"><i class="fa fa-close" aria-hidden="true"></i></div>
+			<div id="receipt" class="normal"></div>
+			<div id="receiptInfo"><i class="fa fa-info-circle" aria-hidden="true"></i> Noch mehr Informationen erscheinen, wenn sie auf die einzelnen Zeilen klicken.</div>
+		</div>
+		<div data-role="popup" id="popupShare" data-theme="a" class="ui-corner-all">
+			<div style="padding:0;margin:-1px 0 0 -1px;overflow-x:hidden;">
+				<div data-role="tabs" id="tabs" style="padding:0;">
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#shareLink" id="tabShareLink" data-ajax="false" class="ui-btn-active">Link teilen</a></li>
+							<li><a href="#embedMap" id="tabEmbedMap" data-ajax="false">Karte einbetten</a></li>
+						</ul>
+					</div>
+					<div id="shareLink" class="ui-body-d ui-content">
+						<div>
+							In sozialen Netzwerken teilen:
+							<div class="social">
+								<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fopendata.tursics.de%2Findex.html" rel="popup" title="Bei Facebook teilen">Facebook<span></span></a>
+								<a class="twitter"  href="https://twitter.com/intent/tweet?text=Wie%20kaputt%20ist%20deine%20Schule?%20Finde%20es%20hier%20heraus&amp;url=http://opendata.tursics.de/index.html" rel="popup" title="Bei Twitter teilen">Twitter<span></span></a>
+								<a class="whatsapp" href="whatsapp://send?text=Wie%20kaputt%20ist%20deine%20Schule?%20Finde%20es%20hier%20heraus%3A%20http%3A%2F%2Fopendata.tursics.de%2Findex.html" rel="popup" title="Bei WhatsApp teilen">WhatsApp<span></span></a>
+							</div>
+						</div>
+						<div>
+							oder den Link kopieren:<br>
+							<input value="http://opendata.tursics.de/index.html">
+						</div>
+						<div style="text-align:center;margin:0;"><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back">Schließen</a></div>
+					</div>
+					<div id="embedMap" class="ui-body-d ui-content">
+						<div style="width:400px">
+							Den Codeschnipsel können Sie direkt in Ihre Webseite oder in Ihren Wordpress-Blog einbauen.<br>
+						</div>
+						<div class="ui-field-contain ui-grid-b">
+							<div class="ui-block-a" style="padding:0 1em 0 0;margin:0;">
+								<select id="selectEmbedSize" data-native-menu="false" data-inline="false">
+									<option value="400x300">Klein</option>
+									<option value="650x450">Mittel</option>
+									<option value="800x600">Groß</option>
+								</select>
+							</div>
+							<div class="ui-block-b" style="width:66.666%;padding:.25em 0 0 0;margin:0;">
+								<input id="inputEmbedURI" value="" data-inline="true">
+							</div>
+						</div>
+						<iframe></iframe>
+						<div style="text-align:center;margin:.8em 0 0 0;"><a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back">Schließen</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="popup" id="popupInfo" data-theme="a" class="ui-corner-all">
+			<div style="padding:10px 20px;">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
