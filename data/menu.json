@@ -1,0 +1,29 @@
+[
+	{
+		"key": "de",
+		"title": "Deutschland",
+		"data": "data-de",
+		"config": "config-de",
+		"lat": 51.340164,
+		"lng": 6.602664,
+		"zoom": 12
+	},
+	{
+		"key": "at",
+		"title": "Österreich",
+		"data": "data-at",
+		"config": "config-at",
+		"lat": 51.340164,
+		"lng": 6.602664,
+		"zoom": 12
+	},
+	{
+		"key": "ch",
+		"title": "Schweiz",
+		"data": "data-ch",
+		"config": "config-ch",
+		"lat": 51.340164,
+		"lng": 6.602664,
+		"zoom": 12
+	}
+]
