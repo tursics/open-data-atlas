@@ -98,4 +98,4 @@ Chemnitz;city;http://portal-chemnitz.opendata.arcgis.com/;;;2017-03-07;241210;50
 Leipzig;city;https://opendata.leipzig.de;;;;520838;51.34;12.37;DED51;147130000000;
 Halle (Saale);city;http://www.daten.halle.de;;;;231440;51.48;11.97;DEE02;150020000000;
 Jena;city;https://opendata.jena.de/;;;2016-12-20;106915;50.92;11.58;DEG03;160530000000;
-Altenburg;city;"http://www.altenburg.eu/sixcms/detail.php?id=139875&amp;_nav_id1=2505&amp;_nav_id2=5174&amp;_nav_id3=139884&amp;lang=de";;;;32992;50.98;12.43;DEG0M001;160770001001;
+Altenburg;city;http://www.altenburg.eu/sixcms/detail.php;;;;32992;50.98;12.43;DEG0M001;160770001001;
