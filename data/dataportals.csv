@@ -1,101 +1,101 @@
-title;type;url;mail;endpoint;begin;population;lat;lon;nuts;territorial;municipality
-Österreich;country;http://data.gv.at/;;;;8504850;47.6;13.78;AT;;2354
-Statistik Österreich;other;http://data.statistik.gv.at;;;;0;48.18;16.42;AT_autista;;
-Open Data Portal Österreich;other;https://www.opendataportal.at/;;;;0;48.2;16.35;AT_odp;;
-Wirtschaftsuniversität Wien;other;http://data.wu.ac.at/;;;;0;48.21;16.4;AT_wuw;;
-Niederösterreich;state;http://data.noe.gv.at/;;;;1618592;48;16;AT12;;573
-Wien;city+state;http://data.wien.gv.at/;;;;1741246;48.2;16.37;AT13;;1
-Kärnten;state;http://data.ktn.gv.at/;;;;555473;46.76;13.81;AT21;;132
-Klagenfurt;city;http://www.data.gv.at/auftritte/?organisation=stadt-klagenfurt;;;;95450;46.61;14.3;AT21120101;;
-Steiermark;state;http://data.steiermark.at/;;;;1210971;47.47;13.6;AT22;;539
-Graz;city;http://data.graz.gv.at/;;;;265778;47.06;15.43;AT221;;
-Oberösterreich;state;http://data.ooe.gv.at/;;;;1418498;48;13.5;AT31;;444
-Linz;city;http://data.linz.gv.at/;;;;191501;48.3;14.29;AT31240101;;
-Engerwitzdorf;city;http://data.engerwitzdorf.gv.at/;;;;8552;48.33;14.42;AT31241605;;
-Kremsmünster;city;http://www.data.gv.at/auftritte/?organisation=gemeinde-kremsmuenster;;;;6419;48.05;14.13;AT31440907;;
-Salzburg (Land);state;http://data.salzburg.gv.at/;;;2014-06-30;531898;47.84;13.28;AT32;;119
-Salzburg (Stadt);city;http://data.stadt-salzburg.at/;;;;145871;47.8;13.03;AT32350101;;
-Tirol;state;http://data.tirol.gv.at/;;;;715888;47;11.33;AT33;;279
-Innsbruck;city;http://data.innsbruck.gv.at/;;;;122458;47.26;11.39;AT332;;
-Vorarlberg;state;http://data.vorarlberg.gv.at/;;;;376347;47.24;9.89;AT34;;96
-Schweiz;country;http://opendata.swiss/;;;;8112200;46.8;8.23;CH;;2551
-Kanton Genf;state;https://opendata.swiss/de/organization/canton-geneve;;;;484400;46.36;6.17;CH013;;
-Bern;city;https://opendata.swiss/de/organization/stadt-bern;;;;127515;46.95;7.43;CH0210351;;
-Kanton Basel-Stadt;state;https://opendata.swiss/de/organization/kanton-basel-stadt;;;;191800;47.59;7.69;CH031;;
-Kanton Zürich;state;https://opendata.swiss/de/organization/kanton-zuerich;;;;1466100;47.69;8.64;CH040;;
-Zürich;city;http://www.stadt-zuerich.ch/opendata;;;;400028;47.37;8.54;CH0400261;;
-govdata - Datenportal für Deutschland;country+other;https://www.govdata.de/;;;;80380000;53.55;9.98;DE;0;11116
-Baustelleninformationssystem des Bundes und der Länder;other;http://www.bast.de/DE/FB-F/Baustelleninformation/baustelleninformation_hidden_node.html;;;;0;50.95;7.14;DE_bast;;
-Bundesamt für Kartographie und Geodäsie;other;http://www.geodatenzentrum.de/geodaten/gdz_rahmen.gdz_div?gdz_spr=deu&gdz_akt_zeile=5&gdz_anz_zeile=0&gdz_user_id=0;;;;0;50.09;8.66;DE_bkg;;
-Bundesministerium für Verkehr und digitale Infrastruktur (BMVI);supreme;https://www.mcloud.de/;;;2016-05-18;;52.52;13.37;DE_BMVI;;
-Deutsche Bahn;other;http://data.deutschebahn.com/;;;;0;52.5;13.37;DE_db;;
-Deutscher Wetterdienst;other;https://opendata.dwd.de/;;;;;50.1;8.74;DE_DWD;;
-Geobasisdaten und Geodatendienste der Vermessungsverwaltung Baden-Württemberg;other;https://www.lgl-bw.de/lgl-internet/opencms/de/07_Produkte_und_Dienstleistungen/Open_Data_Initiative/;;;;0;48.77;9.17;DE_lglbw;;
-OffeneDaten.de;other;https://offenedaten.de/;;;;0;52.51;13.42;DE_odde;;
-Regionalverband Ruhr - Geodatenshop;other;http://www.geoshop.metropoleruhr.de/public/rvr/Startseite;;;;0;51.44;7.01;DE_rvrgds;;
-Baden-Württemberg;state;http://opendata.service-bw.de;;;2014-10-08;10512000;48.53;9.05;DE1;8;1101
-Karlsruhe;city;https://transparenz.karlsruhe.de/;;;;296033;49.01;8.4;DE122;82120000000;
-Mannheim;city;https://opendata.mannheim.de/;;;2015-11-24;294627;49.48;8.46;DE126;82220000000;
-Freiburg im Breisgau;city;http://opendata.freiburg.de;;;;218043;47.99;7.84;DE131;83110000000;
-Ortenaukreis;district;http://www.ortenaukreis.de/Online-Dienste/Open-Data;;;;412678;48.46;7.94;DE134;8317;
-Ulm;city;http://daten.ulm.de/;;;;117977;48.4;9.98;DE144;84210000000;
-Bayern;state;http://www.opendata.bayern.de/;;;;12443000;48.94;11.39;DE2;9;2056
-München;city;http://www.opengov-muenchen.de;;;2014-12-19;1388308;48.13;11.57;DE212;91620000000;
-Berlin;city+state;http://daten.berlin.de/;;;;3375222;52.51;13.4;DE3;110000000000;1
-Potsdam;city;https://opendata.potsdam.de/;;;2018-01-11;159456;52.39;13.06;DE404;120540000000;
-Freie Hansestadt Bremen;state;http://daten.bremen.de/;;;;657391;53.34;8.59;DE5;4;2
-Hamburg;city+state;http://daten.hamburg.de/;;;;1734272;53.55;9.99;DE6;20000000000;1
-Frankfurt am Main;city;http://offenedaten.frankfurt.de/;;;2014-10-15;687775;50.11;8.68;DE712;64120000000;
-Neubrandenburg;city;http://www.neubrandenburg.de/opendata/;;;;63437;53.55;13.26;DE802;130710107107;
-Rostock;city;http://www.opendata-hro.de/;;;;202887;54.08;12.13;DE803;130030000000;
-Braunschweig;city;http://www.braunschweig.de/leben/stadtplanung_bauen/geoinformationen/opengeodata.html;;;;245798;52.26;10.52;DE911;31010000000;
-Wennigsen (Deister);city;http://data.wennigsen.net/;;;;13933;52.27;9.57;DE929020;32410020020;
-Landkreis Lüneburg;district;https://open.lklg.net/;;;2016-08-18;176727;53.23;10.57;DE935;3355;
-Nordrhein-Westfalen;state;https://open.nrw/de/dat_kat;;;;17545000;52.52;8.65;DEA;5;396
-Niederrhein (Region);district;http://offenesdatenportal.de/;;;2015-04-16;;51.38;6.57;DEA1_Niederrhein;;
-Düsseldorf;city;https://opendata.duesseldorf.de/;;;2017-12-06;593682;51.22;6.78;DEA11;51110000000;
-Krefeld;city;https://www.offenesdatenportal.de/organization/krefeld;;;2016-01-13;222026;51.33;6.56;DEA14;51140000000;
-Mönchengladbach;city;http://offenedaten.moenchengladbach.de/;;;2015-05-11;255087;51.19;6.44;DEA15;51160000000;
-Mülheim an der Ruhr;city;http://open.muelheim-ruhr.de;;;;166654;51.42;6.88;DEA16;51170000000;
-Wuppertal;city;http://www.offenedaten-wuppertal.de/;;;2016-09-05;342885;51.25;7.21;DEA1A;51240000000;
-Kreis Kleve;district;https://www.offenesdatenportal.de/organization/kreis-kleve;;;;302698;51.78;6.13;DEA1B;5154;
-Stadt Kleve;city;https://www.offenesdatenportal.de/organization/stadt-kleve;;;;48172;51.78;6.13;DEA1B036;51540036036;
-Wachtendonk;city;https://www.offenesdatenportal.de/organization/gemeinde-wachtendonk;;;;7898;51.4;6.33;DEA1B060;51540060060;
-Dormagen;city;https://opendata.dormagen.de;;;2017-12-07;64064;51.09;6.84;DEA1D004;;
-Meerbusch;city;https://opendata.meerbusch.de/;;;2017-02-11;56193;51.26;6.67;DEA1D022;51620022022;
-Kreis Viersen;district;https://www.offenesdatenportal.de/organization/kreis-viersen;;;;294921;51.25;6.39;DEA1E;5166;
-Moers;city;http://offenedaten.moers.de/;;;;103504;51.45;6.62;DEA1F024;51700024024;
-Stadt Wesel;city;http://opendata.wesel.de/;;;;60070;51.65;6.61;DEA1F048;51700048048;
-Bonn;city;http://opendata.bonn.de/;;;;309869;50.73;7.09;DEA22;53140000000;
-Köln;city;http://offenedaten-koeln.de/;;;;1024373;50.93;6.95;DEA23;53150000000;
-Heimbach (Eifel);city;http://offenedaten.kdvz-frechen.de/group/heimbach;;;2016-11-08;4366;50.63;6.48;DEA26012;53580012012;
-Hürtgenwald;city;http://offenedaten.kdvz-frechen.de/group/h%C3%BCrtgenwald;;;2016-11-08;8780;50.71;6.37;DEA26016;53580016016;
-Jülich;city;http://offenedaten.kdvz-frechen.de/group/j%C3%BClich;;;2016-11-08;32601;50.92;6.35;DEA26024;53580024024;
-Kreuzau;city;http://offenedaten.kdvz-frechen.de/group/kreuzau;;;2016-11-08;17441;50.74;6.48;DEA26028;53580028028;
-Langerwehe;city;http://offenedaten.kdvz-frechen.de/group/langerwehe;;;2016-11-08;13791;50.81;6.34;DEA26032;53580032032;
-Linnich;city;http://offenedaten.kdvz-frechen.de/group/linnich;;;2016-11-08;12591;50.97;6.26;DEA26036;53580036036;
-Merzenich;city;http://offenedaten.kdvz-frechen.de/group/merzenich;;;2016-11-08;9950;50.83;6.53;DEA26040;53580040040;
-Titz;city;http://offenedaten.kdvz-frechen.de/group/titz;;;2016-11-08;8277;51;6.42;DEA26056;53580056056;
-Vettweiß;city;http://offenedaten.kdvz-frechen.de/group/vettwei%C3%9F;;;2016-11-08;9223;50.73;6.59;DEA26060;53580060060;
-Bedburg;city;http://offenedaten.kdvz-frechen.de/group/bedburg;;;2017-04-29;23334;51;6.56;DEA27004;;
-Bergheim;city;http://offenedaten.kdvz-frechen.de/group/bergheim;;;2016-11-08;59656;50.96;6.65;DEA27008;53620008008;
-Brühl (Rheinland);city;http://offenedaten.kdvz-frechen.de/group/br%C3%BChl;;;2016-11-08;44768;50.83;6.9;DEA27012;53620012012;
-Elsdorf (Rheinland);city;http://offenedaten.kdvz-frechen.de/group/elsdorf;;;2016-11-08;21232;50.93;6.56;DEA27016;53620016016;
-Kerpen;city;http://offenedaten.kdvz-frechen.de/group/kerpen;;;2016-11-08;65477;50.87;6.69;DEA27032;53620032032;
-Wesseling;city;http://offenedaten.kdvz-frechen.de/group/wesseling;;;2016-11-08;35975;50.82;6.97;DEA27040;53620040040;
-Kreis Euskirchen;district;http://offenedaten.kdvz-frechen.de/group/kreis-euskirchen;;;2016-11-08;191165;50.78;6.85;DEA28;5366;
-Bad Münstereifel;city;http://offenedaten.kdvz-frechen.de/group/bad-m%C3%BCnstereifel;;;2016-11-08;17367;50.55;6.76;DEA28004;53660004004;
-Kall;city;http://offenedaten.kdvz-frechen.de/group/kall;;;2016-11-08;11229;50.54;6.55;DEA28024;53660024024;
-Aachen;city;http://offenedaten.aachen.de/;;;;240086;50.77;6.08;DEA2D002;53340002002;
-Gelsenkirchen;city;https://opendata.gelsenkirchen.de/;;;2017-05-23;257607;51.51;7.1;DEA32;55130000000;
-Münster (Westfalen);city;http://www.muenster.de/stadt/katasteramt/geodatenmanagement.html;;;;296599;51.96;7.62;DEA33;55150000000;
-Bochum;city;http://www.bochum.de/opendata;;;;362213;51.48;7.21;DEA51;59110000000;
-Herne;city;http://www.herne.de/kommunen/herne/ttw.nsf/id/DE_Open-Data;;;;154563;51.54;7.22;DEA55;59160000000;
-Arnsberg;city;http://offenedaten.arnsberg.de;;;;73501;51.39;8.06;DEA5705958004;59580004004;
-Rheinland-Pfalz;state;http://daten.rlp.de/;;;;3995000;49.91;7.44;DEB;7;2306
-Sachsen;state;http://www.opendata.sachsen.de/;;;;4054000;51.06;13.15;DED;14;432
-Chemnitz;city;http://portal-chemnitz.opendata.arcgis.com/;;;2017-03-07;241210;50.83;12.92;DED41;145110000000;
-Leipzig;city;https://opendata.leipzig.de;;;;520838;51.34;12.37;DED51;147130000000;
-Halle (Saale);city;http://www.daten.halle.de;;;;231440;51.48;11.97;DEE02;150020000000;
-Jena;city;https://opendata.jena.de/;;;2016-12-20;106915;50.92;11.58;DEG03;160530000000;
-Altenburg;city;http://www.altenburg.eu/sixcms/detail.php;;;;32992;50.98;12.43;DEG0M001;160770001001;
+title,type,url,mail,endpoint,begin,population,lat,lon,nuts,territorial,municipality
+Österreich,country,http://data.gv.at/,,,,8504850,47.6,13.78,AT,,2354
+Statistik Österreich,other,http://data.statistik.gv.at,,,,0,48.18,16.42,AT_autista,,
+Open Data Portal Österreich,other,https://www.opendataportal.at/,,,,0,48.2,16.35,AT_odp,,
+Wirtschaftsuniversität Wien,other,http://data.wu.ac.at/,,,,0,48.21,16.4,AT_wuw,,
+Niederösterreich,state,http://data.noe.gv.at/,,,,1618592,48,16,AT12,,573
+Wien,city+state,http://data.wien.gv.at/,,,,1741246,48.2,16.37,AT13,,1
+Kärnten,state,http://data.ktn.gv.at/,,,,555473,46.76,13.81,AT21,,132
+Klagenfurt,city,http://www.data.gv.at/auftritte/?organisation=stadt-klagenfurt,,,,95450,46.61,14.3,AT21120101,,
+Steiermark,state,http://data.steiermark.at/,,,,1210971,47.47,13.6,AT22,,539
+Graz,city,http://data.graz.gv.at/,,,,265778,47.06,15.43,AT221,,
+Oberösterreich,state,http://data.ooe.gv.at/,,,,1418498,48,13.5,AT31,,444
+Linz,city,http://data.linz.gv.at/,,,,191501,48.3,14.29,AT31240101,,
+Engerwitzdorf,city,http://data.engerwitzdorf.gv.at/,,,,8552,48.33,14.42,AT31241605,,
+Kremsmünster,city,http://www.data.gv.at/auftritte/?organisation=gemeinde-kremsmuenster,,,,6419,48.05,14.13,AT31440907,,
+Salzburg (Land),state,http://data.salzburg.gv.at/,,,2014-06-30,531898,47.84,13.28,AT32,,119
+Salzburg (Stadt),city,http://data.stadt-salzburg.at/,,,,145871,47.8,13.03,AT32350101,,
+Tirol,state,http://data.tirol.gv.at/,,,,715888,47,11.33,AT33,,279
+Innsbruck,city,http://data.innsbruck.gv.at/,,,,122458,47.26,11.39,AT332,,
+Vorarlberg,state,http://data.vorarlberg.gv.at/,,,,376347,47.24,9.89,AT34,,96
+Schweiz,country,http://opendata.swiss/,,,,8112200,46.8,8.23,CH,,2551
+Kanton Genf,state,https://opendata.swiss/de/organization/canton-geneve,,,,484400,46.36,6.17,CH013,,
+Bern,city,https://opendata.swiss/de/organization/stadt-bern,,,,127515,46.95,7.43,CH0210351,,
+Kanton Basel-Stadt,state,https://opendata.swiss/de/organization/kanton-basel-stadt,,,,191800,47.59,7.69,CH031,,
+Kanton Zürich,state,https://opendata.swiss/de/organization/kanton-zuerich,,,,1466100,47.69,8.64,CH040,,
+Zürich,city,http://www.stadt-zuerich.ch/opendata,,,,400028,47.37,8.54,CH0400261,,
+govdata - Datenportal für Deutschland,country+other,https://www.govdata.de/,,,,80380000,53.55,9.98,DE,0,11116
+Baustelleninformationssystem des Bundes und der Länder,other,http://www.bast.de/DE/FB-F/Baustelleninformation/baustelleninformation_hidden_node.html,,,,0,50.95,7.14,DE_bast,,
+Bundesamt für Kartographie und Geodäsie,other,http://www.geodatenzentrum.de/geodaten/gdz_rahmen.gdz_div?gdz_spr=deu&gdz_akt_zeile=5&gdz_anz_zeile=0&gdz_user_id=0,,,,0,50.09,8.66,DE_bkg,,
+Bundesministerium für Verkehr und digitale Infrastruktur (BMVI),supreme,https://www.mcloud.de/,,,2016-05-18,,52.52,13.37,DE_BMVI,,
+Deutsche Bahn,other,http://data.deutschebahn.com/,,,,0,52.5,13.37,DE_db,,
+Deutscher Wetterdienst,other,https://opendata.dwd.de/,,,,,50.1,8.74,DE_DWD,,
+Geobasisdaten und Geodatendienste der Vermessungsverwaltung Baden-Württemberg,other,https://www.lgl-bw.de/lgl-internet/opencms/de/07_Produkte_und_Dienstleistungen/Open_Data_Initiative/,,,,0,48.77,9.17,DE_lglbw,,
+OffeneDaten.de,other,https://offenedaten.de/,,,,0,52.51,13.42,DE_odde,,
+Regionalverband Ruhr - Geodatenshop,other,http://www.geoshop.metropoleruhr.de/public/rvr/Startseite,,,,0,51.44,7.01,DE_rvrgds,,
+Baden-Württemberg,state,http://opendata.service-bw.de,,,2014-10-08,10512000,48.53,9.05,DE1,8,1101
+Karlsruhe,city,https://transparenz.karlsruhe.de/,,,,296033,49.01,8.4,DE122,82120000000,
+Mannheim,city,https://opendata.mannheim.de/,,,2015-11-24,294627,49.48,8.46,DE126,82220000000,
+Freiburg im Breisgau,city,http://opendata.freiburg.de,,,,218043,47.99,7.84,DE131,83110000000,
+Ortenaukreis,district,http://www.ortenaukreis.de/Online-Dienste/Open-Data,,,,412678,48.46,7.94,DE134,8317,
+Ulm,city,http://daten.ulm.de/,,,,117977,48.4,9.98,DE144,84210000000,
+Bayern,state,http://www.opendata.bayern.de/,,,,12443000,48.94,11.39,DE2,9,2056
+München,city,http://www.opengov-muenchen.de,,,2014-12-19,1388308,48.13,11.57,DE212,91620000000,
+Berlin,city+state,http://daten.berlin.de/,,,,3375222,52.51,13.4,DE3,110000000000,1
+Potsdam,city,https://opendata.potsdam.de/,,,2018-01-11,159456,52.39,13.06,DE404,120540000000,
+Freie Hansestadt Bremen,state,http://daten.bremen.de/,,,,657391,53.34,8.59,DE5,4,2
+Hamburg,city+state,http://daten.hamburg.de/,,,,1734272,53.55,9.99,DE6,20000000000,1
+Frankfurt am Main,city,http://offenedaten.frankfurt.de/,,,2014-10-15,687775,50.11,8.68,DE712,64120000000,
+Neubrandenburg,city,http://www.neubrandenburg.de/opendata/,,,,63437,53.55,13.26,DE802,130710107107,
+Rostock,city,http://www.opendata-hro.de/,,,,202887,54.08,12.13,DE803,130030000000,
+Braunschweig,city,http://www.braunschweig.de/leben/stadtplanung_bauen/geoinformationen/opengeodata.html,,,,245798,52.26,10.52,DE911,31010000000,
+Wennigsen (Deister),city,http://data.wennigsen.net/,,,,13933,52.27,9.57,DE929020,32410020020,
+Landkreis Lüneburg,district,https://open.lklg.net/,,,2016-08-18,176727,53.23,10.57,DE935,3355,
+Nordrhein-Westfalen,state,https://open.nrw/de/dat_kat,,,,17545000,52.52,8.65,DEA,5,396
+Niederrhein (Region),district,http://offenesdatenportal.de/,,,2015-04-16,,51.38,6.57,DEA1_Niederrhein,,
+Düsseldorf,city,https://opendata.duesseldorf.de/,,,2017-12-06,593682,51.22,6.78,DEA11,51110000000,
+Krefeld,city,https://www.offenesdatenportal.de/organization/krefeld,,,2016-01-13,222026,51.33,6.56,DEA14,51140000000,
+Mönchengladbach,city,http://offenedaten.moenchengladbach.de/,,,2015-05-11,255087,51.19,6.44,DEA15,51160000000,
+Mülheim an der Ruhr,city,http://open.muelheim-ruhr.de,,,,166654,51.42,6.88,DEA16,51170000000,
+Wuppertal,city,http://www.offenedaten-wuppertal.de/,,,2016-09-05,342885,51.25,7.21,DEA1A,51240000000,
+Kreis Kleve,district,https://www.offenesdatenportal.de/organization/kreis-kleve,,,,302698,51.78,6.13,DEA1B,5154,
+Stadt Kleve,city,https://www.offenesdatenportal.de/organization/stadt-kleve,,,,48172,51.78,6.13,DEA1B036,51540036036,
+Wachtendonk,city,https://www.offenesdatenportal.de/organization/gemeinde-wachtendonk,,,,7898,51.4,6.33,DEA1B060,51540060060,
+Dormagen,city,https://opendata.dormagen.de,,,2017-12-07,64064,51.09,6.84,DEA1D004,,
+Meerbusch,city,https://opendata.meerbusch.de/,,,2017-02-11,56193,51.26,6.67,DEA1D022,51620022022,
+Kreis Viersen,district,https://www.offenesdatenportal.de/organization/kreis-viersen,,,,294921,51.25,6.39,DEA1E,5166,
+Moers,city,http://offenedaten.moers.de/,,,,103504,51.45,6.62,DEA1F024,51700024024,
+Stadt Wesel,city,http://opendata.wesel.de/,,,,60070,51.65,6.61,DEA1F048,51700048048,
+Bonn,city,http://opendata.bonn.de/,,,,309869,50.73,7.09,DEA22,53140000000,
+Köln,city,http://offenedaten-koeln.de/,,,,1024373,50.93,6.95,DEA23,53150000000,
+Heimbach (Eifel),city,http://offenedaten.kdvz-frechen.de/group/heimbach,,,2016-11-08,4366,50.63,6.48,DEA26012,53580012012,
+Hürtgenwald,city,http://offenedaten.kdvz-frechen.de/group/h%C3%BCrtgenwald,,,2016-11-08,8780,50.71,6.37,DEA26016,53580016016,
+Jülich,city,http://offenedaten.kdvz-frechen.de/group/j%C3%BClich,,,2016-11-08,32601,50.92,6.35,DEA26024,53580024024,
+Kreuzau,city,http://offenedaten.kdvz-frechen.de/group/kreuzau,,,2016-11-08,17441,50.74,6.48,DEA26028,53580028028,
+Langerwehe,city,http://offenedaten.kdvz-frechen.de/group/langerwehe,,,2016-11-08,13791,50.81,6.34,DEA26032,53580032032,
+Linnich,city,http://offenedaten.kdvz-frechen.de/group/linnich,,,2016-11-08,12591,50.97,6.26,DEA26036,53580036036,
+Merzenich,city,http://offenedaten.kdvz-frechen.de/group/merzenich,,,2016-11-08,9950,50.83,6.53,DEA26040,53580040040,
+Titz,city,http://offenedaten.kdvz-frechen.de/group/titz,,,2016-11-08,8277,51,6.42,DEA26056,53580056056,
+Vettweiß,city,http://offenedaten.kdvz-frechen.de/group/vettwei%C3%9F,,,2016-11-08,9223,50.73,6.59,DEA26060,53580060060,
+Bedburg,city,http://offenedaten.kdvz-frechen.de/group/bedburg,,,2017-04-29,23334,51,6.56,DEA27004,,
+Bergheim,city,http://offenedaten.kdvz-frechen.de/group/bergheim,,,2016-11-08,59656,50.96,6.65,DEA27008,53620008008,
+Brühl (Rheinland),city,http://offenedaten.kdvz-frechen.de/group/br%C3%BChl,,,2016-11-08,44768,50.83,6.9,DEA27012,53620012012,
+Elsdorf (Rheinland),city,http://offenedaten.kdvz-frechen.de/group/elsdorf,,,2016-11-08,21232,50.93,6.56,DEA27016,53620016016,
+Kerpen,city,http://offenedaten.kdvz-frechen.de/group/kerpen,,,2016-11-08,65477,50.87,6.69,DEA27032,53620032032,
+Wesseling,city,http://offenedaten.kdvz-frechen.de/group/wesseling,,,2016-11-08,35975,50.82,6.97,DEA27040,53620040040,
+Kreis Euskirchen,district,http://offenedaten.kdvz-frechen.de/group/kreis-euskirchen,,,2016-11-08,191165,50.78,6.85,DEA28,5366,
+Bad Münstereifel,city,http://offenedaten.kdvz-frechen.de/group/bad-m%C3%BCnstereifel,,,2016-11-08,17367,50.55,6.76,DEA28004,53660004004,
+Kall,city,http://offenedaten.kdvz-frechen.de/group/kall,,,2016-11-08,11229,50.54,6.55,DEA28024,53660024024,
+Aachen,city,http://offenedaten.aachen.de/,,,,240086,50.77,6.08,DEA2D002,53340002002,
+Gelsenkirchen,city,https://opendata.gelsenkirchen.de/,,,2017-05-23,257607,51.51,7.1,DEA32,55130000000,
+Münster (Westfalen),city,http://www.muenster.de/stadt/katasteramt/geodatenmanagement.html,,,,296599,51.96,7.62,DEA33,55150000000,
+Bochum,city,http://www.bochum.de/opendata,,,,362213,51.48,7.21,DEA51,59110000000,
+Herne,city,http://www.herne.de/kommunen/herne/ttw.nsf/id/DE_Open-Data,,,,154563,51.54,7.22,DEA55,59160000000,
+Arnsberg,city,http://offenedaten.arnsberg.de,,,,73501,51.39,8.06,DEA5705958004,59580004004,
+Rheinland-Pfalz,state,http://daten.rlp.de/,,,,3995000,49.91,7.44,DEB,7,2306
+Sachsen,state,http://www.opendata.sachsen.de/,,,,4054000,51.06,13.15,DED,14,432
+Chemnitz,city,http://portal-chemnitz.opendata.arcgis.com/,,,2017-03-07,241210,50.83,12.92,DED41,145110000000,
+Leipzig,city,https://opendata.leipzig.de,,,,520838,51.34,12.37,DED51,147130000000,
+Halle (Saale),city,http://www.daten.halle.de,,,,231440,51.48,11.97,DEE02,150020000000,
+Jena,city,https://opendata.jena.de/,,,2016-12-20,106915,50.92,11.58,DEG03,160530000000,
+Altenburg,city,http://www.altenburg.eu/sixcms/detail.php,,,,32992,50.98,12.43,DEG0M001,160770001001,
