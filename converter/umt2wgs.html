@@ -140,6 +140,28 @@
 							console.log( obj);
 						}
 						str += '"><br>';
+						str += 'GeoJSON: <input type="text" value="';
+						if(( parseInt( obj.properties['GF']) >= 3) || (2 == obj.properties['RS'].length) || ('000000000000' == obj.properties['RS'])) {
+							str += '[';
+							for( var coordinate = 0; coordinate < obj.geometry.coordinates.length; ++coordinate) {
+								var coordinates = obj.geometry.coordinates[ coordinate];
+								if( coordinate > 0) {
+									str += ',';
+								}
+								str += '[';
+								for( var path = 0; path < coordinates.length; ++path) {
+									var coord = proj4( utm32, proj4.WGS84, coordinates[ path]);
+									str += '['+(parseInt(coord[0]*100000)/100000)+','+(parseInt(coord[1]*100000)/100000)+'],';
+								}
+								str = str.substr( 0, str.length - 1);
+								str += ']';
+							}
+							str += ']';
+							console.log(obj);
+						} else {
+							console.log( obj);
+						}
+						str += '"><br>';
 					}
 				}
 
