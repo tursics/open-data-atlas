@@ -4,7 +4,7 @@ Statistik Österreich;other;http://data.statistik.gv.at;;;;0;48.18;16.42;AT_auti
 Open Data Portal Österreich;other;https://www.opendataportal.at/;;;;0;48.2;16.35;AT_odp;;
 Wirtschaftsuniversität Wien;other;http://data.wu.ac.at/;;;;0;48.21;16.4;AT_wuw;;
 Niederösterreich;state;http://data.noe.gv.at/;;;;1618592;48;16;AT12;;573
-Wien;city,state;http://data.wien.gv.at/;;;;1741246;48.2;16.37;AT13;;1
+Wien;city+state;http://data.wien.gv.at/;;;;1741246;48.2;16.37;AT13;;1
 Kärnten;state;http://data.ktn.gv.at/;;;;555473;46.76;13.81;AT21;;132
 Klagenfurt;city;http://www.data.gv.at/auftritte/?organisation=stadt-klagenfurt;;;;95450;46.61;14.3;AT21120101;;
 Steiermark;state;http://data.steiermark.at/;;;;1210971;47.47;13.6;AT22;;539
@@ -41,10 +41,10 @@ Ortenaukreis;district;http://www.ortenaukreis.de/Online-Dienste/Open-Data;;;;412
 Ulm;city;http://daten.ulm.de/;;;;117977;48.4;9.98;DE144;84210000000;
 Bayern;state;http://www.opendata.bayern.de/;;;;12443000;48.94;11.39;DE2;9;2056
 München;city;http://www.opengov-muenchen.de;;;2014-12-19;1388308;48.13;11.57;DE212;91620000000;
-Berlin;city,state;http://daten.berlin.de/;;;;3375222;52.51;13.4;DE3;110000000000;1
+Berlin;city+state;http://daten.berlin.de/;;;;3375222;52.51;13.4;DE3;110000000000;1
 Potsdam;city;https://opendata.potsdam.de/;;;2018-01-11;159456;52.39;13.06;DE404;120540000000;
 Freie Hansestadt Bremen;state;http://daten.bremen.de/;;;;657391;53.34;8.59;DE5;4;2
-Hamburg;city,state;http://daten.hamburg.de/;;;;1734272;53.55;9.99;DE6;20000000000;1
+Hamburg;city+state;http://daten.hamburg.de/;;;;1734272;53.55;9.99;DE6;20000000000;1
 Frankfurt am Main;city;http://offenedaten.frankfurt.de/;;;2014-10-15;687775;50.11;8.68;DE712;64120000000;
 Neubrandenburg;city;http://www.neubrandenburg.de/opendata/;;;;63437;53.55;13.26;DE802;130710107107;
 Rostock;city;http://www.opendata-hro.de/;;;;202887;54.08;12.13;DE803;130030000000;
