@@ -1,0 +1,40 @@
+{
+	"receipt": {
+		"body": [
+			"<div class='full center bold' id='rectitle'></div>",
+			"<div class='full center'><span id='rectype'></span> (<span id='recid'></span>)</div>",
+			"<div class='full center' id='recaddress'></div>",
+			"<div class='full center'><span id='reczip'></span> Berlin</div>",
+			"<div class='empty'></div>",
+			"<div class='full bold'><span id='recpriority'></span></div>",
+			"<div class='empty'></div>",
+			"<div class='full'>--------------------------------------------</div>",
+			"<div class='full'>Diese Schule hat einen</div>",
+			"<div><span class='half'>Sanierungsbedarf von</span><span class='number'><span id='reccosts'></span> EUR</span></div>",
+			"<div class='full'>--------------------------------------------</div>",
+			"<div class='empty'></div>",
+			"<div><span class='half'></span><span class='number'>Quelle: <a href='https://github.com/tursics/schuldaten/raw/master/berlin/2017/170301%20HA-Bericht%20SenBJF_Geb%C3%A4udescan-Schulbauten-mit-Sanierungsbedarf.pdf'>SenBJF</a></span></div>",
+			"<div><span class='half' id='recNow'></span><span class='number'>Daten: <a href='https://github.com/tursics/schulsanierung/blob/master/data/data-berlin.csv' target='_blank'>03/2017</a></span></div>",
+			"<div class='empty'></div>",
+			"<div class='full center'>Vielen Dank für Ihren Einkauf!</div>",
+			"<div class='full center'>Sanieren Sie bald wieder</div>"
+		],
+		"info": false
+	},
+	"marker": {
+		"color": "color",
+		"icon": "icon"
+	},
+	"printerlabel": {
+		"top": "title",
+		"middle": "costs",
+		"bottom": "priority"
+	},
+	"search": {
+		"pattern": "title",
+		"description": "type",
+		"data": "id",
+		"color": "color",
+		"icon": "icon"
+	}
+}

@@ -2,11 +2,11 @@
 	{
 		"key": "de",
 		"title": "Deutschland",
-		"data": "data-de",
+		"dataPolygon": "dataportals_polygon",
 		"config": "config-de",
 		"lat": 51.165,
 		"lng": 10.455278,
-		"zoom": 12
+		"zoom": 6
 	},
 	{
 		"key": "at",
@@ -15,7 +15,7 @@
 		"config": "config-at",
 		"lat": 47.6,
 		"lng": 13.783333,
-		"zoom": 12
+		"zoom": 7
 	},
 	{
 		"key": "ch",
@@ -24,6 +24,6 @@
 		"config": "config-ch",
 		"lat": 46.8,
 		"lng": 8.233333,
-		"zoom": 12
+		"zoom": 8
 	}
 ]

@@ -367,7 +367,7 @@ var data = {
 				receipt.hide();
 				marker.hide();
 				search.hide();
-//				map.setView(new L.LatLng(city.lat, city.lng), city.zoom, {animation: true});
+				map.setView(new L.LatLng(city.lat, city.lng), city.zoom, {animation: true});
 
 				$.ajax({
 					url: 'data/' + city.config + '.json',
@@ -387,6 +387,24 @@ var data = {
 		'use strict';
 
 		receipt.init(cityData);
+
+		if (typeof city.dataPolygon !== 'undefined') {
+			var district_boundary = new L.geoJson();
+			district_boundary.addTo(map);
+
+			$.ajax({
+				url: 'data/' + city.dataPolygon + '.geojson',
+				dataType: 'json',
+				success: function (data) {
+					$(data.features).each(function (key, data) {
+						district_boundary.addData(data);
+					});
+				}
+			}).error(function () {
+			});
+
+			return;
+		}
 
 		$.ajax({
 			url: 'data/' + city.data + '.json',
@@ -459,8 +477,8 @@ $(document).on("pageshow", "#pageMap", function () {
 		}
 	}
 
-	// center of Krefeld
-	initMap('mapContainer', 51.340164, 6.602664, 12);
+	// Brandenburg Gate
+	initMap('mapContainer', 52.516141, 13.376927, 17);
 
 	receipt.initUI();
 	data.initUI();
