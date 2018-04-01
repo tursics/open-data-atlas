@@ -387,6 +387,7 @@ var data = {
 					success: function (data) {
 						that.initCity(city, data);
 					}
+				}).error(function () {
 				});
 			}
 		} catch (e) {

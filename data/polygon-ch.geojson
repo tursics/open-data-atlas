@@ -1,0 +1,119 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 8.23,46.8 ]
+    },
+    "properties": {
+    "title":"Schweiz",
+    "type":"country",
+    "url":"http://opendata.swiss/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":8112200,
+    "nuts":"CH",
+    "territorial":null,
+    "municipality":2551
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 6.17,46.36 ]
+    },
+    "properties": {
+    "title":"Kanton Genf",
+    "type":"state",
+    "url":"https://opendata.swiss/de/organization/canton-geneve",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":484400,
+    "nuts":"CH013",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 7.43,46.95 ]
+    },
+    "properties": {
+    "title":"Bern",
+    "type":"city",
+    "url":"https://opendata.swiss/de/organization/stadt-bern",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":127515,
+    "nuts":"CH0210351",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 7.69,47.59 ]
+    },
+    "properties": {
+    "title":"Kanton Basel-Stadt",
+    "type":"state",
+    "url":"https://opendata.swiss/de/organization/kanton-basel-stadt",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":191800,
+    "nuts":"CH031",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 8.64,47.69 ]
+    },
+    "properties": {
+    "title":"Kanton Zürich",
+    "type":"state",
+    "url":"https://opendata.swiss/de/organization/kanton-zuerich",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":1466100,
+    "nuts":"CH040",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 8.54,47.37 ]
+    },
+    "properties": {
+    "title":"Zürich",
+    "type":"city",
+    "url":"http://www.stadt-zuerich.ch/opendata",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":400028,
+    "nuts":"CH0400261",
+    "territorial":null,
+    "municipality":null
+    }
+  }
+]
+}

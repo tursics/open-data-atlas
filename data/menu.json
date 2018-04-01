@@ -2,7 +2,7 @@
 	{
 		"key": "de",
 		"title": "Deutschland",
-		"dataPolygon": "dataportals_polygon",
+		"dataPolygon": "polygon-de",
 		"config": "config-de",
 		"lat": 51.165,
 		"lng": 10.455278,
@@ -11,7 +11,7 @@
 	{
 		"key": "at",
 		"title": "Österreich",
-		"data": "data-at",
+		"dataPolygon": "polygon-at",
 		"config": "config-at",
 		"lat": 47.6,
 		"lng": 13.783333,
@@ -20,7 +20,7 @@
 	{
 		"key": "ch",
 		"title": "Schweiz",
-		"data": "data-ch",
+		"dataPolygon": "polygon-ch",
 		"config": "config-ch",
 		"lat": 46.8,
 		"lng": 8.233333,

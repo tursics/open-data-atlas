@@ -1,0 +1,366 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 13.78,47.6 ]
+    },
+    "properties": {
+    "title":"Österreich",
+    "type":"country",
+    "url":"http://data.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":8504850,
+    "nuts":"AT",
+    "territorial":null,
+    "municipality":2354
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 16.42,48.18 ]
+    },
+    "properties": {
+    "title":"Statistik Österreich",
+    "type":"other",
+    "url":"http://data.statistik.gv.at",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":0,
+    "nuts":"AT_autista",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 16.35,48.2 ]
+    },
+    "properties": {
+    "title":"Open Data Portal Österreich",
+    "type":"other",
+    "url":"https://www.opendataportal.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":0,
+    "nuts":"AT_odp",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 16.4,48.21 ]
+    },
+    "properties": {
+    "title":"Wirtschaftsuniversität Wien",
+    "type":"other",
+    "url":"http://data.wu.ac.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":0,
+    "nuts":"AT_wuw",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 16,48 ]
+    },
+    "properties": {
+    "title":"Niederösterreich",
+    "type":"state",
+    "url":"http://data.noe.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":1618592,
+    "nuts":"AT12",
+    "territorial":null,
+    "municipality":573
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 16.37,48.2 ]
+    },
+    "properties": {
+    "title":"Wien",
+    "type":"city+state",
+    "url":"http://data.wien.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":1741246,
+    "nuts":"AT13",
+    "territorial":null,
+    "municipality":1
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 13.81,46.76 ]
+    },
+    "properties": {
+    "title":"Kärnten",
+    "type":"state",
+    "url":"http://data.ktn.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":555473,
+    "nuts":"AT21",
+    "territorial":null,
+    "municipality":132
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 14.3,46.61 ]
+    },
+    "properties": {
+    "title":"Klagenfurt",
+    "type":"city",
+    "url":"http://www.data.gv.at/auftritte/?organisation=stadt-klagenfurt",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":95450,
+    "nuts":"AT21120101",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 13.6,47.47 ]
+    },
+    "properties": {
+    "title":"Steiermark",
+    "type":"state",
+    "url":"http://data.steiermark.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":1210971,
+    "nuts":"AT22",
+    "territorial":null,
+    "municipality":539
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 15.43,47.06 ]
+    },
+    "properties": {
+    "title":"Graz",
+    "type":"city",
+    "url":"http://data.graz.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":265778,
+    "nuts":"AT221",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 13.5,48 ]
+    },
+    "properties": {
+    "title":"Oberösterreich",
+    "type":"state",
+    "url":"http://data.ooe.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":1418498,
+    "nuts":"AT31",
+    "territorial":null,
+    "municipality":444
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 14.29,48.3 ]
+    },
+    "properties": {
+    "title":"Linz",
+    "type":"city",
+    "url":"http://data.linz.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":191501,
+    "nuts":"AT31240101",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 14.42,48.33 ]
+    },
+    "properties": {
+    "title":"Engerwitzdorf",
+    "type":"city",
+    "url":"http://data.engerwitzdorf.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":8552,
+    "nuts":"AT31241605",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 14.13,48.05 ]
+    },
+    "properties": {
+    "title":"Kremsmünster",
+    "type":"city",
+    "url":"http://www.data.gv.at/auftritte/?organisation=gemeinde-kremsmuenster",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":6419,
+    "nuts":"AT31440907",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 13.28,47.84 ]
+    },
+    "properties": {
+    "title":"Salzburg (Land)",
+    "type":"state",
+    "url":"http://data.salzburg.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"2014-06-30",
+    "population":531898,
+    "nuts":"AT32",
+    "territorial":null,
+    "municipality":119
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 13.03,47.8 ]
+    },
+    "properties": {
+    "title":"Salzburg (Stadt)",
+    "type":"city",
+    "url":"http://data.stadt-salzburg.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":145871,
+    "nuts":"AT32350101",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 11.33,47 ]
+    },
+    "properties": {
+    "title":"Tirol",
+    "type":"state",
+    "url":"http://data.tirol.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":715888,
+    "nuts":"AT33",
+    "territorial":null,
+    "municipality":279
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 11.39,47.26 ]
+    },
+    "properties": {
+    "title":"Innsbruck",
+    "type":"city",
+    "url":"http://data.innsbruck.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":122458,
+    "nuts":"AT332",
+    "territorial":null,
+    "municipality":null
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 9.89,47.24 ]
+    },
+    "properties": {
+    "title":"Vorarlberg",
+    "type":"state",
+    "url":"http://data.vorarlberg.gv.at/",
+    "mail":"",
+    "endpoint":"",
+    "begin":"",
+    "population":376347,
+    "nuts":"AT34",
+    "territorial":null,
+    "municipality":96
+    }
+  }
+]
+}
