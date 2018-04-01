@@ -1,7 +1,7 @@
 /* schulsanierung.tursics.de - JavaScript file */
 
 /*jslint browser: true*/
-/*global $,L*/
+/*global $,L,window,document */
 
 var map = null;
 
@@ -52,7 +52,7 @@ var printerLabel = {
 			.openOn(map);
 	},
 
-	hide: function (data) {
+	hide: function () {
 		'use strict';
 
 		if (this.layerPopup && map) {
@@ -68,7 +68,7 @@ var receipt = {
 	initUI: function () {
 		'use strict';
 
-		$('#receipt .group').on('click', function (e) {
+		$('#receipt .group').on('click', function () {
 			$(this).toggleClass('groupClosed');
 		});
 		$('#receiptClose').on('click', this.hide);
@@ -146,7 +146,7 @@ var marker = {
 	layerGroup: null,
 	cityData: null,
 
-	show: function (data, cityData) {
+	show: function (data, filetype, cityData) {
 		'use strict';
 
 		try {
@@ -165,21 +165,34 @@ var marker = {
 				printerLabel.hide(evt.layer.options.data);
 			});
 
-			var that = this;
-			$.each(data, function (key, val) {
-				if ((typeof val.lat !== 'undefined') && (typeof val.lng !== 'undefined') && val.lat && val.lng) {
-					var marker = L.marker([parseFloat(val.lat), parseFloat(val.lng)], {
-							data: val,
-							format: cityData.printerlabel,
-							icon: L.AwesomeMarkers.icon({
-								icon: val[cityData.marker.icon],
-								prefix: 'fa',
-								markerColor: val[cityData.marker.color]
-							})
-						});
-					that.layerGroup.addLayer(marker);
-				}
-			});
+			var that = this,
+				boundary;
+
+			if (filetype === 'geojson') {
+				boundary = new L.geoJson();
+				boundary.addTo(map);
+
+				$(data.features).each(function (key, data) {
+					boundary.addData(data);
+				});
+
+				that.layerGroup.addLayer(boundary);
+			} else {
+				$.each(data, function (key, val) {
+					if ((typeof val.lat !== 'undefined') && (typeof val.lng !== 'undefined') && val.lat && val.lng) {
+						var marker = L.marker([parseFloat(val.lat), parseFloat(val.lng)], {
+								data: val,
+								format: cityData.printerlabel,
+								icon: L.AwesomeMarkers.icon({
+									icon: val[cityData.marker.icon],
+									prefix: 'fa',
+									markerColor: val[cityData.marker.color]
+								})
+							});
+						that.layerGroup.addLayer(marker);
+					}
+				});
+			}
 		} catch (e) {
 //			console.log(e);
 		}
@@ -220,8 +233,6 @@ var search = {
 	initUI: function () {
 		'use strict';
 
-		var that = this;
-
 		$('#autocomplete').focus(function () {
 			window.scrollTo(0, 0);
 			document.body.scrollTop = 0;
@@ -231,7 +242,7 @@ var search = {
 		});
 	},
 
-	init: function (data, cityData) {
+	init: function (data, filetype, cityData) {
 		'use strict';
 
 		var that = this;
@@ -309,7 +320,7 @@ var data = {
 		'use strict';
 
 		var that = this;
-		$('#searchBox .module select').on('change', function (e) {
+		$('#searchBox .module select').on('change', function () {
 			that.loadCity($('#searchBox .module select').val());
 		});
 	},
@@ -386,34 +397,28 @@ var data = {
 	initCity: function (city, cityData) {
 		'use strict';
 
-		receipt.init(cityData);
+		var filetype = '',
+			path = '';
 
 		if (typeof city.dataPolygon !== 'undefined') {
-			var district_boundary = new L.geoJson();
-			district_boundary.addTo(map);
-
-			$.ajax({
-				url: 'data/' + city.dataPolygon + '.geojson',
-				dataType: 'json',
-				success: function (data) {
-					$(data.features).each(function (key, data) {
-						district_boundary.addData(data);
-					});
-				}
-			}).error(function () {
-			});
-
-			return;
+			filetype = 'geojson';
+			path = 'data/' + city.dataPolygon + '.' + filetype;
+		} else if (typeof city.data !== 'undefined') {
+			filetype = 'json';
+			path = 'data/' + city.data + '.' + filetype;
 		}
 
+		receipt.init(cityData);
+
 		$.ajax({
-			url: 'data/' + city.data + '.json',
+			url: path,
 			dataType: 'json',
 			mimeType: 'application/json',
 			success: function (data) {
-				marker.show(data, cityData);
-				search.init(data, cityData);
+				marker.show(data, filetype, cityData);
+				search.init(data, filetype, cityData);
 			}
+		}).error(function () {
 		});
 	}
 };
@@ -425,7 +430,7 @@ var ControlInfo = L.Control.extend({
 		position: 'bottomright'
 	},
 
-	onAdd: function (map) {
+	onAdd: function () {
 		'use strict';
 
 		var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
@@ -484,21 +489,21 @@ $(document).on("pageshow", "#pageMap", function () {
 	data.initUI();
 	search.initUI();
 
-	$("#popupShare").on('popupafteropen', function (e, ui) {
+	$("#popupShare").on('popupafteropen', function () {
 		$('#shareLink input').focus().select();
 	});
-	$('#tabShareLink').on('click', function (e) {
+	$('#tabShareLink').on('click', function () {
 		$('#popupShare').popup('reposition', 'positionTo: window');
 		$('#shareLink input').focus().select();
 	});
-	$('#tabEmbedMap').on('click', function (e) {
+	$('#tabEmbedMap').on('click', function () {
 		updateEmbedURI();
 		$('#popupShare').popup('reposition', 'positionTo: window');
 		$('#embedMap input').focus().select();
 	});
 
 	$('#selectEmbedSize').val('400x300').selectmenu('refresh');
-	$('#selectEmbedSize').on('change', function (e) {
+	$('#selectEmbedSize').on('change', function () {
 		updateEmbedURI();
 		$('#popupShare').popup('reposition', 'positionTo: window');
 	});
