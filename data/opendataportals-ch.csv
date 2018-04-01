@@ -1,0 +1,7 @@
+portal_title;type;url;begin;nuts
+Schweiz;country;http://opendata.swiss/;;CH
+Kanton Genf;state;https://opendata.swiss/de/organization/canton-geneve;;CH013
+Bern;city;https://opendata.swiss/de/organization/stadt-bern;;CH0210351
+Kanton Basel-Stadt;state;https://opendata.swiss/de/organization/kanton-basel-stadt;;CH031
+Kanton Zürich;state;https://opendata.swiss/de/organization/kanton-zuerich;;CH040
+Zürich;city;http://www.stadt-zuerich.ch/opendata;;CH0400261

@@ -1,0 +1,20 @@
+portal_title;type;url;begin;nuts
+Österreich;country;http://data.gv.at/;;AT
+Statistik Österreich;other;http://data.statistik.gv.at;;
+Open Data Portal Österreich;other;https://www.opendataportal.at/;;
+Wirtschaftsuniversität Wien;other;http://data.wu.ac.at/;;
+Niederösterreich;state;http://data.noe.gv.at/;;AT12
+Wien;city+state;http://data.wien.gv.at/;;AT13
+Kärnten;state;http://data.ktn.gv.at/;;AT21
+Klagenfurt;city;http://www.data.gv.at/auftritte/?organisation=stadt-klagenfurt;;AT21120101
+Steiermark;state;http://data.steiermark.at/;;AT22
+Graz;city;http://data.graz.gv.at/;;AT221
+Oberösterreich;state;http://data.ooe.gv.at/;;AT31
+Linz;city;http://data.linz.gv.at/;;AT31240101
+Engerwitzdorf;city;http://data.engerwitzdorf.gv.at/;;AT31241605
+Kremsmünster;city;http://www.data.gv.at/auftritte/?organisation=gemeinde-kremsmuenster;;AT31440907
+Salzburg (Land);state;http://data.salzburg.gv.at/;2014-06-30;AT32
+Salzburg (Stadt);city;http://data.stadt-salzburg.at/;;AT32350101
+Tirol;state;http://data.tirol.gv.at/;;AT33
+Innsbruck;city;http://data.innsbruck.gv.at/;;AT332
+Vorarlberg;state;http://data.vorarlberg.gv.at/;;AT34
