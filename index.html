@@ -26,198 +26,32 @@
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:creator" content="@tursics">
 
-	<link rel="stylesheet" href="jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
+	<link rel="stylesheet" href="lib/font-awesome-4.6.3/css/font-awesome.css">
+	<link rel="stylesheet" href="lib/leaflet-0.7.7/leaflet.css" />
+	<link rel="stylesheet" href="index.css" />
+	<link rel="stylesheet" href="lib/leaflet.awesome-markers-2.0.2/leaflet.awesome-markers.css">
 
-	<script src="http://js.api.here.com/se/2.5.4/jsl.js?with=maps,places,directions,positioning" type="text/javascript" charset="utf-8"></script>
-
-	<style type="text/css">
-		html {
-			overflow:hidden;
-		}
-		body {
-			font-weight:300 !important;
-			margin:0;
-			padding:0;
-			position:absolute;
-			overflow:hidden;
-			width:100%;
-			height:100%;
-		}
-		#mapContainer {
-			width:70%;
-			height:100%;
-			left:0;
-			top:0;
-			margin-top:-2.7em;
-			padding:0px!important;
-			text-shadow:none;
-		}
-		#mapDetails {
-			position:absolute;
-			width:30%;
-			height:100%;
-			right:0;
-			top:0;
-			margin-top:0;
-			padding:0 !important;
-			text-shadow:none;
-			background:#ffffff !important;
-			border-left:1px solid #000000 !important;
-			overflow-y:scroll;
-		}
-		#mapDetailsDiv {
-			margin:3.5em 0 3.5em 0;
-			padding:1em;
-		}
-		.ui-header {
-			background:#ffffff !important;
-			border-bottom:1px solid #000000 !important;
-		}
-		.segmented-control { text-align:center; }
-		.segmented-control .ui-controlgroup { display:inline; margin:.2em 0px; }
-		.chart { display:inline;padding:0.5em 0.75em 0 0.75em; }
-		.chart div { background-repeat:no-repeat;background-position:15px 15px;background-size:70px 70px; }
-		.chartAT div { background-image:url('images/at.png'); }
-		.chartCH div { background-image:url('images/ch.png'); }
-		.chartDE div { background-image:url('images/de.png'); }
-		#chart1 {padding:0 0 2.5em 0; }
-		.circles-text span { font-size:0.5em;position:absolute;top:107px;left:0;width:100px;line-height:normal; }
-		.circles-wrp { height:140px; }
-
-		#pageMap { width:100%; height:100%; }
-		#dataList {
-			margin:1em -1em 0 -1em;
-		}
-		.marker-red {
-			color:#f03b20;
-			font-size:1.5em;
-			padding-right:0.2em;
-		}
-		.marker-yellow {
-			color:#e1c64b;
-			font-size:1.5em;
-			padding-right:0.2em;
-		}
-		.marker-green {
-			color:#31a354;
-			font-size:1.5em;
-			padding-right:0.2em;
-		}
-		.marker-white {
-			color:#d0d0d0;
-			font-size:1.5em;
-			padding-right:0.2em;
-		}
-		#dataInfo {
-			border-top:1px solid #000000 !important;
-			margin:1em -1em 0 -1em;
-			padding:1em 1em 0 1em;
-		}
-		#headSlotCfB {
-			float:left;
-		}
-		#headSlotCfB img {
-			height:2.5em;
-			padding: .3em 0 .3em 1em;
-		}
-		#headSlotTitle {
-			float:left;
-			font-size:2em;
-			font-weight:100 !important;
-			padding:0.3em 0 0 1em;
-		}
-		#headSlotButtons {
-			float:right;
-			margin:0.5em 1em 0.5em 0;
-		}
-		#headSlotDonut {
-			float:right;
-			margin:0;
-			display:none;
-		}
-@media only screen and (max-width:768px) and (min-width:480px) {
-		#headSlotCfB img {
-			height:2.5em;
-		}
-		#headSlotTitle {
-			font-size:1.5em;
-			padding:0.3em 0 0 0;
-		}
-		#headSlotButtons {
-			margin:0.3em 0.7em 0.3em 0;
-		}
-		#headSlotButtons .ui-btn {
-			font-size:0.7em;
-		}
-}
-@media only screen and (max-width:480px) and (min-width:370px) {
-		#headSlotCfB img {
-			height:2.5em;
-		}
-		#headSlotTitle {
-			font-size:1.5em;
-			padding:0.3em 0 0 0;
-		}
-		#headSlotButtons {
-			display:none;
-		}
-		#headSlotDonut {
-			margin:0 0.7em 0 0;
-			display:block;
-		}
-		#headSlotDonut .ui-btn {
-			font-size:0.7em;
-		}
-}
-@media only screen and (max-width:370px) {
-		#headSlotCfB {
-			display:none;
-		}
-		#headSlotTitle {
-			font-size:1.5em;
-			padding:0.3em 0 0 0.3em;
-		}
-		#headSlotButtons {
-			display:none;
-		}
-		#headSlotDonut {
-			margin:0 0.7em 0 0;
-			display:block;
-		}
-		#headSlotDonut .ui-btn {
-			font-size:0.7em;
-		}
-}
-@media only screen and (max-width:768px) {
-		#mapContainer {
-			width:100%;
-			height:50%;
-			margin-top:-1.5em;
-		}
-		#mapDetails {
-			width:100%;
-			height:50%;
-			left:0;
-			top:50%;
-			border-left:none !important;
-			border-top:1px solid #000000 !important;
-		}
-		#mapDetailsDiv {
-			margin:0 0 3.5em 0;
-			padding:1em;
-		}
-}
-	</style>
-	<script src="jquery.mobile-1.4.2/jquery-1.10.2.min.js"></script>
-	<script src="data/dataBasics.js"></script>
-	<script src="data/dataFirstnames.js"></script>
+	<script src="lib/leaflet-0.7.7/leaflet.js"></script>
+	<script src="lib/jquery.mobile-1.4.2/jquery-1.11.1.min.js"></script>
+	<script src="lib/tursics.ddj.js"></script>
+	<script src="lib/tursics.ddj.map.js"></script>
+	<script src="lib/tursics.ddj.marker.js"></script>
+	<script src="lib/tursics.ddj.search.js"></script>
 	<script src="index.js"></script>
-	<script src="jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	<script src="lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	<script src="lib/jquery.autocomplete-1.2.25/jquery.autocomplete.min.js"></script>
+	<script src="lib/leaflet.awesome-markers-2.0.2/leaflet.awesome-markers.min.js"></script>
 	<script src="circles-0.0.5/circles.min.js"></script>
 </head>
 <body>
 	<div data-role="page" id="pageMap">
+		<div role="main" class="ui-content" id="mapContainer"></div>
+		<div id="searchBox">
+		</div>
+	</div>
+
+	<div data-role="page" id="_pageMap">
 		<div data-role="header" data-position="fixed">
 			<div id="headSlotCfB">
 				<a href="http://codefor.berlin/" class="ui-link" target="_blank"><img src="images/cfg_berlin_hex.svg" /></a>
@@ -281,7 +115,7 @@
 				<div>Einen kurzen Moment noch...</div>
 			</div>
 		</div>
-		<div role="main" class="ui-content" id="mapContainer"></div>
+		<div role="main" class="ui-content" id="_mapContainer"></div>
 		<div id="mapDetails"><div id="mapDetailsDiv"></div></div>
 	</div>
 </body>
