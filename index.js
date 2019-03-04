@@ -74,6 +74,9 @@ $(document).on("pageshow", "#pageMap", function () {
 
 		ddj.init(data);
 
+		ddj.polygon.init({
+		});
+
 		ddj.marker.init({
 			onMouseOver: function (latlng, data) {
 /*				updateMapHoverItem(latlng, data, {
