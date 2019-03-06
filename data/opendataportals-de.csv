@@ -65,7 +65,7 @@ Aachen;city;http://offenedaten.aachen.de/;;DEA2D002
 Gelsenkirchen;city;https://opendata.gelsenkirchen.de/;2017-05-23;DEA32
 Münster (Westfalen);city;http://www.muenster.de/stadt/katasteramt/geodatenmanagement.html;;DEA33
 Bochum;city;http://www.bochum.de/opendata;;DEA51
-Herne;city;http://www.herne.de/kommunen/herne/ttw.nsf/id/DE_Open-Data;;DEA55
+Herne;city;https://www.herne.de/Stadt-und-Leben/Stadtfakten/Open-Data/;;DEA55
 Arnsberg;city;http://offenedaten.arnsberg.de;;DEA57004
 Rheinland-Pfalz;state;http://daten.rlp.de/;;DEB
 Sachsen;state;http://www.opendata.sachsen.de/;;DED
@@ -78,3 +78,7 @@ Bielefeld;city;https://open-data.bielefeld.de/;;DEA41
 Siegburg;city;http://offenedaten.kdvz-frechen.de/group/siegburg;;DEA2C060
 Niederzier;city;http://offenedaten.kdvz-frechen.de/group/niederzier;;DEA26048
 Nörvenich;city;http://offenedaten.kdvz-frechen.de/group/n%C3%B6rvenich;;DEA26052
+Brandenburg;state;https://datenadler.de/;;
+OpenData-Plattform ÖPNV;other;https://www.opendata-oepnv.de/;;
+Kiel;city;https://www.kiel.de/de/kiel_zukunft/statistik_kieler_zahlen/open_data/index.php;;
+Dortmund;city;https://opendata.dortmund.de/;;
