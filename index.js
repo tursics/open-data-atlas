@@ -75,16 +75,24 @@ $(document).on("pageshow", "#pageMap", function () {
 		ddj.init(data);
 
 		ddj.polygon.init({
+			onStyle: function (data, style) {
+//				style.color = 'red';
+				return style;
+			},
+			onMarkerStyle: function (data, style) {
+//				style.fillColor = 'red';
+				return style;
+			}
 		});
 
-		ddj.marker.init({
-			onMouseOver: function (latlng, data) {
+//		ddj.marker.init({
+//			onMouseOver: function (latlng, data) {
 /*				updateMapHoverItem(latlng, data, {
 					options: {
 						markerColor: getColor(data)
 					}
 				}, 6);*/
-			},
+/*			},
 			onMouseOut: function (latlng, data) {
 //				updateMapVoidItem(data);
 			},
@@ -92,7 +100,7 @@ $(document).on("pageshow", "#pageMap", function () {
 //				updateMapSelectItem(data);
 			}
 		});
-
+*/
 		ddj.search.init({
 			showNoSuggestion: true,
 			titleNoSuggestion: '<i class="fa fa-info-circle" aria-hidden="true"></i> Geben sie bitte den Namen einer Schule ein',
