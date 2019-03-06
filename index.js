@@ -76,7 +76,15 @@ $(document).on("pageshow", "#pageMap", function () {
 
 		ddj.polygon.init({
 			onStyle: function (data, style) {
-//				style.color = 'red';
+				if (data.type.indexOf('country') !== -1) {
+					style.color = '#555';
+					style.fillColor = '#fff';
+					style.fillOpacity = 0.8;
+				} else {
+					style.color = '#1f78b4';
+					style.fillColor = '#1f78b4';
+					style.fillOpacity = 0.5;
+				}
 				return style;
 			},
 			onMarkerStyle: function (data, style) {
