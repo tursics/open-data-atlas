@@ -76,20 +76,59 @@ $(document).on("pageshow", "#pageMap", function () {
 
 		ddj.polygon.init({
 			onStyle: function (data, style) {
-				if (data.type.indexOf('country') !== -1) {
-					style.color = '#555';
-					style.fillColor = '#fff';
-					style.fillOpacity = 0.8;
-				} else {
-					style.color = '#1f78b4';
-					style.fillColor = '#1f78b4';
-					style.fillOpacity = 0.5;
-				}
+				style.color = '#555';
+				style.fillColor = '#fff';
+				style.fillOpacity = 0.8;
+
 				return style;
 			},
 			onMarkerStyle: function (data, style) {
 //				style.fillColor = 'red';
 				return style;
+			},
+			onFilter: function (data) {
+				return data.type.indexOf('country') !== -1;
+			}
+		});
+		ddj.polygon.push({
+			onStyle: function (data, style) {
+				style.color = '#fdbf6f';
+				style.fillColor = '#fdbf6f';
+				style.fillOpacity = 0.5;
+
+				return style;
+			},
+			onFilter: function (data) {
+				return (data.type.indexOf('country') === -1)
+					&& (data.type.indexOf('state') !== -1);
+			}
+		});
+		ddj.polygon.push({
+			onStyle: function (data, style) {
+				style.color = '#33a02c';
+				style.fillColor = '#33a02c';
+				style.fillOpacity = 0.5;
+
+				return style;
+			},
+			onFilter: function (data) {
+				return (data.type.indexOf('country') === -1)
+					&& (data.type.indexOf('state') === -1)
+					&& (data.type.indexOf('district') !== -1);
+			}
+		});
+		ddj.polygon.push({
+			onStyle: function (data, style) {
+				style.color = '#1f78b4';
+				style.fillColor = '#1f78b4';
+				style.fillOpacity = 0.5;
+
+				return style;
+			},
+			onFilter: function (data) {
+				return (data.type.indexOf('country') === -1)
+					&& (data.type.indexOf('state') === -1)
+					&& (data.type.indexOf('district') === -1);
 			}
 		});
 
