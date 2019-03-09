@@ -128,7 +128,23 @@ $(document).on("pageshow", "#pageMap", function () {
 			onFilter: function (data) {
 				return (data.type.indexOf('country') === -1)
 					&& (data.type.indexOf('state') === -1)
-					&& (data.type.indexOf('district') === -1);
+					&& (data.type.indexOf('district') === -1)
+					&& (data.type.indexOf('city') !== -1);
+			}
+		});
+		ddj.polygon.push({
+			onStyle: function (data, style) {
+				style.color = '#d252b9';
+				style.fillColor = '#d252b9';
+				style.fillOpacity = 0.5;
+
+				return style;
+			},
+			onFilter: function (data) {
+				return (data.type.indexOf('country') === -1)
+					&& (data.type.indexOf('state') === -1)
+					&& (data.type.indexOf('district') === -1)
+					&& (data.type.indexOf('city') === -1);
 			}
 		});
 
