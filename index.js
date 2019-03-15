@@ -3,8 +3,29 @@
 /*jslint browser: true*/
 /*global $,L,ddj*/
 
+var layerPopup = null;
+
 var settings = {
+//	filterCountry: 'DE',
+//	filterLevel: 'all',
+	dataset: 'portals',
+//	filterPage: '#popupData',
 };
+
+// -----------------------------------------------------------------------------
+
+function formatPopulation(population) {
+	'use strict';
+
+	var str = population.toString();
+	if (str.length > 3) {
+		str = str.substr(0, str.length - 3) + '.' + str.substr(str.length - 3);
+	}
+	if (str.length > 7) {
+		str = str.substr(0, str.length - 7) + '.' + str.substr(str.length - 7);
+	}
+	return str;
+}
 
 // -----------------------------------------------------------------------------
 
@@ -42,7 +63,168 @@ function enrichMissingData(data) {
 
 // -----------------------------------------------------------------------------
 
-$(document).on("pageshow", "#pageMap", function () {
+function getPopupContent(data) {
+	'use strict';
+
+	/*
+		begin: ""
+		endpoint: ""
+		lat: 52.506569999999996
+		lng: 13.424389999999999
+		mail: ""
+		municipality: 1
+		nuts: "DE3"
+		population: 3375222
+		territorial: "110000000000"
+		title: "Berlin"
+		type: "city+state"
+		url: "http://daten.berlin.de/"
+	*/
+
+	try {
+		var str, i, l, item, level, allData = ddj.getData();
+
+		str = '<div style="font-size:1.25em;">';
+		str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
+		str += '<i class="fa fa-map-marker"></i> ' + data.title + '<br>';
+		if (data.population > 0) {
+			str += '<i class="fa fa-male"></i> ' + formatPopulation(data.population) + ' Einwohner<br>';
+		}
+		str += '</div>';
+
+		if (typeof data.territorial !== 'undefined') {
+			str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
+			item = data.territorial;
+			level = [];
+
+			if (item) {
+				if (item.length >= 2) {
+					level.push(item.substr(0, 2)); // state
+				}
+				if (item.length >= 3) {
+					level.push(item.substr(0, 3)); // governorate
+				}
+				if (item.length >= 5) {
+					level.push(item.substr(0, 5)); // county
+				}
+				if (item.length >= 9) {
+					level.push(item.substr(0, 9)); // union
+				}
+				if (item.length >= 12) {
+					level.push(item.substr(0, 12)); // municipal
+				}
+			}
+
+			str += '<i class="fa fa-chevron-right"></i> Deutschland<br>';
+			for (l = 0; l < level.length; ++l) {
+				for (i = 0; i < allData.length; ++i) {
+					if (allData[i].properties && allData[i].properties.territorial) {
+						if (level[l] === allData[i].properties.territorial) {
+							str += '<i class="fa fa-chevron-right"></i> ' + allData[i].properties.title + '<br>';
+							break;
+						}
+					}
+				}
+				if (i >= allData.length) {
+//					str += '<i class="fa fa-map-marker"></i> ' + level[ l] + '<br>';
+				}
+			}
+//			str += '<i class="fa fa-map-marker"></i> ' + allData['nuts'] + '<br>';
+			str += '</div>';
+		}
+
+		if (typeof data.url !== 'undefined') {
+			str += '<i class="fa fa-check"></i> Hat ein <a href="' + data.url + '" target="_blank">Open Data Portal</a><br>';
+		} else {
+			str += '<i class="fa fa-times"></i> Hat kein Open Data Portal<br>';
+		}
+		if (typeof data.email !== 'undefined') {
+			str += '<i class="fa fa-check"></i> Hat einen <a href=mailto:"' + data.email + '">Open Data Ansprechpartner</a><br>';
+		}
+
+		if( typeof data['history'] !== 'undefined') {
+			str += '<br>';
+
+			var historySize = data['history'].length;
+			for( var h = 0; h < historySize; ++h) {
+				str += '<div style="border-top:1px solid #aaaaaa;color:#aaaaaa;padding-top:0.5em;margin-top:0.5em;">';
+				str += '<i class="fa fa-calendar"></i> ' + data['history'][ h]['date'] + '<br>';
+				str += '<i class="fa fa-comment-o"></i> ' + data['history'][ h]['event'] + '</div>';
+			}
+		}
+		str += '</div>';
+
+		return str;
+	} catch(e) {
+		return e.message;
+	}
+}
+// -----------------------------------------------------------------------------
+
+function highlightMapItem(data) {
+	'use strict';
+
+	function setText(key, txt) {
+		var item = $('#rec' + key);
+
+		if (item.parent().hasClass('number')) {
+			txt = formatNumber(txt);
+		} else if (item.parent().hasClass('boolean')) {
+			txt = (txt === 1 ? 'ja' : 'nein');
+		}
+
+		item.text(txt);
+	}
+
+	mapAction();
+
+	var key;
+
+	for (key in data) {
+		if (data.hasOwnProperty(key)) {
+			setText(key, data[key]);
+		}
+	}
+
+	setText('count2017', data.count_2017 || 0);
+	setText('count2018', data.count_2018 || 0);
+	setText('hotspot', 'x' === data['Brennpunktschule-2018'] ? 'ja' : 'nein');
+
+	$('#receiptBox').css('display', 'block');
+}
+
+// -----------------------------------------------------------------------------
+
+function selectMapItem(coordinates, data, icon, offsetY) {
+	'use strict';
+
+	var options = {
+		closeButton: false,
+		offset: L.point(0, offsetY),
+		className: 'printerLabel teacher' + Math.floor(Math.random() * 10)
+	};
+
+	layerPopup = L.popup(options)
+		.setLatLng(coordinates)
+		.setContent(getPopupContent(data))
+		.openOn(ddj.getMap());
+}
+
+// -----------------------------------------------------------------------------
+
+function deselectMapItem() {
+	'use strict';
+
+	if (layerPopup && ddj.getMap()) {
+		ddj.getMap().closePopup(layerPopup);
+		layerPopup = null;
+    }
+}
+
+// -----------------------------------------------------------------------------
+
+$(document).on('ready', function () {
+//$(document).on("pageshow", "#pageMap", function () {
 	'use strict';
 
 	function updateEmbedURI() {
@@ -148,23 +330,23 @@ $(document).on("pageshow", "#pageMap", function () {
 			}
 		});
 
-//		ddj.marker.init({
-//			onMouseOver: function (latlng, data) {
-/*				updateMapHoverItem(latlng, data, {
+		ddj.marker.init({
+			onMouseOver: function (latlng, data) {
+				selectMapItem(latlng, data, {
 					options: {
-						markerColor: getColor(data)
+						markerColor: 'red'
 					}
-				}, 6);*/
-/*			},
+				}, 6);
+			},
 			onMouseOut: function (latlng, data) {
-//				updateMapVoidItem(data);
+				deselectMapItem(data);
 			},
 			onClick: function (latlng, data) {
-//				updateMapSelectItem(data);
+				highlightMapItem(data);
 			}
 		});
-*/
-		ddj.search.init({
+
+/*		ddj.search.init({
 			showNoSuggestion: true,
 			titleNoSuggestion: '<i class="fa fa-info-circle" aria-hidden="true"></i> Geben sie bitte den Namen einer Schule ein',
 			onAdd: function (obj, value) {
@@ -208,12 +390,12 @@ $(document).on("pageshow", "#pageMap", function () {
 			onClick: function (data) {
 				selectSuggestion(data.BSN);
 			}
-		});
+		});*/
 
 //		initSocialMedia();
 	});
 
-	ddj.getMap().addControl(new ControlInfo());
+/*	ddj.getMap().addControl(new ControlInfo());
 
 	$('#autocomplete').val('');
 	$('#receipt .group').on('click', function () {
@@ -293,6 +475,7 @@ $(document).on("pageshow", "#pageMap", function () {
 		updateEmbedURI();
 		$('#popupShare').popup('reposition', 'positionTo: window');
 	});
+	*/
 });
 
 // -----------------------------------------------------------------------------
@@ -301,193 +484,11 @@ $(document).on("pageshow", "#pageMap", function () {
 /*
 	use http://www.convertcsv.com/csv-to-json.htm
 */
-
+/*
 var map = null;
 var mapContainer = null;
 var mapBubble = null;
 var mapBubbles = null;
-var filterCountry = 'DE';
-var filterLevel = 'all';
-var filterDataset = 'portals';
-var filterPage = '#popupData';
-
-// -----------------------------------------------------------------------------
-
-function initNokiaMap(elementName, lat, lon, zoom) {
-	'use strict';
-
-	mapBubbles = new nokia.maps.map.component.InfoBubbles();
-	var TOUCH = nokia.maps.dom.Page.browser.touch,
-		CLICK = TOUCH ? 'tap' : 'click';
-
-	mapContainer = new nokia.maps.map.Container();
-	mapContainer.addListener(CLICK, function (evt) {
-		if (evt.target.nr >= 0) {
-			mapBubble = mapBubbles.openBubble(getBubbleHTML(evt.target.nr), evt.target.coordinate);
-		}
-	}, false);
-
-	map.components.add(mapBubbles);
-	map.objects.add(mapContainer);
-}
-
-// -----------------------------------------------------------------------------
-
-function getBubbleHTML(id) {
-	'use strict';
-
-	try {
-		var str, i, l, data, level;
-
-		str = '<div style="font-size:1.25em;">';
-		str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
-		str += '<i class="fa fa-map-marker"></i> ' + dataBasics[id].name + '<br>';
-		if (dataBasics[id].population > 0) {
-			str += '<i class="fa fa-male"></i> ' + formatPopulation(dataBasics[id].population) + ' Einwohner<br>';
-		}
-		str += '</div>';
-
-		if (typeof dataBasics[id].territorial !== 'undefined') {
-			str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
-			data = dataBasics[id].territorial;
-			level = [];
-
-			if (data.length >= 2) {
-				level.push(data.substr(0, 2)); // state
-			}
-			if (data.length >= 3) {
-				level.push(data.substr(0, 3)); // governorate
-			}
-			if (data.length >= 5) {
-				level.push(data.substr(0, 5)); // county
-			}
-			if (data.length >= 9) {
-				level.push(data.substr(0, 9)); // union
-			}
-			if (data.length >= 12) {
-				level.push(data.substr(0, 12)); // municipal
-			}
-
-			str += '<i class="fa fa-chevron-right"></i> Deutschland<br>';
-			for (l = 0; l < level.length; ++l) {
-				for (i = 0; i < dataBasics.length; ++i) {
-					if (typeof dataBasics[i].territorial !== 'undefined') {
-						if (level[l] === dataBasics[i].territorial) {
-							str += '<i class="fa fa-chevron-right"></i> ' + dataBasics[i].name + '<br>';
-							break;
-						}
-					}
-				}
-				if (i >= dataBasics.length) {
-//					str += '<i class="fa fa-map-marker"></i> ' + level[ l] + '<br>';
-				}
-			}
-//			str += '<i class="fa fa-map-marker"></i> ' + dataBasics[ id]['nuts'] + '<br>';
-			str += '</div>';
-		}
-
-		if (typeof dataBasics[id].linkOGD !== 'undefined') {
-			str += '<i class="fa fa-check"></i> Hat ein <a href="' + dataBasics[id].linkOGD + '" target="_blank">Open Data Portal</a><br>';
-		} else {
-			str += '<i class="fa fa-times"></i> Hat kein Open Data Portal<br>';
-		}
-		if (typeof dataBasics[id].linkOGDMail !== 'undefined') {
-			str += '<i class="fa fa-check"></i> Hat einen <a href=mailto:"' + dataBasics[id].linkOGDMail + '">Open Data Ansprechpartner</a><br>';
-		}
-
-		if ('firstnames' === filterDataset) {
-			var idata = basicIndexGetDataIndex(id);
-
-			if ((-1 !== idata) && (typeof dataFirstnames[idata]['linkOGData'] !== 'undefined')) {
-				str += '<i class="fa fa-heart"></i> Enthält einen <a href="' + dataFirstnames[idata]['linkOGData'] + '" target="_blank">Vornamen-Datensatz</a><br>';
-
-				if (typeof dataFirstnames[idata]['linkOGDLicense'] !== 'undefined') {
-					var license = dataFirstnames[idata]['linkOGDLicense'];
-					var good = false;
-
-					if ('CC 0' === license) {
-						good = true;
-					} else if ('CC BY 4.0' === license) {
-						good = true;
-					} else if ('CC BY 3.0' === license) {
-						good = true;
-					} else if ('DL DE 0 2.0' === license) {
-						good = true;
-					} else if ('DL DE BY 2.0' === license) {
-						good = true;
-					}
-
-					if (good) {
-						str += '<i class="fa fa-heart"></i> Mit der Lizenz ' + license + '<br>';
-					} else {
-						str += '<i class="fa fa-check"></i> Mit der Lizenz ' + license + '<br>';
-					}
-				}
-			} else {
-				if (typeof dataBasics[id]['linkOGD'] !== 'undefined') {
-					str += '<i class="fa fa-times"></i> Kein Vornamen-Datensatz vorhanden<br>';
-				}
-
-				if ((-1 != idata) && (typeof dataFirstnames[idata]['linkWebData'] !== 'undefined') && (dataFirstnames[ idata]['linkWebData'] != '')) {
-					str += '<i class="fa fa-check"></i> Vornamen auf der <a href="' + dataFirstnames[idata]['linkWebData'] + '" target="_blank">Webseite</a><br>';
-				} else if (typeof dataBasics[id]['linkOGD'] === 'undefined') {
-					str += '<i class="fa fa-times"></i> Keine Vornamen vorhanden<br>';
-				}
-
-				if ((-1 != idata) && (typeof dataFirstnames[idata]['status'] !== 'undefined')) {
-					if ('nodata' == dataFirstnames[ idata]['status']) {
-						str += '<i class="fa fa-circle-o"></i> Keine Geburten registriert<br>';
-					} else if ('fee' == dataFirstnames[idata]['status']) {
-						str += '<i class="fa fa-warning"></i> Kostenpflichtige Auskunft<br>';
-					}
-				}
-			}
-		}
-
-		if ('firstnames' === filterDataset) {
-			if(( -1 != idata) && (typeof dataFirstnames[idata]['history'] !== 'undefined')) {
-				str += '<br>';
-
-				var historySize = dataFirstnames[idata]['history'].length;
-				for( var h = 0; h < historySize; ++h) {
-					str += '<div style="border-top:1px solid #aaaaaa;color:#aaaaaa;padding-top:0.5em;margin-top:0.5em;">';
-					str += '<i class="fa fa-calendar"></i> ' + dataFirstnames[idata]['history'][h]['date'] + '<br>';
-					str += '<i class="fa fa-comment-o"></i> ' + dataFirstnames[idata]['history'][h]['event'] + '</div>';
-				}
-			}
-		} else {
-			if( typeof dataBasics[ id]['history'] !== 'undefined') {
-				str += '<br>';
-
-				var historySize = dataBasics[ id]['history'].length;
-				for( var h = 0; h < historySize; ++h) {
-					str += '<div style="border-top:1px solid #aaaaaa;color:#aaaaaa;padding-top:0.5em;margin-top:0.5em;">';
-					str += '<i class="fa fa-calendar"></i> ' + dataBasics[ id]['history'][ h]['date'] + '<br>';
-					str += '<i class="fa fa-comment-o"></i> ' + dataBasics[ id]['history'][ h]['event'] + '</div>';
-				}
-			}
-		}
-		str += '</div>';
-
-		return str;
-	} catch( e) {
-		return e.message;
-	}
-}
-
-// -----------------------------------------------------------------------------
-
-function formatPopulation( population)
-{
-	var str = population.toString();
-	if( str.length > 3) {
-		str = str.substr( 0, str.length - 3) + '.' + str.substr( str.length - 3);
-	}
-	if( str.length > 7) {
-		str = str.substr( 0, str.length - 7) + '.' + str.substr( str.length - 7);
-	}
-	return str;
-}
 
 // -----------------------------------------------------------------------------
 
@@ -1730,11 +1731,11 @@ function generateDataList()
 
 	txt += '<select name="filterDataset" id="filterDataset">';
 	if( 'all' == filterLevel) {
-		txt += '<option value="portals"' + ('portals' == filterDataset ? ' selected="selected"' : '') + '>Open Data Portale</option>';
+		txt += '<option value="portals"' + ('portals' == settings.dataset ? ' selected="selected"' : '') + '>Open Data Portale</option>';
 	} else {
-		txt += '<option value="portals"' + ('portals' == filterDataset ? ' selected="selected"' : '') + '>Open Data Portalen</option>';
+		txt += '<option value="portals"' + ('portals' == settings.dataset ? ' selected="selected"' : '') + '>Open Data Portalen</option>';
 	}
-	txt += '<option value="firstnames"' + ('firstnames' == filterDataset ? ' selected="selected"' : '') + '>Vornamen Datensätze</option>';
+	txt += '<option value="firstnames"' + ('firstnames' == settings.dataset ? ' selected="selected"' : '') + '>Vornamen Datensätze</option>';
 	txt += '</select>';
 
 	txt += '<select name="filterCountry" id="filterCountry">';
@@ -1747,33 +1748,33 @@ function generateDataList()
 	txt += '</form>';
 
 	var obj = objectDefault;
-	if(( 'all' == filterLevel) && ('portals' == filterDataset)) {
+	if(( 'all' == filterLevel) && ('portals' == settings.dataset)) {
 		obj = objectAllPortals;
-	} else if(( 'all' == filterLevel) && ('firstnames' == filterDataset)) {
+	} else if(( 'all' == filterLevel) && ('firstnames' == settings.dataset)) {
 		obj = objectAllFirstnames;
-	} else if(( 'supreme' == filterLevel) && ('portals' == filterDataset)) {
+	} else if(( 'supreme' == filterLevel) && ('portals' == settings.dataset)) {
 		obj = objectSupremePortals;
-	} else if(( 'supreme' == filterLevel) && ('firstnames' == filterDataset)) {
+	} else if(( 'supreme' == filterLevel) && ('firstnames' == settings.dataset)) {
 		obj = objectSupremeFirstnames;
-	} else if(( 'nuts1' == filterLevel) && ('portals' == filterDataset)) {
+	} else if(( 'nuts1' == filterLevel) && ('portals' == settings.dataset)) {
 		obj = objectNuts1Portals;
-	} else if(( 'nuts1' == filterLevel) && ('firstnames' == filterDataset)) {
+	} else if(( 'nuts1' == filterLevel) && ('firstnames' == settings.dataset)) {
 		obj = objectNuts1Firstnames;
-	} else if(( 'district' == filterLevel) && ('portals' == filterDataset)) {
+	} else if(( 'district' == filterLevel) && ('portals' == settings.dataset)) {
 		obj = objectDistrictPortals;
-	} else if(( 'district' == filterLevel) && ('firstnames' == filterDataset)) {
+	} else if(( 'district' == filterLevel) && ('firstnames' == settings.dataset)) {
 		obj = objectDistrictFirstnames;
-	} else if(( 'cities' == filterLevel) && ('portals' == filterDataset)) {
+	} else if(( 'cities' == filterLevel) && ('portals' == settings.dataset)) {
 		obj = objectCityPortals;
-	} else if(( 'cities' == filterLevel) && ('firstnames' == filterDataset)) {
+	} else if(( 'cities' == filterLevel) && ('firstnames' == settings.dataset)) {
 		obj = objectCityFirstnames;
-	} else if(( 'municipal' == filterLevel) && ('portals' == filterDataset)) {
+	} else if(( 'municipal' == filterLevel) && ('portals' == settings.dataset)) {
 		obj = objectMunicipalPortals;
-	} else if(( 'municipal' == filterLevel) && ('firstnames' == filterDataset)) {
+	} else if(( 'municipal' == filterLevel) && ('firstnames' == settings.dataset)) {
 		obj = objectMunicipalFirstnames;
-	} else if(( 'other' == filterLevel) && ('portals' == filterDataset)) {
+	} else if(( 'other' == filterLevel) && ('portals' == settings.dataset)) {
 		obj = objectOtherPortals;
-	} else if(( 'other' == filterLevel) && ('firstnames' == filterDataset)) {
+	} else if(( 'other' == filterLevel) && ('firstnames' == settings.dataset)) {
 		obj = objectOtherFirstnames;
 	}
 
@@ -1814,7 +1815,7 @@ function generateDataList()
 		generateDataList();
 	});
 	$( '#filterDataset').change( function() {
-		filterDataset = $( this).val();
+		settings.dataset = $( this).val();
 		generateDataList();
 	});
 	$( '#filterBasic-input').keydown( function( e) {
@@ -1881,7 +1882,7 @@ function saveURL()
 {
 	var url = '/?page=' + filterPage.substr( 6);
 	url += '&level=' + filterLevel;
-	url += '&dataset=' + filterDataset;
+	url += '&dataset=' + settings.dataset;
 	url += '&country=' + filterCountry;
 	url += '&lat=' + parseInt( map.center.latitude * 10000) / 10000;
 	url += '&lng=' + parseInt( map.center.longitude * 10000) / 10000;
@@ -1890,7 +1891,7 @@ function saveURL()
 //	history.pushState( {}, '', url);
 	history.replaceState( {}, '', url);
 }
-
+*/
 // -----------------------------------------------------------------------------
 /*
 $( document).ready( function()
@@ -1910,7 +1911,7 @@ $( document).ready( function()
 			filterLevel = params['level'];
 		}
 		if( typeof params['dataset'] !== 'undefined') {
-			filterDataset = params['dataset'];
+			settings.dataset = params['dataset'];
 		}
 
 		var page = '';
