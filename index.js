@@ -8,7 +8,7 @@ var layerPopup = null;
 var settings = {
 //	filterCountry: 'DE',
 //	filterLevel: 'all',
-	dataset: 'portals',
+	dataset: 'portals'
 //	filterPage: '#popupData',
 };
 
@@ -55,10 +55,93 @@ var ControlInfo = L.Control.extend({
 
 // -----------------------------------------------------------------------------
 
-function enrichMissingData(data) {
+function getIDfromTitle(country, title) {
 	'use strict';
 
+	var id = title.toLowerCase();
+
+	id = id.replace(/\s+/g, '-').replace(/-+/g, '-').replace(/\.+/g, '-');
+	id = id.replace(/\(+/g, '').replace(/\)+/g, '');
+	id = id.replace(/ä+/g, 'ae').replace(/ö+/g, 'oe').replace(/ü+/g, 'ue').replace(/ß+/g, 'ss');
+
+	id = id.substr(0, 29);
+	id = country + '-' + id;
+
+	return id;
+}
+
+// -----------------------------------------------------------------------------
+
+function enrichMissingData(country, data) {
+	'use strict';
+
+	var f, feature, id;
+
+	for (f = 0; f < data.features.length; ++f) {
+		feature = data.features[f];
+		feature.properties.id = getIDfromTitle(country, feature.properties.title);
+	}
 	return data;
+}
+
+// -----------------------------------------------------------------------------
+
+function getTerritorialList(data) {
+	'use strict';
+
+	var str = '', i, l, item, level, allData = ddj.getData();
+
+	if (typeof data.territorial !== 'undefined') {
+		str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
+		item = data.territorial;
+		level = [];
+
+		if (item) {
+			if (item.length >= 2) {
+				level.push(item.substr(0, 2)); // state
+			}
+			if (item.length >= 3) {
+				level.push(item.substr(0, 3)); // governorate
+			}
+			if (item.length >= 5) {
+				level.push(item.substr(0, 5)); // county
+			}
+			if (item.length >= 9) {
+				level.push(item.substr(0, 9)); // union
+			}
+			if (item.length >= 12) {
+				level.push(item.substr(0, 12)); // municipal
+			}
+		}
+
+		// Germany is 0 or '0'
+		if (data.territorial != 0) {
+			str += '<i class="fa fa-chevron-right"></i> <a href="" data-key="id" data-value="' + 'foo' + '">Deutschland</a><br>';
+		}
+
+		for (l = 0; l < level.length; ++l) {
+			if (data.territorial !== level[l]) {
+				for (i = 0; i < allData.length; ++i) {
+					if (allData[i].properties && allData[i].properties.territorial) {
+						if (level[l] === allData[i].properties.territorial) {
+							str += '<i class="fa fa-chevron-right"></i> ';
+							str += '<a href="" data-key="id" data-value="' + allData[i].properties.id + '">';
+							str += allData[i].properties.title;
+							str += '</a><br>';
+							break;
+						}
+					}
+				}
+			}
+//			if (i >= allData.length) {
+//				str += '<i class="fa fa-map-marker"></i> ' + level[ l] + '<br>';
+//			}
+		}
+//		str += '<i class="fa fa-map-marker"></i> ' + allData['nuts'] + '<br>';
+		str += '</div>';
+	}
+
+	return str;
 }
 
 // -----------------------------------------------------------------------------
@@ -66,96 +149,18 @@ function enrichMissingData(data) {
 function getPopupContent(data) {
 	'use strict';
 
-	/*
-		begin: ""
-		endpoint: ""
-		lat: 52.506569999999996
-		lng: 13.424389999999999
-		mail: ""
-		municipality: 1
-		nuts: "DE3"
-		population: 3375222
-		territorial: "110000000000"
-		title: "Berlin"
-		type: "city+state"
-		url: "http://daten.berlin.de/"
-	*/
-
 	try {
-		var str, i, l, item, level, allData = ddj.getData();
+		var str, color = '#fff', background = '#1f78b4';
 
-		str = '<div style="font-size:1.25em;">';
-		str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
-		str += '<i class="fa fa-map-marker"></i> ' + data.title + '<br>';
-		if (data.population > 0) {
-			str += '<i class="fa fa-male"></i> ' + formatPopulation(data.population) + ' Einwohner<br>';
-		}
+		str = '<div style="font-size:1.25em;background:' + background + ';color:' + color + '">';
+		str += '<div style="padding-bottom:0.5em;margin-bottom:0.5em;">';
+		str += data.title;
 		str += '</div>';
-
-		if (typeof data.territorial !== 'undefined') {
-			str += '<div style="border-bottom:1px solid white;padding-bottom:0.5em;margin-bottom:0.5em;">';
-			item = data.territorial;
-			level = [];
-
-			if (item) {
-				if (item.length >= 2) {
-					level.push(item.substr(0, 2)); // state
-				}
-				if (item.length >= 3) {
-					level.push(item.substr(0, 3)); // governorate
-				}
-				if (item.length >= 5) {
-					level.push(item.substr(0, 5)); // county
-				}
-				if (item.length >= 9) {
-					level.push(item.substr(0, 9)); // union
-				}
-				if (item.length >= 12) {
-					level.push(item.substr(0, 12)); // municipal
-				}
-			}
-
-			str += '<i class="fa fa-chevron-right"></i> Deutschland<br>';
-			for (l = 0; l < level.length; ++l) {
-				for (i = 0; i < allData.length; ++i) {
-					if (allData[i].properties && allData[i].properties.territorial) {
-						if (level[l] === allData[i].properties.territorial) {
-							str += '<i class="fa fa-chevron-right"></i> ' + allData[i].properties.title + '<br>';
-							break;
-						}
-					}
-				}
-				if (i >= allData.length) {
-//					str += '<i class="fa fa-map-marker"></i> ' + level[ l] + '<br>';
-				}
-			}
-//			str += '<i class="fa fa-map-marker"></i> ' + allData['nuts'] + '<br>';
-			str += '</div>';
-		}
-
-		if (typeof data.url !== 'undefined') {
-			str += '<i class="fa fa-check"></i> Hat ein <a href="' + data.url + '" target="_blank">Open Data Portal</a><br>';
-		} else {
-			str += '<i class="fa fa-times"></i> Hat kein Open Data Portal<br>';
-		}
-		if (typeof data.email !== 'undefined') {
-			str += '<i class="fa fa-check"></i> Hat einen <a href=mailto:"' + data.email + '">Open Data Ansprechpartner</a><br>';
-		}
-
-		if( typeof data['history'] !== 'undefined') {
-			str += '<br>';
-
-			var historySize = data['history'].length;
-			for( var h = 0; h < historySize; ++h) {
-				str += '<div style="border-top:1px solid #aaaaaa;color:#aaaaaa;padding-top:0.5em;margin-top:0.5em;">';
-				str += '<i class="fa fa-calendar"></i> ' + data['history'][ h]['date'] + '<br>';
-				str += '<i class="fa fa-comment-o"></i> ' + data['history'][ h]['event'] + '</div>';
-			}
-		}
+		str += '<img src="img/' + data.id + '.svg">';
 		str += '</div>';
 
 		return str;
-	} catch(e) {
+	} catch (e) {
 		return e.message;
 	}
 }
@@ -178,7 +183,7 @@ function highlightMapItem(data) {
 
 	mapAction();
 
-	var key;
+	var key, now = new Date(), days = '...';
 
 	for (key in data) {
 		if (data.hasOwnProperty(key)) {
@@ -186,22 +191,38 @@ function highlightMapItem(data) {
 		}
 	}
 
-	setText('count2017', data.count_2017 || 0);
-	setText('count2018', data.count_2018 || 0);
-	setText('hotspot', 'x' === data['Brennpunktschule-2018'] ? 'ja' : 'nein');
+	setText('detype', data.type.replace('city', 'Stadt').replace('state', 'Bundesland').replace('district', 'Landkreis').replace('country', 'Staat').replace('other', 'Datenbereitsteller').replace('+', ' und ') || '');
+	if ((data.population === 0) || (data.population === null)) {
+		setText('population', '');
+	} else {
+		setText('population', formatPopulation(data.population) + ' Einwohner');
+	}
+	$('#recterritorialList').html(getTerritorialList(data));
+
+	if (data.begin !== '') {
+		days = (now - new Date(data.begin)) / 24 / 60 / 60 / 1000;
+		days = parseInt(days, 10);
+	}
+	setText('days', days);
+
+	$('#itemImage').attr('src', 'img/' + data.id + '.svg');
+
+	$('#reclinkPortal').html(data.url === '' ? '' : '<a href="' + data.url + '" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i> URL</a>');
+	$('#reclinkMail').html(data.mail === '' ? '' : '<a href="mailto:' + data.mail + '"><i class="fa fa-info-circle" aria-hidden="true"></i> URL</a>');
+	$('#reclinkAPI').html(data.endpoint === '' ? '' : '<a href="' + data.endpoint + '" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i> URL</a>');
 
 	$('#receiptBox').css('display', 'block');
 }
 
 // -----------------------------------------------------------------------------
 
-function selectMapItem(coordinates, data, icon, offsetY) {
+function selectMapItem(coordinates, data, icon, offsetX, offsetY) {
 	'use strict';
 
 	var options = {
 		closeButton: false,
-		offset: L.point(0, offsetY),
-		className: 'printerLabel teacher' + Math.floor(Math.random() * 10)
+		offset: L.point(offsetX, offsetY),
+		className: 'mapPopup'
 	};
 
 	layerPopup = L.popup(options)
@@ -216,8 +237,8 @@ function deselectMapItem() {
 	'use strict';
 
 	if (layerPopup && ddj.getMap()) {
-		ddj.getMap().closePopup(layerPopup);
-		layerPopup = null;
+//		ddj.getMap().closePopup(layerPopup);
+//		layerPopup = null;
     }
 }
 
@@ -250,9 +271,10 @@ $(document).on('ready', function () {
 		onFocusOnce: mapAction
 	});
 
-	var dataUrl = 'data/polygon-de.geojson';
+	var country = 'de';
+	var dataUrl = 'data/polygon-' + country + '.geojson';
 	$.getJSON(dataUrl, function (data) {
-		data = enrichMissingData(data);
+		data = enrichMissingData(country, data);
 
 		ddj.init(data);
 
@@ -336,7 +358,7 @@ $(document).on('ready', function () {
 					options: {
 						markerColor: 'red'
 					}
-				}, 6);
+				}, 91, -8);
 			},
 			onMouseOut: function (latlng, data) {
 				deselectMapItem(data);

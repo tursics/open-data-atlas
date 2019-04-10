@@ -29,8 +29,8 @@
 	<link rel="stylesheet" href="lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css">
 	<link rel="stylesheet" href="lib/font-awesome-4.6.3/css/font-awesome.css">
 	<link rel="stylesheet" href="lib/leaflet-0.7.7/leaflet.css" />
-	<link rel="stylesheet" href="index.css" />
 	<link rel="stylesheet" href="lib/leaflet.awesome-markers-2.0.2/leaflet.awesome-markers.css">
+	<link rel="stylesheet" href="index.css" />
 
 	<script src="lib/leaflet-1.4.0/leaflet.js"></script>
 	<script src="lib/jquery.mobile-1.4.2/jquery-1.11.1.min.js"></script>
@@ -49,12 +49,12 @@
 	<div id="mapContainer"></div>
 	<div id="searchBox">
 		<h3>Open Data Atlas</h3>
-		<div class="sample">
-			Zum Beispiel: <a href="#">32. Schule</a>, <a href="#">Ballettschule</a>
-		</div>
 		<div class="searchInput">
-			<input type="text" name="schools" id="autocomplete" placeholder="Geben Sie einen Schulnamen ein" />
+			<input type="text" name="schools" id="autocomplete" placeholder="Geben Sie einen Suchbegriff ein" />
 			<div><i class="fa fa-search" aria-hidden="true"></i></div>
+		</div>
+		<div class="sample">
+			Zum Beispiel: <a href="#">Berlin</a>, <a href="#">Ulm</a>
 		</div>
 		<div class="priceBar"><div class="priceRed"></div><div class="priceOrange"></div><div class="priceBlue"></div><div class="priceGreen"></div></div>
 		<div class="filter" style="padding: 1em 0 0 0;">
@@ -105,31 +105,22 @@
 			</div>
 		</div>
 		<div class="priceBar"><div class="priceRed"></div><div class="priceOrange"></div><div class="priceBlue"></div><div class="priceGreen"></div></div>
-		<div id="receiptBox" style="padding: 0 0 .5em 0;">
-			<div id="receipt" class="normal">
-				<div class="full bold" id="recSchulname"></div>
-				<div class="empty"></div>
-				<div class="full"><span id="recSchulart"></span> (<span id="recBSN"></span>)</div>
-				<div class="full" id="recStrasse"></div>
-				<div class="full"><span id="recPLZ"></span> Berlin</div>
-				<div class="empty"></div>
-				<div class="bold">Schuljahr 2017/18</div>
-				<div class="bold">==============</div>
-				<div class="bold">Lehrkräfte: <span id="recAlleLehrkraefte_2017"></span></div>
-				<div class="bold">Quereinsteigende: <span id="recAlleQ_2017"></span></div>
-				<div class="bold">Gesamt: <span id="reccount2017"></span></div>
-				<div class="empty"></div>
-				<div class="bold">Schuljahr 2018/19</div>
-				<div class="bold">==============</div>
-				<div class="bold">Lehrkräfte: <span id="recAlleLehrkraefte_2018"></span></div>
-				<div class="bold">Quereinsteigende: <span id="recAlleQ_2018"></span></div>
-				<div class="bold">Seiteneinsteigende: <span id="recAlleS_2018"></span></div>
-				<div class="bold">Gesamt: <span id="reccount2018"></span></div>
-				<div class="empty"></div>
-				<div class="bold">Brennpunktschule: <span id="rechotspot"></span></div>
-			</div>
-			<div id="receiptClose"><i class="fa fa-chevron-up" aria-hidden="true"></i>verkleinern</div>
+	</div>
+	<div id="receiptBox" class="withItemImage" style="padding: 0 0 .5em 0;">
+		<div id="receipt" class="normal">
+			<div class="center"><img class="itemImage" id="itemImage" src=""></div>
+			<div class="full center bold" id="rectitle"></div>
+			<div class="full center" id="recdetype"></div>
+			<div class="full center" id="recpopulation"></div>
+			<div class="empty"></div>
+			<div class="bold">Open Data-Portal</div>
+			<div class="full">Start vor <span id="recdays"></span> Tagen</div>
+			<div class="full"><span id="reclinkPortal"></span> <span id="reclinkMail"></span> <span id="reclinkAPI"></span></div>
+			<div class="empty"></div>
+			<div class="bold">Weitere Portale</div>
+			<div class="full" id="recterritorialList"></div>
 		</div>
+		<div id="receiptClose"><i class="fa fa-chevron-up" aria-hidden="true"></i>verkleinern</div>
 	</div>
 
 <!--	<div data-role="page" id="_pageMap">
