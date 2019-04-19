@@ -6,8 +6,8 @@
 var layerPopup = null;
 
 var settings = {
-//	filterCountry: 'DE',
-//	filterLevel: 'all',
+	filterCountry: 'DE',
+	filterLevel: 'all',
 	dataset: 'portals'
 //	filterPage: '#popupData',
 };
@@ -172,11 +172,11 @@ function highlightMapItem(data) {
 	function setText(key, txt) {
 		var item = $('#rec' + key);
 
-		if (item.parent().hasClass('number')) {
-			txt = formatNumber(txt);
-		} else if (item.parent().hasClass('boolean')) {
-			txt = (txt === 1 ? 'ja' : 'nein');
-		}
+//		if (item.parent().hasClass('number')) {
+//			txt = formatNumber(txt);
+//		} else if (item.parent().hasClass('boolean')) {
+//			txt = (txt === 1 ? 'ja' : 'nein');
+//		}
 
 		item.text(txt);
 	}
@@ -237,8 +237,8 @@ function deselectMapItem() {
 	'use strict';
 
 	if (layerPopup && ddj.getMap()) {
-//		ddj.getMap().closePopup(layerPopup);
-//		layerPopup = null;
+		ddj.getMap().closePopup(layerPopup);
+		layerPopup = null;
     }
 }
 
@@ -268,7 +268,53 @@ $(document).on('ready', function () {
 		centerLat: 52.516,
 		centerLng: 13.4795,
 		zoom: 6,
-		onFocusOnce: mapAction
+		onFocusOnce: mapAction,
+		onZoomed: function () {
+			var center = ddj.getMap().getCenter();
+
+			ddj.url.replace({
+				lat: parseInt(center.lat * 10000, 10) / 10000,
+				lng: parseInt(center.lng * 10000, 10) / 10000,
+				zoom: ddj.getMap().getZoom()
+			});
+		},
+		onMoved: function () {
+			var center = ddj.getMap().getCenter();
+
+			ddj.url.replace({
+				lat: parseInt(center.lat * 10000, 10) / 10000,
+				lng: parseInt(center.lng * 10000, 10) / 10000,
+				zoom: ddj.getMap().getZoom()
+			});
+		}
+	});
+
+	ddj.url.init({
+		onInit: function (params) {
+/*			if (typeof params.country !== 'undefined') {
+				settings.filterCountry = params.country;
+			}
+			if (typeof params.level !== 'undefined') {
+				settings.filterLevel = params.level;
+			}
+			if (typeof params.dataset !== 'undefined') {
+				settings.dataset = params.dataset;
+			}*/
+
+			if( typeof params['zoom'] !== 'undefined') {
+				map.set( 'zoomLevel', params['zoom']);
+			}
+			if(( typeof params['lat'] !== 'undefined') && (typeof params['lng'] !== 'undefined')) {
+				map.set( 'center', new nokia.maps.geo.Coordinate( parseFloat( params['lat']), parseFloat( params['lng'])));
+/*				map.panTo([
+					currentPos.lat,
+					currentPos.lng + 0.1
+				])*/
+			}
+		},
+		onKeyValueLinkClicked: function (key, value) {
+			return false;
+		}
 	});
 
 	var country = 'de';
@@ -417,23 +463,28 @@ $(document).on('ready', function () {
 //		initSocialMedia();
 	});
 
-/*	ddj.getMap().addControl(new ControlInfo());
+///	ddj.getMap().addControl(new ControlInfo());
 
 	$('#autocomplete').val('');
+
+	// events for detail information
 	$('#receipt .group').on('click', function () {
 		$(this).toggleClass('groupClosed');
 	});
 	$('#receiptClose').on('click', function () {
 		$('#receiptBox').css('display', 'none');
 	});
-	$('#searchBox .sample a:nth-child(1)').on('click', function () {
+
+/*	$('#searchBox .sample a:nth-child(1)').on('click', function () {
 		$('#autocomplete').val('32. Schule (Grundschule) (11G32)');
 		selectSuggestion('11G32');
 	});
 	$('#searchBox .sample a:nth-child(2)').on('click', function () {
 		$('#autocomplete').val('Staatliche Ballettschule Berlin und Schule für Artistik (03B08)');
 		selectSuggestion('03B08');
-	});
+	});*/
+
+	// events for filter
 	$('#filterOpen').on('click', function () {
 		$('#filterBox').css('display', 'block');
 		$('#filterOpen').css('display', 'none');
@@ -443,7 +494,7 @@ $(document).on('ready', function () {
 		$('#filterOpen').css('display', 'inline-block');
 	});
 
-	$('#searchBox #cbRelative').on('click', function () {
+/*	$('#searchBox #cbRelative').on('click', function () {
 		settings.relativeValues = $('#searchBox #cbRelative').is(':checked');
 		ddj.voronoi.update();
 		ddj.marker.update();

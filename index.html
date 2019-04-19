@@ -39,6 +39,7 @@
 	<script src="lib/tursics.ddj.marker.js"></script>
 	<script src="lib/tursics.ddj.polygon.js"></script>
 	<script src="lib/tursics.ddj.search.js"></script>
+	<script src="lib/tursics.ddj.url.js"></script>
 	<script src="index.js"></script>
 	<script src="lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
 	<script src="lib/jquery.autocomplete-1.2.25/jquery.autocomplete.min.js"></script>
@@ -58,11 +59,11 @@
 		</div>
 		<div class="priceBar"><div class="priceRed"></div><div class="priceOrange"></div><div class="priceBlue"></div><div class="priceGreen"></div></div>
 		<div class="filter" style="padding: 1em 0 0 0;">
-			<i class="fa fa-filter" aria-hidden="true"></i> Passe die Darstellung an:<br>
+			<i class="fa fa-filter" aria-hidden="true"></i> Zeige auf der Karte:<br>
 			<div id="filterOpen"><i class="fa fa-chevron-down" aria-hidden="true"></i>anzeigen</div>
 			<div id="filterBox">
 				<select id="selectDistrict" data-native-menu="false" data-inline="false">
-					<option value="">Bezirk</option>
+					<option value="">Ebene</option>
 					<option value="berlin" selected>Berlin</option>
 					<option value="04">Charlottenburg-Wilmersdorf</option>
 					<option value="02">Friedrichshain-Kreuzberg</option>
@@ -120,7 +121,7 @@
 			<div class="bold">Weitere Portale</div>
 			<div class="full" id="recterritorialList"></div>
 		</div>
-		<div id="receiptClose"><i class="fa fa-chevron-up" aria-hidden="true"></i>verkleinern</div>
+		<div id="receiptClose"><i class="fa fa-chevron-up" aria-hidden="true"></i>ausblenden</div>
 	</div>
 
 <!--	<div data-role="page" id="_pageMap">
