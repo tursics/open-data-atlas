@@ -8,8 +8,11 @@ var layerPopup = null;
 var settings = {
 	filterCountry: 'DE',
 	filterLevel: 'all',
-	dataset: 'portals'
+	dataset: 'portals',
 //	filterPage: '#popupData',
+	initZoom: 6,
+	initLat: 52.516,
+	initLng: 13.4795
 };
 
 // -----------------------------------------------------------------------------
@@ -261,34 +264,6 @@ $(document).on('ready', function () {
 		}
 	}
 
-	// center the city hall
-	ddj.map.init('mapContainer', {
-		mapboxId: 'tursics.l7ad5ee8',
-		mapboxToken: 'pk.eyJ1IjoidHVyc2ljcyIsImEiOiI1UWlEY3RNIn0.U9sg8F_23xWXLn4QdfZeqg',
-		centerLat: 52.516,
-		centerLng: 13.4795,
-		zoom: 6,
-		onFocusOnce: mapAction,
-		onZoomed: function () {
-			var center = ddj.getMap().getCenter();
-
-			ddj.url.replace({
-				lat: parseInt(center.lat * 10000, 10) / 10000,
-				lng: parseInt(center.lng * 10000, 10) / 10000,
-				zoom: ddj.getMap().getZoom()
-			});
-		},
-		onMoved: function () {
-			var center = ddj.getMap().getCenter();
-
-			ddj.url.replace({
-				lat: parseInt(center.lat * 10000, 10) / 10000,
-				lng: parseInt(center.lng * 10000, 10) / 10000,
-				zoom: ddj.getMap().getZoom()
-			});
-		}
-	});
-
 	ddj.url.init({
 		onInit: function (params) {
 /*			if (typeof params.country !== 'undefined') {
@@ -302,14 +277,43 @@ $(document).on('ready', function () {
 			}*/
 
 			if (typeof params.zoom !== 'undefined') {
-				ddj.getMap().setZoom(params.zoom);
+				settings.initZoom = params.zoom;
 			}
 			if ((typeof params.lat !== 'undefined') && (typeof params.lng !== 'undefined')) {
-				ddj.getMap().panTo([parseFloat(params.lat), parseFloat(params.lng)]);
+				settings.initLat = params.lat;
+				settings.initLng = params.lng;
 			}
 		},
 		onKeyValueLinkClicked: function (key, value) {
 			return false;
+		}
+	});
+
+	// center the city hall
+	ddj.map.init('mapContainer', {
+		mapboxId: 'tursics.l7ad5ee8',
+		mapboxToken: 'pk.eyJ1IjoidHVyc2ljcyIsImEiOiI1UWlEY3RNIn0.U9sg8F_23xWXLn4QdfZeqg',
+		centerLat: settings.initLat,
+		centerLng: settings.initLng,
+		zoom: settings.initZoom,
+		onFocusOnce: mapAction,
+		onZoomed: function () {
+			var center = ddj.getMap().getCenter();
+
+			ddj.url.replace({
+//				lat: parseInt(center.lat * 10000, 10) / 10000,
+//				lng: parseInt(center.lng * 10000, 10) / 10000,
+				zoom: ddj.getMap().getZoom()
+			});
+		},
+		onMoved: function () {
+			var center = ddj.getMap().getCenter();
+
+			ddj.url.replace({
+				lat: parseInt(center.lat * 10000, 10) / 10000,
+				lng: parseInt(center.lng * 10000, 10) / 10000,
+//				zoom: ddj.getMap().getZoom()
+			});
 		}
 	});
 
