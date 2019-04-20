@@ -78,7 +78,7 @@ function getIDfromTitle(country, title) {
 function enrichMissingData(country, data) {
 	'use strict';
 
-	var f, feature, id;
+	var f, feature;
 
 	for (f = 0; f < data.features.length; ++f) {
 		feature = data.features[f];
@@ -119,7 +119,7 @@ function getTerritorialList(data) {
 
 		// Germany is 0 or '0'
 		if (data.territorial != 0) {
-			str += '<i class="fa fa-chevron-right"></i> <a href="" data-key="id" data-value="' + 'foo' + '">Deutschland</a><br>';
+			str += '<i class="fa fa-chevron-right"></i> <a href="" data-key="id" data-value="' + 'de-govdata-datenportal-fuer-deut' + '">Deutschland</a><br>';
 		}
 
 		for (l = 0; l < level.length; ++l) {
@@ -167,6 +167,23 @@ function getPopupContent(data) {
 		return e.message;
 	}
 }
+// -----------------------------------------------------------------------------
+
+function getMapItemByID(id) {
+	'use strict';
+
+	var allData = ddj.getData(),
+		i;
+
+	for (i = 0; i < allData.length; ++i) {
+		if (allData[i].properties && (allData[i].properties.id === id)) {
+			return allData[i].properties;
+		}
+	}
+
+	return null;
+}
+
 // -----------------------------------------------------------------------------
 
 function highlightMapItem(data) {
@@ -285,7 +302,10 @@ $(document).on('ready', function () {
 			}
 		},
 		onKeyValueLinkClicked: function (key, value) {
-			return false;
+			if (key === 'id') {
+				highlightMapItem(getMapItemByID(value));
+				return false;
+			}
 		}
 	});
 
