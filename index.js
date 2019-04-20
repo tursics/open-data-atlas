@@ -301,15 +301,11 @@ $(document).on('ready', function () {
 				settings.dataset = params.dataset;
 			}*/
 
-			if( typeof params['zoom'] !== 'undefined') {
-				map.set( 'zoomLevel', params['zoom']);
+			if (typeof params.zoom !== 'undefined') {
+				ddj.getMap().setZoom(params.zoom);
 			}
-			if(( typeof params['lat'] !== 'undefined') && (typeof params['lng'] !== 'undefined')) {
-				map.set( 'center', new nokia.maps.geo.Coordinate( parseFloat( params['lat']), parseFloat( params['lng'])));
-/*				map.panTo([
-					currentPos.lat,
-					currentPos.lng + 0.1
-				])*/
+			if ((typeof params.lat !== 'undefined') && (typeof params.lng !== 'undefined')) {
+				ddj.getMap().panTo([parseFloat(params.lat), parseFloat(params.lng)]);
 			}
 		},
 		onKeyValueLinkClicked: function (key, value) {
