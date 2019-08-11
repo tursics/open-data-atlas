@@ -43,51 +43,55 @@ Moers,city,http://offenedaten.moers.de/,,DEA1F024,5170024,Stephan Bernoth und Th
 Wesel,city,http://opendata.wesel.de/,,DEA1F048,5170048,Herr Scholten und Herr Bohm,informationstechnik@wesel.de,,,KRZN,CKAN,https://www.offenesdatenportal.de/api/3/action/organization_activity_list?id=stadt-wesel,,2019-03-12
 Bonn,city,http://opendata.bonn.de/,2014-05-28,DEA22,5314000,Sven Hense,opendata@bonn.de,https://twitter.com/opendatabonn,,Stadt Köln,DKAN,https://opendata.bonn.de/api/3/action/package_list,,2019-07-30
 Köln,city,http://offenedaten-koeln.de/,,DEA23,5315000,Sabine Möwes,e-government@stadt-koeln.de,https://twitter.com/OpenDataKoeln,,Stadt Köln,DKAN,https://offenedaten-koeln.de/api/3/action/package_list,https://offenedaten-koeln.de/catalog.xml,2019-07-29
-Heimbach (Eifel),city,http://offenedaten.kdvz-frechen.de/group/heimbach,2016-11-08,DEA26012,5358012,,,,,,,,,
-Hürtgenwald,city,http://offenedaten.kdvz-frechen.de/group/h%C3%BCrtgenwald,2016-11-08,DEA26016,5358016,,,,,,,,,
-Jülich,city,http://offenedaten.kdvz-frechen.de/group/j%C3%BClich,2016-11-08,DEA26024,5358024,,,,,,,,,
-Kreuzau,city,http://offenedaten.kdvz-frechen.de/group/kreuzau,2016-11-08,DEA26028,5358028,,,,,,,,,
-Langerwehe,city,http://offenedaten.kdvz-frechen.de/group/langerwehe,2016-11-08,DEA26032,5358032,,,,,,,,,
-Linnich,city,http://offenedaten.kdvz-frechen.de/group/linnich,2016-11-08,DEA26036,5358036,,,,,,,,,
-Merzenich,city,http://offenedaten.kdvz-frechen.de/group/merzenich,2016-11-08,DEA26040,5358040,,,,,,,,,
-Titz,city,http://offenedaten.kdvz-frechen.de/group/titz,2016-11-08,DEA26056,5358056,,,,,,,,,
-Vettweiß,city,http://offenedaten.kdvz-frechen.de/group/vettwei%C3%9F,2016-11-08,DEA26060,5358060,,,,,,,,,
-Bedburg,city,http://offenedaten.kdvz-frechen.de/group/bedburg,2017-04-29,DEA27004,5362004,,,,,,,,,
-Bergheim,city,http://offenedaten.kdvz-frechen.de/group/bergheim,2016-11-08,DEA27008,9185118,,,,,,,,,
-Brühl (Rheinland),city,http://offenedaten.kdvz-frechen.de/group/br%C3%BChl,2016-11-08,DEA27012,5362012,,,,,,,,,
-Elsdorf (Rheinland),city,http://offenedaten.kdvz-frechen.de/group/elsdorf,2016-11-08,DEA27016,5362016,,,,,,,,,
-Kerpen,city,http://offenedaten.kdvz-frechen.de/group/kerpen,2016-11-08,DEA27032,5362032,,,,,,,,,
-Wesseling,city,http://offenedaten.kdvz-frechen.de/group/wesseling,2016-11-08,DEA27040,5362040,,,,,,,,,
-Kreis Euskirchen,district,http://offenedaten.kdvz-frechen.de/group/kreis-euskirchen,2016-11-08,DEA28,,,,,,,,,,
-Bad Münstereifel,city,http://offenedaten.kdvz-frechen.de/group/bad-m%C3%BCnstereifel,2016-11-08,DEA28004,5366004,,,,,,,,,
-Kall,city,http://offenedaten.kdvz-frechen.de/group/kall,2016-11-08,DEA28024,5366024,,,,,,,,,
-Aachen,city,http://offenedaten.aachen.de/,,DEA2D002,5334002,,,,,,,,,
-Gelsenkirchen,city,https://opendata.gelsenkirchen.de/,2017-05-23,DEA32,5513000,,,,,,,,,
+Heimbach (Eifel),city,http://offenedaten.kdvz-frechen.de/group/heimbach,2016-11-08,DEA26012,5358012,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Hürtgenwald,city,http://offenedaten.kdvz-frechen.de/group/h%C3%BCrtgenwald,2016-11-08,DEA26016,5358016,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Jülich,city,http://offenedaten.kdvz-frechen.de/group/j%C3%BClich,2016-11-08,DEA26024,5358024,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Kreuzau,city,http://offenedaten.kdvz-frechen.de/group/kreuzau,2016-11-08,DEA26028,5358028,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Langerwehe,city,http://offenedaten.kdvz-frechen.de/group/langerwehe,2016-11-08,DEA26032,5358032,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Linnich,city,http://offenedaten.kdvz-frechen.de/group/linnich,2016-11-08,DEA26036,5358036,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Merzenich,city,http://offenedaten.kdvz-frechen.de/group/merzenich,2016-11-08,DEA26040,5358040,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Titz,city,http://offenedaten.kdvz-frechen.de/group/titz,2016-11-08,DEA26056,5358056,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Vettweiß,city,http://offenedaten.kdvz-frechen.de/group/vettwei%C3%9F,2016-11-08,DEA26060,5358060,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Bedburg,city,http://offenedaten.kdvz-frechen.de/group/bedburg,2017-04-29,DEA27004,5362004,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Bergheim,city,http://offenedaten.kdvz-frechen.de/group/bergheim,2016-11-08,DEA27008,9185118,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Brühl (Rheinland),city,http://offenedaten.kdvz-frechen.de/group/br%C3%BChl,2016-11-08,DEA27012,5362012,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Elsdorf (Rheinland),city,http://offenedaten.kdvz-frechen.de/group/elsdorf,2016-11-08,DEA27016,5362016,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Kerpen,city,http://offenedaten.kdvz-frechen.de/group/kerpen,2016-11-08,DEA27032,5362032,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Wesseling,city,http://offenedaten.kdvz-frechen.de/group/wesseling,2016-11-08,DEA27040,5362040,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Kreis Euskirchen,district,http://offenedaten.kdvz-frechen.de/group/kreis-euskirchen,2016-11-08,DEA28,,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Bad Münstereifel,city,http://offenedaten.kdvz-frechen.de/group/bad-m%C3%BCnstereifel,2016-11-08,DEA28004,5366004,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Kall,city,http://offenedaten.kdvz-frechen.de/group/kall,2016-11-08,DEA28024,5366024,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Aachen,city,http://offenedaten.aachen.de/,,DEA2D002,5334002,,offenedaten@mail.aachen.de,,,regio iT - gesellschaft für informationstechnologie mbH,CKAN,http://offenedaten.aachen.de/api/3/action/package_list,,2019-08-10
+Gelsenkirchen,city,https://opendata.gelsenkirchen.de/,2017-05-23,DEA32,5513000,Ulrike Karn und Manfred vom Sondern,ulrike.karn@gelsenkirchen.de,,,gkd-el,DKAN,https://opendata.gelsenkirchen.de/api/3/action/package_list,,2019-08-10
 Münster (Westfalen),city,https://www.stadt-muenster.de/open-data.html,,DEA33,5515000,Thomas Werner und Astrid Reich,opendata@citeq.de,,,,Typo3,,,2019-03-12
-Bochum,city,http://www.bochum.de/opendata,,DEA51,5911000,,,,,,,,,
-Herne,city,https://www.herne.de/Stadt-und-Leben/Stadtfakten/Open-Data/,,DEA55,5916000,,,,,,,,,
-Arnsberg,city,http://offenedaten.arnsberg.de,,DEA57004,5958004,,,,,,,,,
-Rheinland-Pfalz,state,http://daten.rlp.de/,,DEB,,,,,,,,,,
-Sachsen,state,http://www.opendata.sachsen.de/,,DED,,,,,,,,,,
-Chemnitz,city,http://portal-chemnitz.opendata.arcgis.com/,2017-03-07,DED41,14511000,,,,,,,,,
-Leipzig,city,https://opendata.leipzig.de,,DED51,14713000,,,,,,,,,
-Halle (Saale),city,http://www.daten.halle.de,,DEE02,15002000,,,,,,,,,
-Jena,city,https://opendata.jena.de/,2016-12-20,DEG03,16053000,,,,,,,,,
-Altenburg,city,http://www.altenburg.eu/sixcms/detail.php,,DEG0M001,16077001,,,,,,,,,
-Bielefeld,city,https://open-data.bielefeld.de/,,DEA41,5711000,,,,,,,,,
-Siegburg,city,http://offenedaten.kdvz-frechen.de/group/siegburg,,DEA2C060,5382060,,,,,,,,,
-Niederzier,city,http://offenedaten.kdvz-frechen.de/group/niederzier,,DEA26048,5358048,,,,,,,,,
-Nörvenich,city,http://offenedaten.kdvz-frechen.de/group/n%C3%B6rvenich,,DEA26052,5358052,,,,,,,,,
-Brandenburg,state,https://datenadler.de/,,,,,,,,,,,,
-OpenData-Plattform ÖPNV,other,https://www.opendata-oepnv.de/,,,,,,,,,,,,
-Kiel,city,https://www.kiel.de/de/kiel_zukunft/statistik_kieler_zahlen/open_data/index.php,,,1002000,,,,,,,,,
-Dortmund,city,https://opendata.dortmund.de/,,,5913000,,,,,,,,,
-Esri Deutschland Open Data Portal,other,https://opendata-esri-de.opendata.arcgis.com/,,,,,,,,,,,,
-Magdeburg,city,https://www.magdeburg.de/Start/B%C3%BCrger-Stadt/Verwaltung-Service/Offene-Verwaltungsdaten,,,15003000,,,,,,,,,
-Mittenwalde,city,http://stadt-mittenwalde.opendata.arcgis.com/,,,12073404,,,,,,,,,
+Bochum,city,http://www.bochum.de/opendata,,DEA51,5911000,Frau auf'm Kamp und Frau Hartweg und Frau Vidakovic,info@bochum.de ,,,,Website,,,2019-08-10
+Herne,city,https://www.herne.de/Stadt-und-Leben/Stadtfakten/Open-Data/,,DEA55,5916000,,opendata@herne.de,,,,Website,,,2019-08-10
+Arnsberg,city,http://offenedaten.arnsberg.de,,DEA57004,5958004,Elmar Kettler,pressestelle.kettler@arnsberg.de,,,,Website,,,2019-08-10
+Rheinland-Pfalz,state,http://daten.rlp.de/,,DEB,,Aylin Akça,referat391@mdi.rlp.de,,,Landesbetrieb Daten und Information,CKAN,https://daten.rlp.de/api/3/action/package_list,https://daten.rlp.de/catalog.xml,2019-08-10
+Sachsen,state,http://www.opendata.sachsen.de/,,DED,,,opendata@sid.sachsen.de,https://twitter.com/OpenDataSachsen,,,Website,,,2019-08-10
+Chemnitz,city,http://portal-chemnitz.opendata.arcgis.com/,2017-03-07,DED41,14511000,,,,,Amt für Informationsverarbeitung,ArcGIS,,,2019-08-10
+Leipzig,city,https://opendata.leipzig.de,,DED51,14713000,,,,,Lecos GmbH,CKAN,https://opendata.leipzig.de/api/3/action/package_list,,2019-08-10
+Halle (Saale),city,http://opendata.halle.de,,DEE02,15002000,,opendata@halle.de,,,,Website,,,2019-08-10
+Jena,city,https://opendata.jena.de/,2016-12-20,DEG03,16053000,,info@jena.de,,,IT-Service - Kommunale Immobilien Jena,CKAN,https://opendata.jena.de/api/3/action/package_list,,2019-08-10
+Altenburg,city,https://www.altenburg.eu/sixcms/detail.php?id=139875,,DEG0M001,16077001,,,,,,Website,,,2019-08-10
+Bielefeld,city,https://open-data.bielefeld.de/,,DEA41,5711000,,opendata@bielefeld.de,,,Stadt Köln,DKAN,https://open-data.bielefeld.de/api/3/action/package_list,,2019-08-10
+Siegburg,city,http://offenedaten.kdvz-frechen.de/group/siegburg,,DEA2C060,5382060,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Niederzier,city,http://offenedaten.kdvz-frechen.de/group/niederzier,,DEA26048,5358048,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Nörvenich,city,http://offenedaten.kdvz-frechen.de/group/n%C3%B6rvenich,,DEA26052,5358052,,offene-daten@kdvz-frechen.de,https://twitter.com/OpenDataKDVZ,,Stadt Köln,DKAN,,,2019-08-10
+Brandenburg,state,https://datenadler.de/,,,,Frank Schiersner,frank.schiersner@mik.brandenburg.de,,,Inqbus scientific computing,PKAN,,,2019-08-11
+OpenData-Plattform ÖPNV,other,https://www.opendata-oepnv.de/,,,,,opendata-oepnv@vrr.de,,,Verkehrsverbund Rhein-Ruhr AöR,CKAN,https://www.opendata-oepnv.de/api/3/action/package_list,,2019-08-11
+Kiel,city,https://opendata.schleswig-holstein.de/organization/landeshauptstadt-kiel,,,1002000,,,,,Dataport,CKAN,,,2019-08-11
+Dortmund,city,https://opendata.dortmund.de/,2018-08-23,,5913000,,opendata@dortmund.de,,,,Website,,,2019-08-11
+Esri Deutschland Open Data Portal,other,https://opendata-esri-de.opendata.arcgis.com/,,,,,,,,,Website,,,2019-08-11
+Magdeburg,city,https://www.magdeburg.de/Start/B%C3%BCrger-Stadt/Verwaltung-Service/Offene-Verwaltungsdaten,,,15003000,,,,,,Website,,,2019-08-11
+Mittenwalde,city,http://stadt-mittenwalde.opendata.arcgis.com/,,,12073404,,,,,,ArcGIS,,,2019-08-11
 Duisburg,city,https://opendata-duisburg.de/,2019-03-19,,5112000,,,,,Stadt Köln,DKAN,https://opendata-duisburg.de/api/3/action/package_list,https://opendata-duisburg.de/catalog.xml,2019-07-29
 Landkreis Diepholz,district,https://daten.diepholz.de/,,,,,,,,,DKAN,,,2019-07-29
 Schleswig-Holstein,state,https://opendata.schleswig-holstein.de/,,,,,opendata@lr.landsh.de,,,Dataport,CKAN,https://opendata.schleswig-holstein.de/api/3/action/package_list,https://opendata.schleswig-holstein.de/catalog.xml,2019-07-29
 Nahverkehrsgesellschaft Baden-Württemberg mbH,other,https://www.nvbw.de/aufgaben/digitale-mobilitaet/open-data/,,,,Dietmar Seifert,opendata@nvbw.de,,,,TYPO3,,,2019-07-29
 Bundesamt für Seeschifffahrt und Hydrographie,other,https://www.mcloud.de/web/guest/suche/-/results/searchAgg?_mcloudsearchportlet_aggsChoice=extras.displayContact.name.raw%3A%22Bundesamt+f%C3%BCr+Seeschifffahrt+und+Hydrographie+(BSH)%22,2019-07-13,,,,,,,,,,,2019-07-29
 Rhein-Kreis Neuss,district,http://opendata.rhein-kreis-neuss.de/,2019-02-12,,,Tobias Schellhorn und Jürgen Brings,digitalisierung@rhein-kreis-neuss.de,,,OpenDataSoft,OpenDataSoft,https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets,,2019-07-29
+Norderstedt,city,https://opendata.schleswig-holstein.de/organization/norderstedt,,,,,,,,Dataport,CKAN,,,2019-08-11
+Dresden,city,https://opendata.dresden.de,,,,,statistik@dresden.de,,,,DUVA,,,2019-08-11
+Hochsauerlandkreis,district,http://www.hochsauerlandkreis.de/buergerservice/bauen_wohnen_kataster/geo_service/OpenData/,,,,,,,,,Website,,,2019-08-11
+Kreis Soest,district,https://www.kreis-soest.de/gis/start/opendata/opendata.php,,,,,,,,,Website,,,2019-08-11
