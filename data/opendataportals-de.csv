@@ -95,3 +95,4 @@ Norderstedt,city,https://opendata.schleswig-holstein.de/organization/norderstedt
 Dresden,city,https://opendata.dresden.de,,,,,statistik@dresden.de,,,,DUVA,,,2019-08-11
 Hochsauerlandkreis,district,http://www.hochsauerlandkreis.de/buergerservice/bauen_wohnen_kataster/geo_service/OpenData/,,,,,,,,,Website,,,2019-08-11
 Kreis Soest,district,https://www.kreis-soest.de/gis/start/opendata/opendata.php,,,,,,,,,Website,,,2019-08-11
+Essen,city,https://opendata.essen.de/,,,,,opendata@essen.de,,,Stadt Köln,DKAN,https://opendata.essen.de/api/3/action/package_list,https://opendata.essen.de/catalog.xml,2019-10-26
