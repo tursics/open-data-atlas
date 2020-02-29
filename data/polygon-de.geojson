@@ -1226,7 +1226,7 @@
     "properties": {
     "title":"Münster (Westfalen)",
     "type":"city",
-    "url":"http://www.muenster.de/stadt/katasteramt/geodatenmanagement.html",
+    "url":"https://opendata.stadt-muenster.de/",
     "mail":"",
     "endpoint":"",
     "begin":"",
