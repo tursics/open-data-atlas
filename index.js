@@ -1977,9 +1977,6 @@ function saveURL()
 	url += '&level=' + filterLevel;
 	url += '&dataset=' + settings.dataset;
 	url += '&country=' + filterCountry;
-	url += '&lat=' + parseInt( map.center.latitude * 10000) / 10000;
-	url += '&lng=' + parseInt( map.center.longitude * 10000) / 10000;
-	url += '&zoom=' + parseInt( map.zoomLevel * 100) / 100;
 
 //	history.pushState( {}, '', url);
 	history.replaceState( {}, '', url);
@@ -2015,20 +2012,6 @@ $( document).ready( function()
 			page = '#popupData';
 		}
 		showPage( page);
-
-		map.addObserver( 'zoomLevel', function() {
-			saveURL();
-		});
-		map.addObserver( 'center', function() {
-			saveURL();
-		});
-
-		if( typeof params['zoom'] !== 'undefined') {
-			map.set( 'zoomLevel', params['zoom']);
-		}
-		if(( typeof params['lat'] !== 'undefined') && (typeof params['lng'] !== 'undefined')) {
-			map.set( 'center', new nokia.maps.geo.Coordinate( parseFloat( params['lat']), parseFloat( params['lng'])));
-		}
 
 	});
 

@@ -3074,7 +3074,7 @@ var dataBasics = [
 {
 	"name":"Mittenwalde",
 	"group":"city",
-	"nuts":"",
+	"nuts":"DE406332",
 	"population":9104,
 	"lat":52.26,
 	"lon":13.53,
